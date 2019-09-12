@@ -9,7 +9,7 @@ exports.up = function(knex) {
     tbl.date("most_recent_application_due_date");
     tbl.integer("amount");
     tbl.string("geographic_region");
-    tbl.string("domain_area");
+    tbl.string("domain_areas");
     tbl.string("target_entrepreneur_demographic");
     tbl.string("notes");
     tbl.boolean("early_stage_funding");
