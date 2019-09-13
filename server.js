@@ -3,7 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const server = express();
 
-const grantRouter = require("./routes/grantRouter.js");
+const grantRouter = require("./routers/grantRouter.js");
 
 server.use(cors());
 server.use(helmet());

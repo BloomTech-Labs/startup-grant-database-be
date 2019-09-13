@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const grantModel = require("./grantModel.js");
+const grantModel = require("../models/grantModel.js");
 // Get all grants
 router.get("/", (req, res) => {
   grantModel
