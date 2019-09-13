@@ -15,14 +15,15 @@ router.post("/register", (req, res) => {
       res.status(201).json(passHash);
     })
     .catch(error => {
-      res.status(500).json(error);
+      console.log(error);
+      res.status(500).json({ message: "Oh no, something went wrong", error });
     });
 });
 
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
 
-  userModel
+  users
     .findBy({ username })
     .first()
     .then(user => {
