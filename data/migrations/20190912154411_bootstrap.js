@@ -9,7 +9,8 @@ exports.up = function(knex) {
       tbl.text("website");
       tbl.text("most_recent_application_due_date");
       tbl.text("amount");
-      tbl.text("geographic_region");
+      tbl.text("amount_notes: ,
+          geographic_region");
       tbl.text("domain_areas");
       tbl.text("target_entrepreneur_demographic");
       tbl.text("notes");
