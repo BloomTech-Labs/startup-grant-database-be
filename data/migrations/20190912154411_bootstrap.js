@@ -2,19 +2,19 @@ exports.up = function(knex) {
   return knex.schema
     .createTable("grants", tbl => {
       tbl.increments();
-      tbl.string("competition_name");
-      tbl.string("type");
-      tbl.string("area_focus");
-      tbl.string("sponsoring_entity");
-      tbl.string("website");
-      tbl.string("most_recent_application_due_date");
-      tbl.string("amount");
-      tbl.string("geographic_region");
-      tbl.string("domain_areas");
-      tbl.string("target_entrepreneur_demographic");
-      tbl.string("notes");
-      tbl.string("early_stage_funding");
-      tbl.string("details_last_updated");
+      tbl.text("competition_name");
+      tbl.text("type");
+      tbl.text("area_focus");
+      tbl.text("sponsoring_entity");
+      tbl.text("website");
+      tbl.text("most_recent_application_due_date");
+      tbl.text("amount");
+      tbl.text("geographic_region");
+      tbl.text("domain_areas");
+      tbl.text("target_entrepreneur_demographic");
+      tbl.text("notes");
+      tbl.text("early_stage_funding");
+      tbl.text("details_last_updated");
     })
     .createTable("users", tbl => {
       tbl.increments();
