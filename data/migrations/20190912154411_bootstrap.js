@@ -7,14 +7,14 @@ exports.up = function(knex) {
       tbl.string("area_focus");
       tbl.string("sponsoring_entity");
       tbl.string("website");
-      tbl.date("most_recent_application_due_date");
+      tbl.string("most_recent_application_due_date");
       tbl.string("amount");
       tbl.string("geographic_region");
       tbl.string("domain_areas");
       tbl.string("target_entrepreneur_demographic");
       tbl.string("notes");
-      tbl.boolean("early_stage_funding");
-      tbl.date("details_last_updated");
+      tbl.string("early_stage_funding");
+      tbl.string("details_last_updated");
     })
     .createTable("users", tbl => {
       tbl.increments();
