@@ -8,7 +8,7 @@ exports.up = function(knex) {
       tbl.string("sponsoring_entity");
       tbl.string("website");
       tbl.date("most_recent_application_due_date");
-      tbl.integer("amount");
+      tbl.string("amount");
       tbl.string("geographic_region");
       tbl.string("domain_areas");
       tbl.string("target_entrepreneur_demographic");
