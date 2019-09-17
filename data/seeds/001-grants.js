@@ -18,7 +18,7 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Idea can be an invention, product, service, app, or any combination, or something unique',
           early_stage_funding: false,
-          details_last_updated: 8/23/2017,
+          details_last_updated: "8/23/2017",
         },
         {
           competition_name: 'Africa Angels Network Award',
@@ -26,7 +26,7 @@ exports.seed = function(knex) {
           area_focus: 'Social Entrepreneurship',
           sponsoring_entity: 'Harambe Entrepreneur Alliance',
           website: 'http://www.healliance.org/africa_angels_network_award.pdf',
-          most_recent_application_due_date: 12/30/2015,
+          most_recent_application_due_date: "12/30/2015",
           amount: 10000,
           amount_notes: null,
           geographic_region: 'Africa',
@@ -34,7 +34,7 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'For young entrepreneurial Africans; preference given to female-led ventures',
           early_stage_funding: true,
-          details_last_updated: 8/23/2017,
+          details_last_updated: "8/23/2017",
         },
         {
           competition_name: 'Alaska Airlines Environmental Challenge',
