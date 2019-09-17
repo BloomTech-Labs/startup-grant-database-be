@@ -298,7 +298,7 @@ exports.seed = function(knex) {
           area_focus: 'Social Entrepreneurship',
           sponsoring_entity: 'Hult International Business School & Clinton Global Initiative',
           website: 'http://www.hultprize.org/',
-          most_recent_application_due_date: 12/23/17,
+          most_recent_application_due_date: 12/23/2017,
           amount: 1000000,
           amount_notes: null,
           geographic_region: 'Global',
