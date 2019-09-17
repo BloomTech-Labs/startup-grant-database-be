@@ -32,4 +32,24 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// Add a grant
+router.post("/", (req, res) => {
+  const grant = req.body;
+
+  grantModel
+    .add(grant)
+    .then(grant => {
+      res.status(201).json(grant);
+    })
+    .catch(error => {
+      res.status(500).json({ message: "There was an error adding the grant." });
+    });
+});
+
+// Remove a grant
+router.delete("/:id", (req, res) => {});
+
+// Update a grant
+router.put("/:id", (req, res) => {});
+
 module.exports = router;
