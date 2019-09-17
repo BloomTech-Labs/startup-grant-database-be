@@ -64,6 +64,19 @@ router.put("/:id", (req, res) => {
 });
 
 // Remove a grant
-router.delete("/:id", (req, res) => {});
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+
+  grantModel
+    .remove(id)
+    .then(grant => {
+      res.status(200).json(grant);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: "There was an error removing the grant." });
+    });
+});
 
 module.exports = router;
