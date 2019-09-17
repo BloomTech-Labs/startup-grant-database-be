@@ -46,10 +46,24 @@ router.post("/", (req, res) => {
     });
 });
 
+// Update a grant
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const changes = req.body;
+
+  grantModel
+    .update(changes, id)
+    .then(grant => {
+      res.status(200).json(grant);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: "There was an error modifying the grant." });
+    });
+});
+
 // Remove a grant
 router.delete("/:id", (req, res) => {});
-
-// Update a grant
-router.put("/:id", (req, res) => {});
 
 module.exports = router;
