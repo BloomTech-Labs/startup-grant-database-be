@@ -17,7 +17,7 @@ exports.seed = function(knex) {
           domain_areas: 'Environment, conservation, water, agriculture, energy, ICT, health',
           target_entrepreneur_demographic: null,
           notes: 'Idea can be an invention, product, service, app, or any combination, or something unique',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -33,7 +33,7 @@ exports.seed = function(knex) {
           domain_areas: 'Technology, media, telecommunications, fashion design',
           target_entrepreneur_demographic: null,
           notes: 'For young entrepreneurial Africans; preference given to female-led ventures',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -49,7 +49,7 @@ exports.seed = function(knex) {
           domain_areas: 'Clean tech/environmental innovation',
           target_entrepreneur_demographic: null,
           notes: 'One team member must be a student of a college or university in Washington, Alaska, Wyoming, Idaho, or Montana',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -65,7 +65,7 @@ exports.seed = function(knex) {
           domain_areas: 'Poverty alleviation, innovation, sustainability',
           target_entrepreneur_demographic: null,
           notes: 'Applicants must be available for the Summit in Spring',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -81,7 +81,7 @@ exports.seed = function(knex) {
           domain_areas: 'Energy R&D, covering transportation and stationary applications; electricity generation by both renewable and nonrenewable means; electricity transmission, storage, and distribution; energy efficiency for buildings, manufacturing and commerce, and personal use; all aspects of transportation',
           target_entrepreneur_demographic: null,
           notes: 'N/A',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -97,7 +97,7 @@ exports.seed = function(knex) {
           domain_areas: 'Business innovation',
           target_entrepreneur_demographic: null,
           notes: 'Innovative ideas from individuals, small businesses, startups, think tanks, anyone with a great plan or idea. Package your idea into a 2-minute video.',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -113,7 +113,7 @@ exports.seed = function(knex) {
           domain_areas: 'Clean tech and energy, education, business operations, fashion and design, finance, food and beverage, gaming, health care and biotechnology, media and entertainment, retail and commerce, social enterprise, social media, travel and leisure',
           target_entrepreneur_demographic: null,
           notes: 'At least one Stanford student (graduate or undergraduate) or alumnus must be on the team to compete',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -129,7 +129,7 @@ exports.seed = function(knex) {
           domain_areas: 'Art & social change, energy & resource alternatives, financial inclusion, food systems, global health, improving student life, information technology, mobiles for reading, scaling',
           target_entrepreneur_demographic: null,
           notes: 'At least one member of each team must be a matriculated student at an eligible campus to enter the contest',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -145,7 +145,7 @@ exports.seed = function(knex) {
           domain_areas: 'Child care, economic opportunity, food, health, housing, neighborhood development, workforce development',
           target_entrepreneur_demographic: null,
           notes: '---',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -161,7 +161,7 @@ exports.seed = function(knex) {
           domain_areas: 'Unspecified',
           target_entrepreneur_demographic: null,
           notes: 'Company is looking to honor and celebrate a social entrepreneur who is creating positive social impact locally or globally',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -177,7 +177,7 @@ exports.seed = function(knex) {
           domain_areas: 'Environmental footprint/consciousness, sustainability, campus improvement projects, public awareness campaigns & demonstration projects',
           target_entrepreneur_demographic: null,
           notes: 'Eligible parties include teachers, campus administrators, or club advisors at a K-12 public or private school',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -193,7 +193,7 @@ exports.seed = function(knex) {
           domain_areas: 'Education',
           target_entrepreneur_demographic: null,
           notes: 'Open to undergraduates and graduates. Do not need to be affiliated with a university to apply.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -209,7 +209,7 @@ exports.seed = function(knex) {
           domain_areas: 'Sustainable fishing and aquaculture',
           target_entrepreneur_demographic: null,
           notes: '---',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -225,7 +225,7 @@ exports.seed = function(knex) {
           domain_areas: 'Social enterprise, developing countries: girls\' education, energy, education, governance and infrastructure, global health',
           target_entrepreneur_demographic: null,
           notes: 'At least one person on team must be a current student or a graduate of the Fletcher School',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -241,7 +241,7 @@ exports.seed = function(knex) {
           domain_areas: 'Global food system: inputs and production; processing, packaging, and safety; storage and distribution; healthy eating and nutrition',
           target_entrepreneur_demographic: null,
           notes: 'Formerly known as the Food Challenge Prize',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -257,7 +257,7 @@ exports.seed = function(knex) {
           domain_areas: 'Initiatives that tackle urgent needs at multiple scales, from macro-strategies that have the potential for widespread, tangible impacts to local, community-based initiatives with global relevance and replicability',
           target_entrepreneur_demographic: null,
           notes: '--',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -273,7 +273,7 @@ exports.seed = function(knex) {
           domain_areas: 'Global health, NGOs and community-based programs, social innovation and entrepreneurship, development, education, energy, environment, technology',
           target_entrepreneur_demographic: null,
           notes: 'All conference registrants — both students and professionals, and both nonprofit and for-profit organizations — are eligible to apply for the Innovation Prize',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -289,7 +289,7 @@ exports.seed = function(knex) {
           domain_areas: 'Social justice; nominations can come from a variety of fields such as science, medicine, the environment, humanities, business, economics, education, law, public policy, social services, religion and ethics',
           target_entrepreneur_demographic: null,
           notes: '---',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -305,7 +305,7 @@ exports.seed = function(knex) {
           domain_areas: 'Crowded urban spaces. Focus will be placed on doubling income through better connecting the residents of these spaces to products, people, services, and capital.',
           target_entrepreneur_demographic: null,
           notes: 'To apply, you must be currently enrolled in college or university; maximum of one alumnus per team',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -321,7 +321,7 @@ exports.seed = function(knex) {
           domain_areas: 'A set of activities and programs that prepares scientists and engineers to extend their focus beyond the laboratory and broadens the impact of select NSF-funded basic-research projects',
           target_entrepreneur_demographic: null,
           notes: 'Must have an active NSF award or one that has been active within the previous five years. Each team member must commit a minimum of 15 hours per week to the program, which offers a combination of in-\u00adperson “bootcamp” training and webinars over the course of a 7-\u00adweek period.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -337,7 +337,7 @@ exports.seed = function(knex) {
           domain_areas: 'Cultural heritage, human rights, the built environment, the natural environment',
           target_entrepreneur_demographic: null,
           notes: '--',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -353,7 +353,7 @@ exports.seed = function(knex) {
           domain_areas: 'Education',
           target_entrepreneur_demographic: null,
           notes: 'Median organizational budget of $1.5M and median organizational age of 10 years',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -369,7 +369,7 @@ exports.seed = function(knex) {
           domain_areas: 'N/A',
           target_entrepreneur_demographic: null,
           notes: 'Additional bonus prizes available for organizations that raise the most funds using GlobalGiving\'s platform',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -385,7 +385,7 @@ exports.seed = function(knex) {
           domain_areas: 'Urban education, technology',
           target_entrepreneur_demographic: null,
           notes: '---',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -401,7 +401,7 @@ exports.seed = function(knex) {
           domain_areas: 'Energy efficiency, renewable energy, infrastructure & resources',
           target_entrepreneur_demographic: null,
           notes: 'At least two people; at least one team member must be a U.S. citizen',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -417,7 +417,7 @@ exports.seed = function(knex) {
           domain_areas: 'Finance, investment; environmental or societal challenges',
           target_entrepreneur_demographic: null,
           notes: 'For graduate students only; maximum 4 people on a team',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -433,7 +433,7 @@ exports.seed = function(knex) {
           domain_areas: 'Innovation, energy savings, economic development',
           target_entrepreneur_demographic: null,
           notes: 'Up to $40,000 for non-Michigan-based applicants',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -449,7 +449,7 @@ exports.seed = function(knex) {
           domain_areas: 'Climate change in developing countries',
           target_entrepreneur_demographic: null,
           notes: '---',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -465,7 +465,7 @@ exports.seed = function(knex) {
           domain_areas: 'Transportation: smarter driving, public transport & sharing, distribution & logistics\n Emergency Response: first responders, search & rescue, long-term relief\n Internet of Things: connected health, smart cities, smart agriculture',
           target_entrepreneur_demographic: null,
           notes: '---',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -481,7 +481,7 @@ exports.seed = function(knex) {
           domain_areas: 'Unspecified',
           target_entrepreneur_demographic: null,
           notes: 'For university students',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -497,7 +497,7 @@ exports.seed = function(knex) {
           domain_areas: 'Low-income communities, educational inequity',
           target_entrepreneur_demographic: null,
           notes: 'Must be a Teach for America alum or corps member',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -513,7 +513,7 @@ exports.seed = function(knex) {
           domain_areas: 'Impactful, socially responsible projects addressing pressing social issues around the world',
           target_entrepreneur_demographic: null,
           notes: 'Winners are awarded the Resolution Fellowship, which includes ongoing mentorship, pro bono services, robust support, and access to the Resolution network',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -529,7 +529,7 @@ exports.seed = function(knex) {
           domain_areas: 'Social enterprise',
           target_entrepreneur_demographic: null,
           notes: 'Challenge will focus on linking promising social enterprises with venture philanthropists in Southern California',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -545,7 +545,7 @@ exports.seed = function(knex) {
           domain_areas: 'Unspecified',
           target_entrepreneur_demographic: null,
           notes: 'For Duke students/alumni only',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -561,7 +561,7 @@ exports.seed = function(knex) {
           domain_areas: 'Solar',
           target_entrepreneur_demographic: null,
           notes: 'Catalyst program consists of ideation, business innovation, prototype, and incubation; also holds jamathons',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -577,7 +577,7 @@ exports.seed = function(knex) {
           domain_areas: 'Companies whose social, environmental, and/or cultural mission strengthens your financial margins',
           target_entrepreneur_demographic: null,
           notes: '---',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -593,7 +593,7 @@ exports.seed = function(knex) {
           domain_areas: 'Environment, education, young innovator, health, economic development',
           target_entrepreneur_demographic: null,
           notes: '--',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -609,7 +609,7 @@ exports.seed = function(knex) {
           domain_areas: 'Energy',
           target_entrepreneur_demographic: null,
           notes: 'Must travel to UCLA',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -625,7 +625,7 @@ exports.seed = function(knex) {
           domain_areas: 'College access for low-income and underrepresented students',
           target_entrepreneur_demographic: null,
           notes: 'For more information, contact Hector Melendez at hmelendez@pfs-llc.net, 415-561-6540, ext. 206, or Amy Freeman at afreeman@pfs-llc.net, 415-561-6540, ext. 224',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -641,7 +641,7 @@ exports.seed = function(knex) {
           domain_areas: 'Novel advancements over existing solutions to a community problem',
           target_entrepreneur_demographic: null,
           notes: 'Must be a resident of California at time of application and 28 years or younger by 12/31/2015',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -657,7 +657,7 @@ exports.seed = function(knex) {
           domain_areas: 'Technology, social impact. Social areas include access to communication, education, economic development, environment, health. Technical issues include connectivity, energy, language/literacy, ease of use.',
           target_entrepreneur_demographic: null,
           notes: '---',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -673,7 +673,7 @@ exports.seed = function(knex) {
           domain_areas: 'Improve renewable energy and meet hosehold demands efficently',
           target_entrepreneur_demographic: null,
           notes: 'Challenge that will seek ideas on addressing access, saving and promotion of energy as a source of development in Chile.',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -689,7 +689,7 @@ exports.seed = function(knex) {
           domain_areas: 'Have an existing prototype or beta technology and plan to build high-growth companies',
           target_entrepreneur_demographic: null,
           notes: 'Providing women access to the tools, training and networks needed to build scalable, economically impactful companies',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -705,7 +705,7 @@ exports.seed = function(knex) {
           domain_areas: 'Have an idea that has a sustainable impact through an investment strategy that uses finance and investment tools to create an innovative solution to an environmental or societal challenge',
           target_entrepreneur_demographic: null,
           notes: 'Develop creative financial approaches to tackle our world’s most pressing challenges',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -721,7 +721,7 @@ exports.seed = function(knex) {
           domain_areas: 'Financially sustainable or profitable, scalable long term, social and/or environmental bottom line,',
           target_entrepreneur_demographic: null,
           notes: 'Empower the next generation of social entrepreneurs by providing them with mentoring, exposure, and prize money to transform their ideas into fundable, scalable ventures that address the world’s most pressing challenges.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -737,7 +737,7 @@ exports.seed = function(knex) {
           domain_areas: 'EMA serves as a valuable link between the world of media and the environmental community, working tirelessly to bring the planet\'s most pressing issues to the forefront of pop culture and make true change by inspiring the next generation of filmmakers and entrepreneurs.',
           target_entrepreneur_demographic: null,
           notes: 'Each contestant must submit their business plan, as well as a short video pitch of their concept/company.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -753,7 +753,7 @@ exports.seed = function(knex) {
           domain_areas: 'Pacific Venture Capital Conference and Competition (PVCC) is an international competition and conference designed for two types of students: ones with entrepreneurial ideas, and ones with a passion for start-up valuations.',
           target_entrepreneur_demographic: null,
           notes: 'The competition is a stage for undergraduate and MBA students to present business ideas and financial valuations to an audience of entrepreneurial leaders, senior venture capitalists, and top industry professionals from across North America.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -769,7 +769,7 @@ exports.seed = function(knex) {
           domain_areas: 'Participate in one of the most dynamic social impact-focused events of the year, where you’ll get to meet and collaborate with legendary social justice leaders, social entrepreneurs, and other changemakers.',
           target_entrepreneur_demographic: null,
           notes: 'How can we break down the barriers between us – generational, racial, socioeconomic, geographic – to create an America that works for everyone? At New Profit’s annual Gathering of Leaders 400 leadership-level participants will delve into this question together.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -785,7 +785,7 @@ exports.seed = function(knex) {
           domain_areas: 'We offer student teams from universities worldwide the opportunity to present their ideas for low-cost, high-impact, and scalable global health innovations.',
           target_entrepreneur_demographic: null,
           notes: 'An annual competition hosted by the University of California, Berkeley, Stanford University, and the HealthRoots Foundation for Global Health, it offers student teams from universities worldwide the opportunity to present ideas for low-cost, high-impact, scalable global health innovations.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -801,7 +801,7 @@ exports.seed = function(knex) {
           domain_areas: 'CGI U challenges young leaders and entrepreneurs to become agents of positive social change by developing a Commitment to Action: a new, specific, and measurable plan to address a challenge in one of CGI U’s five focus areas.',
           target_entrepreneur_demographic: null,
           notes: null,
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -817,7 +817,7 @@ exports.seed = function(knex) {
           domain_areas: 'The Citi Tech for Integrity Challenge (T4I) is an open innovation challenge to source solutions that promote integrity, accountability and transparency in the public sector. Solve for real-life problem statements that are relevant to government organizations globally.',
           target_entrepreneur_demographic: null,
           notes: 'The accelerator program will run from March to April, when finalists will be selected to participate in Demo Days with cash prizes.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -833,7 +833,7 @@ exports.seed = function(knex) {
           domain_areas: 'Seeking sustainable and scalable hardware-based solutions and technologies that can have a transformational economic, environmental and social impact in underserved communities around the world. The global competition invites the best and brightest engineers, entrepreneurs, students, and innovators to enter their prototype solutions that focus on energy, health, agriculture, clean water, and sanitation.',
           target_entrepreneur_demographic: null,
           notes: 'Designers are invited to enter one of three ISHOW competitions in Bangalore, India; Nairobi, Kenya, and Washington, D.C - 3 winners at each ISHOW can win up to $50,000.',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/23/2017,
         },
         {
@@ -849,7 +849,7 @@ exports.seed = function(knex) {
           domain_areas: 'At Burt\'s Bees, we take our cue from nature. We\'ve committed ourselves to making the world a little greener, a little cleaner, by doing what bees do best: working hard on natural products that people love. That\'s why, for example, we\'ve committed ourselves to a policy of sending zero waste to landfill and also serious about energy use.',
           target_entrepreneur_demographic: null,
           notes: 'A day of coaching at Burt\'s Bees HQ in Durham, NC, Access to a community of peers, and The Natural Launchpad seal to place on all marketing materials and product packaging',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -865,7 +865,7 @@ exports.seed = function(knex) {
           domain_areas: 'Whether it spoke to the arts, science and tech, education, healthcare or human rights, or came from a group or individuals, working locally or globally—what mattered was the potential for impact. What mattered was moving the needle. Welcoming a wide range of solutions was designed to spur cross-topic innovation and broaden the reach of potential applicants and issue areas addressed.',
           target_entrepreneur_demographic: null,
           notes: 'In our 2016 Prize Impact Report, Accelerating Innovation Together, we unpack these stats, what we learned, data that interested us, statistics that surprised us, and how we can keep pushing ourselves to improve. We’re sharing this information in the hope that it will be a resource to those of you (funders and innovators) seeking to make the planet a fairer, more equitable and healthy place to live.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -881,7 +881,7 @@ exports.seed = function(knex) {
           domain_areas: 'In the BridgeBuilder Challenge, we are collaboratively designing solutions that address urgent global challenges in radically new ways such as: working at the intersection, collaborating across divides, and focusing on process and infrastructure.',
           target_entrepreneur_demographic: null,
           notes: 'During our Ideas phase, we\'ll call a global community to action – to share solutions that address urgent challenges at the intersections of peace, prosperity, and planet in radically new ways. These ideas should bridge solutions in two of the three issue areas.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 8/23/2017,
         },
         {
@@ -897,7 +897,7 @@ exports.seed = function(knex) {
           domain_areas: 'Any',
           target_entrepreneur_demographic: null,
           notes: 'For novel solutions to community challenges',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 7/7/2017,
         },
         {
@@ -913,7 +913,7 @@ exports.seed = function(knex) {
           domain_areas: 'Climate / Environmental',
           target_entrepreneur_demographic: null,
           notes: 'Seven different specific challenges',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 7/7/2017,
         },
         {
@@ -929,7 +929,7 @@ exports.seed = function(knex) {
           domain_areas: 'Food Access',
           target_entrepreneur_demographic: null,
           notes: 'a mission to give every low-income neighborhood in Denver access to healthy affordable food',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 7/7/2017,
         },
         {
@@ -945,7 +945,7 @@ exports.seed = function(knex) {
           domain_areas: 'Girl\'s Education, Agriculture, Energy, Global Health, Education, Governance and Infrastructure, "Propose your own',
           target_entrepreneur_demographic: null,
           notes: 'Option to choose from available challenges or to submit your own challenge and solution',
-          early_stage_funding: 'Yes (pilot stage)',
+          early_stage_funding: true,
           details_last_updated: 7/7/2017,
         },
         {
@@ -961,7 +961,7 @@ exports.seed = function(knex) {
           domain_areas: 'Social Change',
           target_entrepreneur_demographic: null,
           notes: 'Through a daily practice of generosity and giving, we make seed grants- 365 days a year- to social change agents who seek to spread compassion\nin their communities and in the world for the benefit of all.',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 7/7/2017,
         },
         {
@@ -977,7 +977,7 @@ exports.seed = function(knex) {
           domain_areas: 'Social Entrepreneurship',
           target_entrepreneur_demographic: null,
           notes: 'The GLG Social Impact Fellowship leverages GLG’s learning platform to help top social entrepreneurs answer their organization’s critical strategic and operational questions, at no cost. Through the two-year Fellowship, ambitious and visionary nonprofit and social enterprise leaders learn in tailored interactions with experts across GLG’s membership and with each other.',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 7/7/2017,
         },
         {
@@ -993,7 +993,7 @@ exports.seed = function(knex) {
           domain_areas: '3 topic areas: Sustainable Planet, Global Health, and Feeding 9 Billion',
           target_entrepreneur_demographic: null,
           notes: '--',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 8/22/2017,
         },
         {
@@ -1009,7 +1009,7 @@ exports.seed = function(knex) {
           domain_areas: 'GovTech',
           target_entrepreneur_demographic: null,
           notes: 'An Open Call for Startups to Improve Government Services. 80+ GovTech Challenges',
-          early_stage_funding: 'No',
+          early_stage_funding: false,
           details_last_updated: 10/17/2018,
         },
         {
@@ -1025,7 +1025,7 @@ exports.seed = function(knex) {
           domain_areas: 'Climate Change',
           target_entrepreneur_demographic: null,
           notes: 'Winners invited to participate in Biomimicry Launchpad',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 10/24/2018,
         },
         {
@@ -1041,7 +1041,7 @@ exports.seed = function(knex) {
           domain_areas: 'Social and environmental change',
           target_entrepreneur_demographic: null,
           notes: 'This competition asks you to select a social or environmental issue and to explore, probe, and research all the connecting elements and factors around it. We want you to present this issue back to us in a way that people can understand, share, and learn from.',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 2/13/2019,
         },
         {
@@ -1057,7 +1057,7 @@ exports.seed = function(knex) {
           domain_areas: 'social impact',
           target_entrepreneur_demographic: null,
           notes: 'Structured as a course which provides experiential learning, 4 rounds',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 2/13/2019,
         },
         {
@@ -1073,7 +1073,7 @@ exports.seed = function(knex) {
           domain_areas: 'clean energy/impact',
           target_entrepreneur_demographic: 'university teams',
           notes: 'Teams that have received\nexcess of $100,000 before the\nentry deadline are not elligible\nto enter',
-          early_stage_funding: 'Yes',
+          early_stage_funding: true,
           details_last_updated: 6/11/2019,
         },
       ]);
