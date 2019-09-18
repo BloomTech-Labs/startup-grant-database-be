@@ -5,8 +5,6 @@ module.exports = {
   find,
   findBy,
   findById
-  // update,
-  // remove
 };
 
 function add(user) {
