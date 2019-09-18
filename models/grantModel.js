@@ -4,8 +4,8 @@ module.exports = {
   find,
   findById,
   add,
-  remove,
-  update
+  update,
+  remove
 };
 
 function find() {
@@ -25,13 +25,13 @@ function add(grant) {
       const [id] = ids;
       return findById(id);
     });
-  // return db("grants").insert(grant);
 }
 
 function update(changes, id) {
   return db("grants")
     .where({ id })
     .update(changes);
+  // .then(id1 => findById(id));
 }
 
 function remove(id) {
