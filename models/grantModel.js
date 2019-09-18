@@ -34,7 +34,7 @@ function update(changes, id) {
     .update(changes);
 }
 
-function remove(grant) {
+function remove(id) {
   return db("grants")
     .where({ id })
     .del();
