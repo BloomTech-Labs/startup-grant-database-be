@@ -46,5 +46,15 @@ describe("server", () => {
       );
       expect(removedGrant.statusCode).toBe(200);
     });
+
+    it("returns 1 in body to confirm deletion", async () => {
+      let response = await request(server)
+        .post("/api/grants")
+        .send(testGrant);
+      const removedGrant = await request(server).delete(
+        `/api/grants/${response.body.id}`
+      );
+      expect(removedGrant.body).toEqual(1);
+    });
   });
 });
