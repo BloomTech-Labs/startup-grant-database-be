@@ -42,10 +42,12 @@ router.post("/", (req, res) => {
       res.status(201).json(grant);
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({ message: "There was an error adding the grant." });
     });
 });
 
+// ============================== RELEASE CANVAS 2 ==============================
 // Update a grant
 router.put("/:id", (req, res) => {
   const { id } = req.params;
@@ -54,7 +56,13 @@ router.put("/:id", (req, res) => {
   grantModel
     .update(changes, id)
     .then(grant => {
-      res.status(200).json(grant);
+      if (grant) {
+        res.status(200).json(grant);
+      } else {
+        res
+          .status(404)
+          .json({ message: "The grant with the specified ID does not exist." });
+      }
     })
     .catch(error => {
       res
@@ -70,7 +78,13 @@ router.delete("/:id", (req, res) => {
   grantModel
     .remove(id)
     .then(grant => {
-      res.status(200).json(grant);
+      if (grant) {
+        res.status(200).json(grant);
+      } else {
+        res
+          .status(404)
+          .json({ message: "The grant with the specified ID does not exist." });
+      }
     })
     .catch(error => {
       res
