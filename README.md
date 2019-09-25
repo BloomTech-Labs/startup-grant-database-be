@@ -80,25 +80,41 @@ Once you have Node.js and NPM:
 | DELETE | `/users/:userId`        | owners, supervisors |                                                    | -->
 
 # Data Model
+<!-- 🚫This is just an example. Replace this with your data model -->
 
-🚫This is just an example. Replace this with your data model
-
-#### 2️⃣ ORGANIZATIONS
+#### GRANTS
 
 ---
 
 ```
 {
   id: UUID
+  competition_name: STRING
+  type: STRING
+  area_focus: STRING
+  sponsoring_entity: STRING
+  website: STRING
+  most_recent_application_due_date: DATE
+  amount: INTEGER
+  amount_notes: STRING
+  geographic_region: STRING
+  domain_areas: STRING [ 'Technology', 'Education', 'Finance' ]
+  target_entrepreneur_demographic: STRING
+  notes: STRING
+  early_stage_funding: BOOLEAN
+  details_last_updated: DATE
+}
+```
+
+<!-- {
+  id: UUID
   name: STRING
   industry: STRING
   paid: BOOLEAN
   customer_id: STRING
   subscription_id: STRING
-}
-```
-
-#### USERS
+} -->
+<!-- #### USERS
 
 ---
 
@@ -116,8 +132,7 @@ Once you have Node.js and NPM:
   emailpref: BOOLEAN
   phonepref: BOOLEAN
 }
-```
-
+``` -->
 ## 2️⃣ Actions
 
 🚫 This is an example, replace this with the actions that pertain to your backend
