@@ -48,7 +48,17 @@ Once you have Node.js and NPM:
 - Point Four -->
 ## 2️⃣ Endpoints
 
-🚫This is a placeholder, replace the endpoints, access controll, and descriptioin to match your project
+#### Grant Routes
+
+| Method | Endpoint                | Access Control      | Description                                        |
+| ------ | ----------------------- | ------------------- | -------------------------------------------------- |
+| GET    | `/api/grants`        | all users           | Returns a list of all grants.               |
+| GET    | `/api/grants/:grantId`    | all users | Returns information for a single grant.             |
+| POST    | `/api/grants`        | all users | Creates a new grant.                    |
+| PUT    | `/api/grants/:grantId`    | all users | Modifies an existing grant.             |
+| DELETE    | `/api/grants/:grantId`    | all users | Deletes an existing grant.             |
+
+<!-- 🚫This is a placeholder, replace the endpoints, access controll, and descriptioin to match your project
 
 #### Organization Routes
 
@@ -67,7 +77,7 @@ Once you have Node.js and NPM:
 | GET    | `/users/:userId`        | owners, supervisors | Returns info for a single user.                    |
 | POST   | `/users/register/owner` | none                | Creates a new user as owner of a new organization. |
 | PUT    | `/users/:userId`        | owners, supervisors |                                                    |
-| DELETE | `/users/:userId`        | owners, supervisors |                                                    |
+| DELETE | `/users/:userId`        | owners, supervisors |                                                    | -->
 
 # Data Model
 
