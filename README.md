@@ -6,18 +6,23 @@
 
 # API Documentation
 
-#### 1️⃣ Backend delpoyed at [🚫name service here](🚫add URL here) <br>
+#### 1️⃣ Backend delpoyed at [Heroku](https://dashboard.heroku.com/apps/labs16-grantly) <br>
 
 ## 1️⃣ Getting started
 
-To get the server running locally:
+You will need:
 
-🚫 adjust these scripts to match your project
+- [Node.js](https://nodejs.org/en/download/)
+- Package manager ([NPM](https://nodejs.org/en/download/) was used to build this project and will continued to be used for maintenance)
+  - NPM is distributed with Node.js- which means that when you download Node.js, you automatically get NPM installed on your computer.
 
-- Clone this repo
-- **yarn install** to install all required dependencies
-- **yarn server** to start the local server
-- **yarn test** to start server using testing environment
+
+Once you have Node.js and NPM:
+
+1. Fork and clone repo
+2. Add an `.env` file at the root of folder. Add environment variables.
+3. Run `npm install` to install the necessary node_modules.
+4. Run `npm start` to start the application.
 
 ### Backend framework goes here
 
