@@ -133,19 +133,18 @@ Once you have Node.js and NPM:
   phonepref: BOOLEAN
 }
 ``` -->
-## 2️⃣ Actions
+## 2️⃣ Actions/Models
+<!-- 🚫 This is an example, replace this with the actions that pertain to your backend -->
 
-🚫 This is an example, replace this with the actions that pertain to your backend
+`getGrant()` -> Returns all grants
 
-`getOrgs()` -> Returns all organizations
+`getGrantById(id)` -> Returns a single grant by ID
 
-`getOrg(orgId)` -> Returns a single organization by ID
+`addGrant(grant)` -> Returns the created grant
 
-`addOrg(org)` -> Returns the created org
+`updateGrant(changes, id)` -> Update a grant by ID
 
-`updateOrg(orgId)` -> Update an organization by ID
-
-`deleteOrg(orgId)` -> Delete an organization by ID
+`removeGrant(id)` -> Delete a grant by ID
 <br>
 <br>
 <br>
