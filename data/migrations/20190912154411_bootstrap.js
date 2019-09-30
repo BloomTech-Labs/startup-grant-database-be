@@ -17,7 +17,18 @@ exports.up = function(knex) {
       tbl.boolean("early_stage_funding");
       tbl.date("details_last_updated");
       // Admin stuff
-      tbl.boolean("is_reviewed");
+    })
+    .createTable("requests", tbl => {
+      tbl.increments();
+      tbl.string("suggestion", 1000);
+      tbl
+        .integer("grant_id")
+        .unsigned()
+        .notNullable()
+        .references("id")
+        .inTable("grants")
+        .onDelete("CASCADE")
+        .onUpdate("CASCADE");
     })
     .createTable("users", tbl => {
       tbl.increments();
@@ -30,5 +41,8 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists("users").dropTableIfExists("grants");
+  return knex.schema
+    .dropTableIfExists("users")
+    .dropTableIfExists("requests")
+    .dropTableIfExists("grants");
 };

@@ -31,6 +31,7 @@ Once you have Node.js and NPM:
 - **yarn install** to install all required dependencies
 - **yarn server** to start the local server
 - **yarn test** to start server using testing environment -->
+
 ### Node.js
 
 - Offers large number of free tools
@@ -46,17 +47,18 @@ Once you have Node.js and NPM:
 - Point Two
 - Point Three
 - Point Four -->
+
 ## 2️⃣ Endpoints
 
 #### Grant Routes
 
-| Method | Endpoint                | Access Control      | Description                                        |
-| ------ | ----------------------- | ------------------- | -------------------------------------------------- |
-| GET    | `/api/grants`        | all users           | Returns a list of all grants.               |
-| GET    | `/api/grants/:grantId`    | all users | Returns information for a single grant.             |
-| POST    | `/api/grants`        | all users | Creates a new grant.                    |
-| PUT    | `/api/grants/:grantId`    | all users | Modifies an existing grant.             |
-| DELETE    | `/api/grants/:grantId`    | all users | Deletes an existing grant.             |
+| Method | Endpoint               | Access Control | Description                             |
+| ------ | ---------------------- | -------------- | --------------------------------------- |
+| GET    | `/api/grants`          | all users      | Returns a list of all grants.           |
+| GET    | `/api/grants/:grantId` | all users      | Returns information for a single grant. |
+| POST   | `/api/grants`          | all users      | Creates a new grant.                    |
+| PUT    | `/api/grants/:grantId` | all users      | Modifies an existing grant.             |
+| DELETE | `/api/grants/:grantId` | all users      | Deletes an existing grant.              |
 
 <!-- 🚫This is a placeholder, replace the endpoints, access controll, and descriptioin to match your project
 
@@ -80,6 +82,7 @@ Once you have Node.js and NPM:
 | DELETE | `/users/:userId`        | owners, supervisors |                                                    | -->
 
 # Data Model
+
 <!-- 🚫This is just an example. Replace this with your data model -->
 
 #### GRANTS
@@ -102,7 +105,8 @@ Once you have Node.js and NPM:
   target_entrepreneur_demographic: STRING
   notes: STRING
   early_stage_funding: BOOLEAN
-  details_last_updated: DATE
+  is_reviewed: true,
+          details_last_updated: DATE
 }
 ```
 
@@ -133,7 +137,9 @@ Once you have Node.js and NPM:
   phonepref: BOOLEAN
 }
 ``` -->
+
 ## 2️⃣ Actions/Models
+
 <!-- 🚫 This is an example, replace this with the actions that pertain to your backend -->
 
 `getGrant()` -> Returns all grants
@@ -213,7 +219,6 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 See [Frontend Documentation](🚫link to your frontend readme here) for details on the fronend of our project.
 🚫 Add DS iOS and/or Andriod links here if applicable.
-
 
 <!-- 🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
 
