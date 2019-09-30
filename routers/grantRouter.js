@@ -1,12 +1,11 @@
 const router = require("express").Router();
 
 const grants = require("../models/grantModel.js");
-const db = require("../data/db-config.js");
 
 // Get all grants
 router.get("/", (req, res) => {
   grants
-    .find()
+    .getGrant()
     .then(grants => {
       res.status(200).json({ message: "Here are the grants!", grants });
     })
@@ -20,7 +19,7 @@ router.get("/:id", (req, res) => {
   const { id } = req.params;
 
   grants
-    .findById(id)
+    .getGrantById(id)
     .then(grants => {
       if (grants) {
         res.status(200).json(grants);
@@ -40,15 +39,10 @@ router.post("/", (req, res) => {
   const grant = req.body;
 
   grants
-    .add(grant)
+    .addGrant(grant)
     .then(grant => {
       res.status(201).json(grant);
     })
-    // db("grants")
-    //   .insert(grant)
-    //   .then(grant => {
-    //     res.status(201).json(grant);
-    //   })
     .catch(error => {
       console.log(error);
       res.status(500).json({ message: "There was an error adding the grant." });
@@ -61,7 +55,7 @@ router.put("/:id", (req, res) => {
   const changes = req.body;
 
   grants
-    .update(changes, id)
+    .updateGrant(changes, id)
     .then(grant => {
       if (grant) {
         res.status(200).json(grant);
@@ -84,7 +78,7 @@ router.delete("/:id", (req, res) => {
   const { id } = req.params;
 
   grants
-    .remove(id)
+    .removeGrant(id)
     .then(grant => {
       if (grant) {
         res.status(200).json(grant);
