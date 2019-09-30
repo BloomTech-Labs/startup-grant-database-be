@@ -5,10 +5,12 @@ const server = express();
 
 const grantRouter = require("./routers/grantRouter.js");
 const authRouter = require("./routers/authRouter.js");
+const adminRouter = require("./routers/adminRouter.js");
 
 server.use(cors());
 server.use(helmet());
 server.use(express.json());
+server.use("/api/admin", adminRouter);
 server.use("/api/grants", grantRouter);
 server.use("/auth", authRouter);
 

@@ -19,6 +19,7 @@ exports.seed = function(knex) {
           notes: 'Idea can be an invention, product, service, app, or any combination, or something unique',
           early_stage_funding: false,
           details_last_updated: "8/23/2017",
+          is_reviewed: true
         },
         {
           competition_name: 'Africa Angels Network Award',
@@ -35,6 +36,7 @@ exports.seed = function(knex) {
           notes: 'For young entrepreneurial Africans; preference given to female-led ventures',
           early_stage_funding: true,
           details_last_updated: "8/23/2017",
+          is_reviewed: false
         },
         {
           competition_name: 'Alaska Airlines Environmental Challenge',
