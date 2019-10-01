@@ -106,6 +106,7 @@ Once you have Node.js and NPM:
   notes: STRING
   early_stage_funding: BOOLEAN
   is_reviewed: true,
+          has_requests: false,
           details_last_updated: DATE
 }
 ```

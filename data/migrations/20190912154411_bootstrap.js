@@ -15,8 +15,9 @@ exports.up = function(knex) {
       tbl.string("target_entrepreneur_demographic", 255);
       tbl.string("notes", 5000);
       tbl.boolean("early_stage_funding");
-      tbl.date("details_last_updated");
       tbl.boolean("is_reviewed");
+      tbl.boolean("has_requests");
+      tbl.date("details_last_updated");
     })
     .createTable("requests", tbl => {
       tbl.increments();
