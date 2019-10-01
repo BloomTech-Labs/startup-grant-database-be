@@ -16,6 +16,7 @@ exports.up = function(knex) {
       tbl.string("notes", 5000);
       tbl.boolean("early_stage_funding");
       tbl.date("details_last_updated");
+      tbl.boolean("is_reviewed");
     })
     .createTable("requests", tbl => {
       tbl.increments();
