@@ -1,9 +1,9 @@
 // Update with your config settings.
 const localPg = {
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS
+  host: "localhost",
+  database: "postgres",
+  user: "postgres",
+  password: "password"
 };
 
 const dbConnection = process.env.DATABASE_URL || localPg;

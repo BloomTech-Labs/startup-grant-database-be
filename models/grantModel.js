@@ -30,7 +30,7 @@ function addGrant(grant) {
 function updateGrant(changes, id) {
   return db("grants")
     .where({ id })
-    .updateGrant(changes);
+    .update(changes);
 }
 
 function removeGrant(id) {
