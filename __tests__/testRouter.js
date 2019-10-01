@@ -16,6 +16,7 @@ const testGrant = {
   target_entrepreneur_demographic: "test",
   notes: "test",
   early_stage_funding: false,
+  is_reviewed: true,
   details_last_updated: "01/01/2001"
 };
 

@@ -1,40 +1,39 @@
 const db = require("../data/db-config.js");
 
 module.exports = {
-  find,
-  findById,
-  add,
-  update,
-  remove
+  getGrant,
+  getGrantById,
+  addGrant,
+  updateGrant,
+  removeGrant
 };
 
-function find() {
+function getGrant() {
   return db("grants");
 }
 
-function findById(id) {
+function getGrantById(id) {
   return db("grants")
     .where({ id })
     .first();
 }
 
-function add(grant) {
+function addGrant(grant) {
   return db("grants")
     .insert(grant, "id")
     .then(ids => {
       const [id] = ids;
-      return findById(id);
+      return getGrantById(id);
     });
 }
 
-function update(changes, id) {
+function updateGrant(changes, id) {
   return db("grants")
     .where({ id })
-    .update(changes);
-  // .then(id1 => findById(id));
+    .updateGrant(changes);
 }
 
-function remove(id) {
+function removeGrant(id) {
   return db("grants")
     .where({ id })
     .del();

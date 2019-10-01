@@ -15,7 +15,21 @@ exports.up = function(knex) {
       tbl.string("target_entrepreneur_demographic", 255);
       tbl.string("notes", 5000);
       tbl.boolean("early_stage_funding");
+      tbl.boolean("is_reviewed");
+      tbl.boolean("has_requests");
       tbl.date("details_last_updated");
+    })
+    .createTable("requests", tbl => {
+      tbl.increments();
+      tbl.string("suggestion", 1000);
+      tbl
+        .integer("grant_id")
+        .unsigned()
+        .notNullable()
+        .references("id")
+        .inTable("grants")
+        .onDelete("CASCADE")
+        .onUpdate("CASCADE");
     })
     .createTable("users", tbl => {
       tbl.increments();
@@ -28,5 +42,8 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists("users").dropTableIfExists("grants");
+  return knex.schema
+    .dropTableIfExists("users")
+    .dropTableIfExists("requests")
+    .dropTableIfExists("grants");
 };

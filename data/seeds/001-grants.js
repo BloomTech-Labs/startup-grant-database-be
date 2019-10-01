@@ -18,7 +18,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Idea can be an invention, product, service, app, or any combination, or something unique',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: false,
+          has_requests: true,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Africa Angels Network Award',
@@ -34,7 +36,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'For young entrepreneurial Africans; preference given to female-led ventures',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: true,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Alaska Airlines Environmental Challenge',
@@ -50,7 +54,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'One team member must be a student of a college or university in Washington, Alaska, Wyoming, Idaho, or Montana',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: true,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'APTE Impact IdeaPitch Competition',
@@ -66,7 +72,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Applicants must be available for the Summit in Spring',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: true,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'ARPA-E: Open Funding Opportunity Announcement',
@@ -82,7 +90,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'N/A',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'AT&T Experts: Grant for Greatness',
@@ -98,7 +108,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Innovative ideas from individuals, small businesses, startups, think tanks, anyone with a great plan or idea. Package your idea into a 2-minute video.',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'BASES Challenge 2017',
@@ -114,7 +126,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'At least one Stanford student (graduate or undergraduate) or alumnus must be on the team to compete',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Big Ideas @ Berkeley',
@@ -130,7 +144,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'At least one member of each team must be a matriculated student at an eligible campus to enter the contest',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Business for Good',
@@ -146,7 +162,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'CommonBond Social Impact Award',
@@ -162,7 +180,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Company is looking to honor and celebrate a social entrepreneur who is creating positive social impact locally or globally',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Eco-Audit Grant',
@@ -178,7 +198,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Eligible parties include teachers, campus administrators, or club advisors at a K-12 public or private school. Different timelines for fall and spring applications',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Education Business Plan Competition (EBPC)',
@@ -194,7 +216,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Open to undergraduates and graduates. Do not need to be affiliated with a university to apply.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Fish 2.0',
@@ -210,7 +234,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Fletcher D-Prize: Poverty Solutions Venture Competition',
@@ -226,7 +252,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'At least one person on team must be a current student or a graduate of the Fletcher School',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Food + City Challenge Prize',
@@ -242,7 +270,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Formerly known as the Food Challenge Prize',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Fuller Challenge',
@@ -258,7 +288,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: '--',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'GHIC Innovation Prize',
@@ -274,7 +306,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'All conference registrants — both students and professionals, and both nonprofit and for-profit organizations — are eligible to apply for the Innovation Prize',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Grinnell College Innovator for Social Justice Prize',
@@ -290,7 +324,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Hult Prize',
@@ -306,7 +342,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'To apply, you must be currently enrolled in college or university; maximum of one alumnus per team',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Innovation Corps (I-Corps)',
@@ -322,7 +360,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Must have an active NSF award or one that has been active within the previous five years. Each team member must commit a minimum of 15 hours per week to the program, which offers a combination of in-\u00adperson “bootcamp” training and webinars over the course of a 7-\u00adweek period. If interested, contact Taryn Upchurch at taryn@stanford.edu',
           early_stage_funding: false,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'J.M.K. Innovation Prize',
@@ -338,7 +378,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: '--',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Lipman Family Prize',
@@ -354,7 +396,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Median organizational budget of $1.5M and median organizational age of 10 years',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'March Open Challenge',
@@ -370,7 +414,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Additional bonus prizes available for organizations that raise the most funds using GlobalGiving\'s platform. they accept applications at any time and your application is valid for 2 years',
           early_stage_funding: false,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Milken-Penn GSE Education Business Plan Competition',
@@ -386,7 +432,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'MIT Clean Energy Prize',
@@ -402,7 +450,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'At least two people; at least one team member must be a U.S. citizen',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Morgan Stanley Sustainable Investing Challenge',
@@ -418,7 +468,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'For graduate students only; maximum 4 people on a team',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'NextChallenge: Smart Cities',
@@ -434,7 +486,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Up to $40,000 for non-Michigan-based applicants',
           early_stage_funding: false,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Notre Dame Global Adaptation Index Prize',
@@ -442,7 +496,7 @@ exports.seed = function(knex) {
           area_focus: 'Social Entrepreneurship',
           sponsoring_entity: 'University of Notre Dame Environmental Change Initiative',
           website: 'http://gain.org/nd-gain-prize',
-          most_recent_application_due_date: null, 
+          most_recent_application_due_date: null,
           amount: null,
           amount_notes: null,
           geographic_region: 'Global',
@@ -450,7 +504,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: false,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Powerful Answers Award',
@@ -466,7 +522,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Rice University Business Plan Competition',
@@ -482,7 +540,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'For university students',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Social Innovation Award',
@@ -498,7 +558,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Must be a Teach for America alum or corps member',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Social Venture Challenge',
@@ -514,7 +576,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Winners are awarded the Resolution Fellowship, which includes ongoing mentorship, pro bono services, robust support, and access to the Resolution network. Check for various deadlines here: http://www.resolutionproject.org/svc/upcoming',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Southern California Social Entrepreneurship Challenge',
@@ -530,7 +594,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Challenge will focus on linking promising social enterprises with venture philanthropists in Southern California',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Start-Up Challenge',
@@ -546,7 +612,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'For Duke students/alumni only',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Sunshot Catalyst Program',
@@ -562,7 +630,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Catalyst program consists of ideation, business innovation, prototype, and incubation; also holds jamathons',
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Sustainable Business Plan Collaboration',
@@ -578,7 +648,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: true,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Tech Award for Global Good',
@@ -586,7 +658,7 @@ exports.seed = function(knex) {
           area_focus: 'Social Entrepreneurship',
           sponsoring_entity: 'Tech Museum of Innovation',
           website: 'https://www.thetech.org/tech-global-good',
-          most_recent_application_due_date: null, 
+          most_recent_application_due_date: null,
           amount: 75000,
           amount_notes: '$25,000-$75,000',
           geographic_region: 'Global',
@@ -594,7 +666,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Email lzane@thetech.org for applications; ltsai@thetech.org for more info.',
           early_stage_funding: false,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'UCLA Anderson Challenges in Energy Case Competition',
@@ -610,7 +684,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Must travel to UCLA',
           early_stage_funding: false,
-          details_last_updated: '8/23/2017',
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: '8/23/2017'
         },
         {
           competition_name: 'Venture Philanthropy Grant',
@@ -618,7 +694,7 @@ exports.seed = function(knex) {
           area_focus: 'Social Entrepreneurship',
           sponsoring_entity: 'Margoes Foundation',
           website: 'http://www.pfs-llc.net/foundations/margoes-foundation/grantseekers/venture-philanthropy',
-          most_recent_application_due_date: null, 
+          most_recent_application_due_date: null,
           amount: 50000,
           amount_notes: '$50,000 per year (for 3 years)',
           geographic_region: 'San Francisco Bay Area',
@@ -626,7 +702,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'For more information, contact Hector Melendez at hmelendez@pfs-llc.net, 415-561-6540, ext. 206, or Amy Freeman at afreeman@pfs-llc.net, 415-561-6540, ext. 224. Deadline not yet released. Opens in early 2018',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Westly Prize',
@@ -642,7 +720,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Must be a resident of California at time of application and 28 years or younger by 12/31/2015',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Wireless Innovation Project',
@@ -658,7 +738,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Government of Chile - Ministry of Energy',
@@ -666,7 +748,7 @@ exports.seed = function(knex) {
           area_focus: 'Social Entrepreneurship',
           sponsoring_entity: 'Impacta Energy',
           website: 'https://www.impactaenergia.cl/en',
-          most_recent_application_due_date: "7/12/2017", 
+          most_recent_application_due_date: "7/12/2017",
           amount: 107000,
           amount_notes: '$7,000-$107,000',
           geographic_region: 'Chile',
@@ -674,7 +756,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Challenge that will seek ideas on addressing access, saving and promotion of energy as a source of development in Chile. New deadline not yet announced; last deadline was July 12, 2017',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Project Entrepreneur',
@@ -690,7 +774,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Providing women access to the tools, training and networks needed to build scalable, economically impactful companies. Next deadline in fall 2017; previous deadline was 11/21/2016',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Kellogg-Morgan Stanley Sustainable Investing Challenge',
@@ -706,7 +792,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Develop creative financial approaches to tackle our world’s most pressing challenges',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Global Social Venture Competition',
@@ -722,7 +810,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Empower the next generation of social entrepreneurs by providing them with mentoring, exposure, and prize money to transform their ideas into fundable, scalable ventures that address the world’s most pressing challenges.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'EMA Innovator Challenge',
@@ -738,7 +828,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Each contestant must submit their business plan, as well as a short video pitch of their concept/company.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Pacific Venture Capital Conference and Competition',
@@ -754,7 +846,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'The competition is a stage for undergraduate and MBA students to present business ideas and financial valuations to an audience of entrepreneurial leaders, senior venture capitalists, and top industry professionals from across North America.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Millennial Impact Fellow Video Competition',
@@ -770,7 +864,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'How can we break down the barriers between us – generational, racial, socioeconomic, geographic – to create an America that works for everyone? At New Profit’s annual Gathering of Leaders 400 leadership-level participants will delve into this question together.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Bay Area Global Health Innovation Challenge',
@@ -786,7 +882,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'An annual competition hosted by the University of California, Berkeley, Stanford University, and the HealthRoots Foundation for Global Health, it offers student teams from universities worldwide the opportunity to present ideas for low-cost, high-impact, scalable global health innovations.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Clinton Global Initiative University 2017',
@@ -802,7 +900,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: null,
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Citi Tech for Integrity Challenge',
@@ -818,7 +918,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'The accelerator program will run from March to April, when finalists will be selected to participate in Demo Days with cash prizes.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Global Competition for Hardware-Led Social Innovations',
@@ -834,7 +936,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Designers are invited to enter one of three ISHOW competitions in Bangalore, India; Nairobi, Kenya, and Washington, D.C - 3 winners at each ISHOW can win up to $50,000.',
           early_stage_funding: true,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Natural Launchpad',
@@ -850,7 +954,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'A day of coaching at Burt\'s Bees HQ in Durham, NC, Access to a community of peers, and The Natural Launchpad seal to place on all marketing materials and product packaging',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Roddenberry Prize',
@@ -866,7 +972,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'In our 2016 Prize Impact Report, Accelerating Innovation Together, we unpack these stats, what we learned, data that interested us, statistics that surprised us, and how we can keep pushing ourselves to improve. We’re sharing this information in the hope that it will be a resource to those of you (funders and innovators) seeking to make the planet a fairer, more equitable and healthy place to live.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'BridgeBuilder Challenge',
@@ -882,7 +990,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'During our Ideas phase, we\'ll call a global community to action – to share solutions that address urgent challenges at the intersections of peace, prosperity, and planet in radically new ways. These ideas should bridge solutions in two of the three issue areas.',
           early_stage_funding: false,
-          details_last_updated: "8/23/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/23/2017"
         },
         {
           competition_name: 'Westly Prize',
@@ -898,7 +1008,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'For novel solutions to community challenges',
           early_stage_funding: true,
-          details_last_updated: "7/7/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "7/7/2017"
         },
         {
           competition_name: 'MIT Climate CoLab',
@@ -914,7 +1026,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Seven different specific challenges',
           early_stage_funding: false,
-          details_last_updated: "7/7/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "7/7/2017"
         },
         {
           competition_name: 'Denver Food Access Project',
@@ -930,7 +1044,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'a mission to give every low-income neighborhood in Denver access to healthy affordable food',
           early_stage_funding: false,
-          details_last_updated: "7/7/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "7/7/2017"
         },
         {
           competition_name: 'D-Prize',
@@ -946,7 +1062,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Option to choose from available challenges or to submit your own challenge and solution',
           early_stage_funding: true,
-          details_last_updated: "7/7/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "7/7/2017"
         },
         {
           competition_name: 'The Pollination Project',
@@ -962,7 +1080,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Through a daily practice of generosity and giving, we make seed grants- 365 days a year- to social change agents who seek to spread compassion\nin their communities and in the world for the benefit of all.',
           early_stage_funding: true,
-          details_last_updated: "7/7/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "7/7/2017"
         },
         {
           competition_name: 'GLG Social Impact Fellowship',
@@ -978,7 +1098,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'The GLG Social Impact Fellowship leverages GLG’s learning platform to help top social entrepreneurs answer their organization’s critical strategic and operational questions, at no cost. Through the two-year Fellowship, ambitious and visionary nonprofit and social enterprise leaders learn in tailored interactions with experts across GLG’s membership and with each other.',
           early_stage_funding: false,
-          details_last_updated: "7/7/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "7/7/2017"
         },
         {
           competition_name: 'NatGeo Chasing Genius Challenge',
@@ -994,7 +1116,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: '--',
           early_stage_funding: true,
-          details_last_updated: "8/22/2017",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "8/22/2017"
         },
         {
           competition_name: 'City Innovate (80+ Challenges to Improve Cities)',
@@ -1010,7 +1134,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'An Open Call for Startups to Improve Government Services. 80+ GovTech Challenges',
           early_stage_funding: false,
-          details_last_updated: "10/17/2018",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "10/17/2018"
         },
         {
           competition_name: 'Biomimicry Challenge',
@@ -1026,7 +1152,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Winners invited to participate in Biomimicry Launchpad',
           early_stage_funding: true,
-          details_last_updated: "10/24/2018",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "10/24/2018"
         },
         {
           competition_name: 'Map the System',
@@ -1042,7 +1170,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'This competition asks you to select a social or environmental issue and to explore, probe, and research all the connecting elements and factors around it. We want you to present this issue back to us in a way that people can understand, share, and learn from.',
           early_stage_funding: true,
-          details_last_updated: "2/13/2019",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "2/13/2019"
         },
         {
           competition_name: 'Social Business Creation',
@@ -1058,7 +1188,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: null,
           notes: 'Structured as a course which provides experiential learning, 4 rounds',
           early_stage_funding: true,
-          details_last_updated: "2/13/2019",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "2/13/2019"
         },
         {
           competition_name: 'MIT Clean Energy Prize',
@@ -1074,7 +1206,9 @@ exports.seed = function(knex) {
           target_entrepreneur_demographic: 'university teams',
           notes: 'Teams that have received\nexcess of $100,000 before the\nentry deadline are not elligible\nto enter',
           early_stage_funding: true,
-          details_last_updated: "6/11/2019",
+          is_reviewed: true,
+          has_requests: false,
+          details_last_updated: "6/11/2019"
         },
       ]);
     });
