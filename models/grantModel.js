@@ -4,8 +4,6 @@ module.exports = {
   getGrant,
   getGrantById,
   addGrant,
-  updateGrant,
-  removeGrant
 };
 
 function getGrant() {
@@ -27,14 +25,3 @@ function addGrant(grant) {
     });
 }
 
-function updateGrant(changes, id) {
-  return db("grants")
-    .where({ id })
-    .update(changes);
-}
-
-function removeGrant(id) {
-  return db("grants")
-    .where({ id })
-    .del();
-}

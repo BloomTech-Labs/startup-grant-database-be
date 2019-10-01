@@ -3,7 +3,9 @@ const db = require("../data/db-config.js");
 module.exports = {
   getPendingGrants,
   putPendingGrants,
-  find
+  find,
+  updateGrant,
+  removeGrant
 };
 
 function getPendingGrants() {
@@ -30,4 +32,16 @@ function find() {
       }));
     });
   });
+}
+
+function updateGrant(changes, id) {
+  return db("grants")
+    .where({ id })
+    .update(changes);
+}
+
+function removeGrant(id) {
+  return db("grants")
+    .where({ id })
+    .del();
 }
