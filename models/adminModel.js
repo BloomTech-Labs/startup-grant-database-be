@@ -1,25 +1,15 @@
 const db = require("../data/db-config.js");
 
 module.exports = {
-  getPendingGrants,
-  putPendingGrants,
-  find,
+  getGrants,
   updateGrant,
   removeGrant,
   removeSuggestion
+  // getPendingGrants,
+  // putPendingGrants,
 };
 
-function getPendingGrants() {
-  return db("grants").where({ is_reviewed });
-}
-
-function putPendingGrants(changes, id) {
-  return db("grants")
-    .where({ id })
-    .update({ changes });
-}
-
-function find() {
+function getGrants() {
   return db("grants").then(grants => {
     let currentSuggestions;
     let newGrants;
@@ -52,3 +42,13 @@ function removeSuggestion(id) {
     .where({ id })
     .del();
 }
+
+// function getPendingGrants() {
+//   return db("grants").where({ is_reviewed });
+// }
+
+// function putPendingGrants(changes, id) {
+//   return db("grants")
+//     .where({ id })
+//     .update({ changes });
+// }
