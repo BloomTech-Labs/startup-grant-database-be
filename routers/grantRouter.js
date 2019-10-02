@@ -49,4 +49,20 @@ router.post("/", (req, res) => {
     });
 });
 
+// Add a suggestion
+router.post("/", (req, res) => {
+  const suggestion = req.body;
+
+  grants
+    .addSuggestion(suggestion)
+    .then(grant => {
+      res.status(201).json(suggestion);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: "There was an error adding the suggestion." });
+    });
+});
+
 module.exports = router;
