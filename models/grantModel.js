@@ -4,6 +4,7 @@ module.exports = {
   getGrant,
   getGrantById,
   addGrant,
+  addSuggestion
 };
 
 function getGrant() {
@@ -25,3 +26,11 @@ function addGrant(grant) {
     });
 }
 
+function addSuggestion(suggestion) {
+  return db("grants")
+    .insert(suggestion, "id")
+    .then(ids => {
+      const [id] = ids;
+      return getGrantById(id);
+    });
+}
