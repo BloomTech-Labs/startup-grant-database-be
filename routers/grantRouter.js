@@ -5,9 +5,9 @@ const grants = require("../models/grantModel.js");
 // Get all grants
 router.get("/", (req, res) => {
   grants
-    .getGrant()
+    .getGrants()
     .then(grants => {
-      res.status(200).json({ message: "Here are the grants!", grants });
+      res.status(200).json(grants);
     })
     .catch(error => {
       res.status(500).json({ message: "Oh no! Something went wrong!", error });

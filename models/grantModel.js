@@ -1,14 +1,26 @@
 const db = require("../data/db-config.js");
 
 module.exports = {
-  getGrant,
+  getGrants,
   getGrantById,
   addGrant,
   addSuggestion
 };
 
-function getGrant() {
-  return db("grants");
+function getGrants() {
+  return db("grants").then(grants => {
+    let currentSuggestions;
+    let newGrants;
+    return db("requests").then(suggestions => {
+      return (newGrants = grants.map(grant => {
+        currentSuggestions = suggestions.filter(node => {
+          console.log(node.grant_id);
+          return grant.id === node.grant_id;
+        });
+        return { ...grant, requests: currentSuggestions };
+      }));
+    });
+  });
 }
 
 function getGrantById(id) {
