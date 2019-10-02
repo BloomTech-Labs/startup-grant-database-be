@@ -50,7 +50,7 @@ router.post("/", (req, res) => {
 });
 
 // Add a suggestion
-router.post("/", (req, res) => {
+router.post("/suggestion", (req, res) => {
   const suggestion = req.body;
 
   grants
