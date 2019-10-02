@@ -25,7 +25,7 @@ function find() {
     return db("requests").then(suggestions => {
       return (newGrants = grants.map(grant => {
         currentSuggestions = suggestions.filter(node => {
-          console.log(node.grant_id);
+          // console.log(node.grant_id);
           return grant.id === node.grant_id;
         });
         return { ...grant, requests: currentSuggestions };
