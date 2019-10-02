@@ -3,9 +3,7 @@ const db = require("../data/db-config.js");
 module.exports = {
   getGrant,
   getGrantById,
-  addGrant,
-  updateGrant,
-  removeGrant
+  addGrant
 };
 
 function getGrant() {
@@ -25,16 +23,4 @@ function addGrant(grant) {
       const [id] = ids;
       return getGrantById(id);
     });
-}
-
-function updateGrant(changes, id) {
-  return db("grants")
-    .where({ id })
-    .update(changes);
-}
-
-function removeGrant(id) {
-  return db("grants")
-    .where({ id })
-    .del();
 }
