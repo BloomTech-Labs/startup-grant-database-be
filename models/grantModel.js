@@ -3,7 +3,8 @@ const db = require("../data/db-config.js");
 module.exports = {
   getGrant,
   getGrantById,
-  addGrant
+  addGrant,
+  addSuggestion
 };
 
 function getGrant() {
@@ -19,6 +20,15 @@ function getGrantById(id) {
 function addGrant(grant) {
   return db("grants")
     .insert(grant, "id")
+    .then(ids => {
+      const [id] = ids;
+      return getGrantById(id);
+    });
+}
+
+function addSuggestion(suggestion) {
+  return db("requests")
+    .insert(suggestion, "id")
     .then(ids => {
       const [id] = ids;
       return getGrantById(id);

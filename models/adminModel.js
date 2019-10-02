@@ -5,7 +5,8 @@ module.exports = {
   putPendingGrants,
   find,
   updateGrant,
-  removeGrant
+  removeGrant,
+  removeSuggestion
 };
 
 function getPendingGrants() {
@@ -42,6 +43,12 @@ function updateGrant(changes, id) {
 
 function removeGrant(id) {
   return db("grants")
+    .where({ id })
+    .del();
+}
+
+function removeSuggestion(id) {
+  return db("requests")
     .where({ id })
     .del();
 }
