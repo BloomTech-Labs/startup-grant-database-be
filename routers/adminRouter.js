@@ -5,6 +5,7 @@ const admin = require("../models/adminModel.js");
 
 // ==========GET: retrieve all grants==========
 router.get("/", (req, res) => {
+  console.log(req.user);
   admin
     .getGrants()
     .then(grant => {
