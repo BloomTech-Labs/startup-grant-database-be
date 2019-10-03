@@ -5,9 +5,9 @@ const grants = require("../models/grantModel.js");
 // Get all grants
 router.get("/", (req, res) => {
   grants
-    .getGrant()
+    .getGrants()
     .then(grants => {
-      res.status(200).json({ message: "Here are the grants!", grants });
+      res.status(200).json(grants);
     })
     .catch(error => {
       res.status(500).json({ message: "Oh no! Something went wrong!", error });
@@ -49,49 +49,19 @@ router.post("/", (req, res) => {
     });
 });
 
-// Update a grant
-router.put("/:id", (req, res) => {
-  const { id } = req.params;
-  const changes = req.body;
+// Add a suggestion
+router.post("/suggestion", (req, res) => {
+  const suggestion = req.body;
 
   grants
-    .updateGrant(changes, id)
+    .addSuggestion(suggestion)
     .then(grant => {
-      if (grant) {
-        res.status(200).json(grant);
-      } else {
-        res
-          .status(404)
-          .json({ message: "The grant with the specified ID does not exist." });
-      }
+      res.status(201).json(suggestion);
     })
     .catch(error => {
       res
         .status(500)
-        .json({ message: "There was an error modifying the grant." });
-    });
-});
-
-// ============================== RELEASE CANVAS 2 ==============================
-// Remove a grant
-router.delete("/:id", (req, res) => {
-  const { id } = req.params;
-
-  grants
-    .removeGrant(id)
-    .then(grant => {
-      if (grant) {
-        res.status(200).json(grant);
-      } else {
-        res
-          .status(404)
-          .json({ message: "The grant with the specified ID does not exist." });
-      }
-    })
-    .catch(error => {
-      res
-        .status(500)
-        .json({ message: "There was an error removing the grant." });
+        .json({ message: "There was an error adding the suggestion." });
     });
 });
 
