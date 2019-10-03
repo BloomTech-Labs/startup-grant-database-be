@@ -2,9 +2,11 @@ const db = require("../data/db-config.js");
 
 module.exports = {
   getGrants,
-  getGrantById,
-  addGrant,
-  addSuggestion
+  updateGrant,
+  removeGrant,
+  removeSuggestion
+  // getPendingGrants,
+  // putPendingGrants,
 };
 
 function getGrants() {
@@ -14,7 +16,7 @@ function getGrants() {
     return db("requests").then(suggestions => {
       return (newGrants = grants.map(grant => {
         currentSuggestions = suggestions.filter(node => {
-          console.log(node.grant_id);
+          // console.log(node.grant_id);
           return grant.id === node.grant_id;
         });
         return { ...grant, requests: currentSuggestions };
@@ -23,26 +25,30 @@ function getGrants() {
   });
 }
 
-function getGrantById(id) {
+function updateGrant(changes, id) {
   return db("grants")
     .where({ id })
-    .first();
+    .update(changes);
 }
 
-function addGrant(grant) {
+function removeGrant(id) {
   return db("grants")
-    .insert(grant, "id")
-    .then(ids => {
-      const [id] = ids;
-      return getGrantById(id);
-    });
+    .where({ id })
+    .del();
 }
 
-function addSuggestion(suggestion) {
+function removeSuggestion(id) {
   return db("requests")
-    .insert(suggestion, "id")
-    .then(ids => {
-      const [id] = ids;
-      return getGrantById(id);
-    });
+    .where({ id })
+    .del();
 }
+
+// function getPendingGrants() {
+//   return db("grants").where({ is_reviewed });
+// }
+
+// function putPendingGrants(changes, id) {
+//   return db("grants")
+//     .where({ id })
+//     .update({ changes });
+// }
