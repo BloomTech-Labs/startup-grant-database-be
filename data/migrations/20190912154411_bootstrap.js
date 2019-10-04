@@ -33,17 +33,41 @@ exports.up = function(knex) {
     })
     .createTable("users", tbl => {
       tbl.increments();
-      tbl
-        .string("username", 128)
-        .notNullable()
-        .unique();
-      tbl.string("password", 128).notNullable();
+      tbl.string("role").defaultTo("user");
+      tbl.string("auth_id", 200);
     });
+  // .createTable("user_roles", tbl => {
+  //   tbl.increments();
+  //   tbl.string("role", 128).defaultTo("user");
+  // })
+  // .createTable("user_roles_info", tbl => {
+  //   tbl.increments();
+  //   tbl
+  //     .integer("user_id")
+  //     .unsigned()
+  //     .notNullable()
+  //     .references("id")
+  //     .inTable("users")
+  //     .onDelete("CASCADE")
+  //     .onUpdate("CASCADE");
+  //   tbl
+  //     .integer("user_role_id")
+  //     .unsigned()
+  //     .notNullable()
+  //     .references("id")
+  //     .inTable("user_roles")
+  //     .onDelete("CASCADE")
+  //     .onUpdate("CASCADE");
+  // });
 };
 
 exports.down = function(knex) {
-  return knex.schema
-    .dropTableIfExists("users")
-    .dropTableIfExists("requests")
-    .dropTableIfExists("grants");
+  return (
+    knex.schema
+      // .dropTableIfExists("user_roles_info")
+      // .dropTableIfExists("user_roles")
+      .dropTableIfExists("users")
+      .dropTableIfExists("requests")
+      .dropTableIfExists("grants")
+  );
 };
