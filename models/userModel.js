@@ -29,3 +29,9 @@ function getUserById(id) {
     .where({ id })
     .first();
 }
+
+function getUserbyAuthId(id) {
+  return db("users")
+    .where({AuthId: id})
+    .first()
+}
