@@ -4,6 +4,7 @@ module.exports = {
   getUser,
   getUserBy,
   getUserById,
+  getUserByAuthId,
   addUser
 };
 
@@ -14,6 +15,12 @@ function addUser(user) {
       const [id] = ids;
       return getUserById(id);
     });
+}
+
+function getUserByAuthId(auth_id) {
+  return db("users")
+    .where({ auth_id })
+    .first();
 }
 
 function getUser() {
