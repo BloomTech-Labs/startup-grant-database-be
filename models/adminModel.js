@@ -1,7 +1,7 @@
 const db = require("../data/db-config.js");
 
 module.exports = {
-  getGrants,
+  getGrantsAdmin,
   updateGrant,
   removeGrant,
   removeSuggestion
@@ -9,7 +9,7 @@ module.exports = {
   // putPendingGrants,
 };
 
-function getGrants() {
+function getGrantsAdmin() {
   return db("grants").then(grants => {
     let currentSuggestions;
     let newGrants;
