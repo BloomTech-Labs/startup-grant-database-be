@@ -2,26 +2,6 @@ const router = require("express").Router();
 
 const grants = require("../models/grantModel.js");
 
-// ==========GET: get specific user by auth ID==========
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
-
-  grants
-    .getGrantById(id)
-    .then(grants => {
-      if (grants) {
-        res.status(200).json(grants);
-      } else {
-        res
-          .status(404)
-          .json({ message: "The grant with the specified ID does not exist." });
-      }
-    })
-    .catch(error => {
-      res.status(500).json({ message: "failed to load grant by id" });
-    });
-});
-
 // ==========GET: get all grants==========
 router.get("/", (req, res) => {
   grants

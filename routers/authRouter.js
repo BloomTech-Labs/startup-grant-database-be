@@ -3,26 +3,26 @@ const bcrypt = require("bcryptjs");
 
 const users = require("../models/userModel.js");
 
+// ==========POST: post new user==========
 router.post("/user", (req, res) => {
   let user = req.body;
 
   users
     .addUser(user)
-    .then(passHash => {
-      res.status(201).json(passHash);
+    .then(user => {
+      res.status(201).json(user);
     })
     .catch(error => {
-      console.log(error);
       res.status(500).json({ message: "Oh no, something went wrong", error });
     });
 });
 
 // ==========GET: get specific user by auth ID==========
-router.get("/user/:id", (req, res) => {
-  const { id } = req.params;
+router.get("/user", (req, res) => {
+  const auth = req.body
 
   users
-    .getGrantByAuthId(id)
+    .getUserByAuthId(auth.auth_id)
     .then(grants => {
       if (grants) {
         res.status(200).json(grants);
