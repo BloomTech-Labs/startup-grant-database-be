@@ -4,6 +4,7 @@ module.exports = {
   getUser,
   getUserBy,
   getUserById,
+  getUserByAuthId,
   addUser
 };
 

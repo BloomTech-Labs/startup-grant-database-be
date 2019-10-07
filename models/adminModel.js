@@ -1,7 +1,6 @@
 const db = require("../data/db-config.js");
 
 module.exports = {
-  getUserByAuthId,
   getGrants,
   updateGrant,
   removeGrant,
@@ -9,12 +8,6 @@ module.exports = {
   // getPendingGrants,
   // putPendingGrants,
 };
-
-function getUserByAuthId(id) {
-  return db("users")
-    .where({ auth_id })
-    .first();
-}
 
 function getGrants() {
   return db("grants").then(grants => {
