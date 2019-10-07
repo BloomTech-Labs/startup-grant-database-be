@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const grants = require("../models/grantModel.js");
 
-// Get all grants
+// ==========GET: get all grants==========
 router.get("/", (req, res) => {
   grants
     .getGrants()
@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// Get grant by ID
+// ==========GET: get specific grants==========
 router.get("/:id", (req, res) => {
   const { id } = req.params;
 
@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Add a grant
+// ==========POST: posts new grant==========
 router.post("/", (req, res) => {
   const grant = req.body;
 
@@ -49,7 +49,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// Add a suggestion
+// ==========POST: posts new grant suggestion==========
 router.post("/suggestion", (req, res) => {
   const suggestion = req.body;
 

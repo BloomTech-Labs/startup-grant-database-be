@@ -4,7 +4,7 @@ const helmet = require("helmet");
 const server = express();
 
 const grantRouter = require("./routers/grantRouter.js");
-const authRouter = require("./routers/authRouter.js");
+const userRouter = require("./routers/userRouter.js");
 const adminRouter = require("./routers/adminRouter.js");
 const middleware = require("./auth/middleware.js");
 
@@ -13,7 +13,7 @@ server.use(helmet());
 server.use(express.json());
 server.use("/api/admin", middleware, adminRouter);
 server.use("/api/grants", grantRouter);
-server.use("/auth", authRouter);
+server.use("/user", userRouter);
 
 server.get("/", (req, res) => {
   res.status(200).json({ server: "running" });
