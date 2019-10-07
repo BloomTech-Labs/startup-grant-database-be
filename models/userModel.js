@@ -17,6 +17,12 @@ function addUser(user) {
     });
 }
 
+function getUserByAuthId(auth_id) {
+  return db("users")
+    .where({ auth_id })
+    .first();
+}
+
 function getUser() {
   return db("users");
 }

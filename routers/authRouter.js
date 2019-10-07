@@ -17,6 +17,26 @@ router.post("/user", (req, res) => {
     });
 });
 
+// ==========GET: get specific user by auth ID==========
+router.get("/user/:id", (req, res) => {
+  const { id } = req.params;
+
+  users
+    .getGrantByAuthId(id)
+    .then(grants => {
+      if (grants) {
+        res.status(200).json(grants);
+      } else {
+        res
+          .status(404)
+          .json({ message: "The grant with the specified ID does not exist." });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({ message: "failed to load grant by id" });
+    });
+});
+
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
 
