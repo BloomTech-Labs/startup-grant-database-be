@@ -7,7 +7,7 @@ exports.seed = function(knex) {
     //   password: bcrypt.hashSync("password123", 12)
     // }
     {
-      role: "user",
+      role: "admin",
       auth_id: "auth0|5d9525bdaed7ac0d51b1103a"
     },
     {
