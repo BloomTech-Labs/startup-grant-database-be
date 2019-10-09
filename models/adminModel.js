@@ -4,7 +4,8 @@ module.exports = {
   getGrantsAdmin,
   updateGrant,
   removeGrant,
-  removeSuggestion
+  removeSuggestion,
+  getSuggestions
   // getPendingGrants,
   // putPendingGrants,
 };
@@ -23,6 +24,10 @@ function getGrantsAdmin() {
       }));
     });
   });
+}
+
+function getSuggestions() {
+  return db('requests')
 }
 
 function updateGrant(changes, id) {

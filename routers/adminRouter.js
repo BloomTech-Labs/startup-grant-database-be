@@ -14,6 +14,18 @@ router.get("/", (req, res) => {
     });
 });
 
+// ==========GET: get all grant suggestions==========
+router.get("/suggestions", (req, res) => {
+  admin
+    .getSuggestions()
+    .then(grants => {
+      res.status(200).json(grants);
+    })
+    .catch(error => {
+      res.status(500).json({ message: "bummer", err })
+    });
+});
+
 // ==========PUT: update a grant==========
 router.put("/:id", (req, res) => {
   const { id } = req.params;
