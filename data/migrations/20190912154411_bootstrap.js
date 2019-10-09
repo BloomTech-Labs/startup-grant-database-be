@@ -21,6 +21,7 @@ exports.up = function(knex) {
     })
     .createTable("requests", tbl => {
       tbl.increments();
+      tbl.string('subject', 255)
       tbl.string("suggestion", 1000);
       tbl
         .integer("grant_id")
