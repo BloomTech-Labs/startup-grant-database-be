@@ -3,7 +3,7 @@ const localPg = {
   host: "localhost",
   database: "postgres",
   user: "postgres",
-  password: "password"
+  password: "password123"
 };
 
 const dbConnection = process.env.DATABASE_URL || localPg;
