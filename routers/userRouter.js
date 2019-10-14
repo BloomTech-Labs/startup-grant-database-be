@@ -19,7 +19,7 @@ router.post("/", (req, res) => {
 
 // ==========GET: get specific user by auth ID==========
 router.get("/", (req, res) => {
-  const user = req.body;
+  const user = req.headers;
 
   users
     .getUserByAuthId(user.auth_id)

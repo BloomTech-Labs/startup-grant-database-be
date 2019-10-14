@@ -1,15 +1,16 @@
 const db = require("../data/db-config.js");
 
 module.exports = {
-  getGrants,
+  getGrantsAdmin,
   updateGrant,
   removeGrant,
-  removeSuggestion
+  removeSuggestion,
+  getSuggestions
   // getPendingGrants,
   // putPendingGrants,
 };
 
-function getGrants() {
+function getGrantsAdmin() {
   return db("grants").then(grants => {
     let currentSuggestions;
     let newGrants;
@@ -23,6 +24,10 @@ function getGrants() {
       }));
     });
   });
+}
+
+function getSuggestions() {
+  return db('requests')
 }
 
 function updateGrant(changes, id) {
