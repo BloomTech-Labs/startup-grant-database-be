@@ -22,6 +22,16 @@ exports.seed = function(knex) {
       auth_id: "google-oauth2|104797840746198870869"
     },
     {
+      // reedtjames1234@gmail.com
+      role: "admin",
+      auth_id: "google-oauth2|101388585358836498209"
+    },
+    {
+      // rory.christian.murray@gmail.com
+      role: "admin",
+      auth_id: "google-oauth2|101213116176046442161"
+    },
+    {
       // labs16grantly@gmail.com
       role: "user",
       auth_id: "google-oauth2|105085847106269862248"
