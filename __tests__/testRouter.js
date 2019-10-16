@@ -1,6 +1,6 @@
 const request = require("supertest");
 const db = require("../data/db-config.js");
-const server = require("../server.js");
+const server = require("../server");
 
 const testGrant = {
   competition_name: "test",
@@ -17,6 +17,7 @@ const testGrant = {
   notes: "test",
   early_stage_funding: false,
   is_reviewed: true,
+  has_requests: false,
   details_last_updated: "01/01/2001"
 };
 
@@ -29,12 +30,41 @@ describe("server", () => {
     expect(process.env.DB_ENV).toBe("testing");
   });
 
-  describe('GET /api/grants', () => {
-    it('return 200 when grants are loaded', async () => {
-      let response = await request(server).get('/api/grants')
+  describe("GET /api/grants", () => {
+    it("return 200 when grants are loaded", async () => {
+      let response = await request(server).get("/api/grants");
       expect(response.status).toBe(200);
-    })
-  })
+    });
+
+    it("returns JSON", async () => {
+      let response = await request(server).get("/api/grants");
+      expect(response.type).toMatch(/json/);
+    });
+
+    it("returns array", async () => {
+      let response = await request(server).get("/api/grants");
+      expect(Array.isArray(response.body)).toBe(true);
+    });
+  });
+
+  describe("GET /api/grants/:id", () => {});
+
+  describe("POST /api/grants", () => {
+    it("returns 201 when new grant added", async () => {
+      let response = await request(server)
+        .post("/api/grants")
+        .send(testGrant);
+      expect(response.status).toBe(201);
+    });
+
+    it("returns JSON", async () => {
+      let response = await request(server)
+        .post("/api/grants")
+        .send(testGrant);
+      expect(response.type).toMatch(/json/);
+    });
+  });
+
 
   // GET ALL - Rory
 
