@@ -21,6 +21,12 @@ const testGrant = {
   details_last_updated: "01/01/2001"
 };
 
+const testSuggestion = {
+  subject: "test",
+  suggestion: "test",
+  grant_id: 1
+}
+
 describe("server", () => {
   // beforeEach(async () => {
   //   await db("grants").truncate();
@@ -64,7 +70,18 @@ describe("server", () => {
       expect(response.type).toMatch(/json/);
     });
   });
+  
+  describe('POST /api/grants/suggestion', () => {
+    it('returns 201 when new suggestion added', async () => {
+      let response = await request(server).post('/api/grants/suggestion').send(testSuggestion)
+      expect(response.status).toBe(201)
+    })
 
+    it('returns JSON', async () => {
+      let response = await request(server).post('/api/grants/suggestion').send(testSuggestion)
+      expect(response.type).toMatch(/json/)
+    })
+  })
 
   // GET ALL - Rory
 
