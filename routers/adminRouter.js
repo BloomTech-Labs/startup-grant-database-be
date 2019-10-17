@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     .catch(err =>
       res
         .status(500)
-        .json({ message: "There was an error retrieving the grants", err })
+        .json({ message: "There was an error retrieving the grants" })
     );
 });
 

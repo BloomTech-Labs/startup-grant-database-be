@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
       res.status(200).json(grants);
     })
     .catch(error => {
-      res.status(500).json({ message: "Oh no! Something went wrong!", error });
+      res.status(500).json({ message: "Error retrieving all grants" });
     });
 });
 

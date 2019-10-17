@@ -13,7 +13,7 @@ router.post("/", (req, res) => {
       res.status(201).json(user);
     })
     .catch(error => {
-      res.status(500).json({ message: "Oh no, something went wrong", error });
+      res.status(500).json({ message: "Error adding user" });
     });
 });
 
