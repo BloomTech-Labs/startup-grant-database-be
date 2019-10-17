@@ -30,6 +30,15 @@ describe("server", () => {
   });
 
   // GET ALL - Rory
+  describe("GET /api/grants", () => {
+    it("return 200 when requested", () => {
+      return request(server)
+        .get("/api/grants")
+        .then(res => {
+          expect(res.status).toBe(200);
+        });
+    });
+  });
 
   // GET BY ID - Michael
 
