@@ -1,3 +1,6 @@
+// These tests pass without the middlewares in the /api/admin route on server.js
+// A future task might be to implementing further testing that includes the middlewares
+
 // const request = require("supertest");
 // const db = require("../data/db-config.js");
 // const server = require("../server");
@@ -101,6 +104,3 @@
 //     });
 //   });
 // });
-
-// // // DELETE - Yusuf
-// //

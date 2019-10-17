@@ -87,22 +87,6 @@ describe("GRANT ROUTER", () => {
     });
   });
 
-  // GET ALL - Rory
-
-  // GET BY ID - Michael
-
-  //   POST -Reed
-  // describe("POST /api/grants", () => {
-  //   it("return 201 when a grant is added", () => {
-  //     return request(server)
-  //       .post("/api/grants")
-  //       .send(testGrant)
-  //       .then(res => {
-  //         expect(res.status).toBe(201);
-  //       });
-  //   });
-  // });
-
   // // PUT - Phil
   // describe("PUT /api/grants", () => {
   //   it("return 201 when a grant is editted", async () => {
