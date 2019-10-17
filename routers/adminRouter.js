@@ -18,8 +18,8 @@ router.get("/", (req, res) => {
 router.get("/suggestions", (req, res) => {
   admin
     .getSuggestions()
-    .then(grants => {
-      res.status(200).json(grants);
+    .then(suggestions => {
+      res.status(200).json(suggestions);
     })
     .catch(error => {
       res.status(500).json({ message: "bummer", err })
