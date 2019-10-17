@@ -10,7 +10,11 @@ router.get("/", (req, res) => {
     .then(grant => {
       res.json(grant);
     })
-    .catch(err => res.status(500).json({ message: "bummer", err }));
+    .catch(err =>
+      res
+        .status(500)
+        .json({ message: "There was an error retrieving the grants", err })
+    );
 });
 
 // ==========PUT: update a grant==========
