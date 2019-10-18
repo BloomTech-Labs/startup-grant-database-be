@@ -8,19 +8,7 @@ module.exports = {
 };
 
 function getGrants() {
-  return db("grants").then(grants => {
-    let currentSuggestions;
-    let newGrants;
-    return db("requests").then(suggestions => {
-      return (newGrants = grants.map(grant => {
-        currentSuggestions = suggestions.filter(node => {
-          console.log(node.grant_id);
-          return grant.id === node.grant_id;
-        });
-        return { ...grant, requests: currentSuggestions };
-      }));
-    });
-  });
+  return db("grants").where({ is_reviewed: true })
 }
 
 function getGrantById(id) {

@@ -2,13 +2,12 @@ const router = require("express").Router();
 
 const admin = require("../models/adminModel.js");
 
-// ==========GET: retrieve all grants==========
+// ==========GET: get all grants==========
 router.get("/", (req, res) => {
-  console.log(req.user);
   admin
-    .getGrants()
-    .then(grant => {
-      res.json(grant);
+    .getGrantsAdmin()
+    .then(grants => {
+      res.status(200).json(grants);
     })
     .catch(err =>
       res

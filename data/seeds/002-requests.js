@@ -4,23 +4,38 @@ exports.seed = function(knex) {
     // Inserts seed entries
     return knex("requests").insert([
       {
-        suggestion: "Please review this grant",
+        subject: "Incorrect dates",
+        suggestion: "Please update the due dates for this grant",
         grant_id: 1
       },
       {
-        suggestion: "Please update this grant",
+        subject: "Typo",
+        suggestion: "There is a typo in the first sentence",
         grant_id: 1
       },
       {
-        suggestion: "Change prize to $10,000",
+        subject: "Needs to be deleted",
+        suggestion: "This is a very old grant, please delete it",
+        grant_id: 1
+      },
+      {
+        subject: "Prize amount",
+        suggestion: "The 1st place prize has been increased to $10,000",
         grant_id: 2
       },
       {
-        suggestion: "Delete",
+        subject: "Typo",
+        suggestion: "'grant' is spelled incorrectly",
+        grant_id: 2
+      },
+      {
+        subject: "delete",
+        suggestion: "please delete this grant it's inappropriate",
         grant_id: 3
       },
       {
-        suggestion: "Please delete",
+        subject: "Grant scam",
+        suggestion: "Please consider removing this grant as there have been reports of fraud",
         grant_id: 4
       }
     ]);

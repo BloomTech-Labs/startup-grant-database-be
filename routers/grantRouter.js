@@ -55,7 +55,7 @@ router.post("/suggestion", (req, res) => {
 
   grants
     .addSuggestion(suggestion)
-    .then(grant => {
+    .then(suggestion => { 
       res.status(201).json(suggestion);
     })
     .catch(error => {
