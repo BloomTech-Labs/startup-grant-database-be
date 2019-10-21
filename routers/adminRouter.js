@@ -9,21 +9,11 @@ router.get("/", (req, res) => {
     .then(grants => {
       res.status(200).json(grants);
     })
-    .catch(error => {
-      res.status(500).json({ message: "bummer", err })
-    });
-});
-
-// ==========GET: get all grant suggestions==========
-router.get("/suggestions", (req, res) => {
-  admin
-    .getSuggestions()
-    .then(grants => {
-      res.status(200).json(grants);
-    })
-    .catch(error => {
-      res.status(500).json({ message: "bummer", err })
-    });
+    .catch(err =>
+      res
+        .status(500)
+        .json({ message: "There was an error retrieving the grants" })
+    );
 });
 
 // ==========PUT: update a grant==========

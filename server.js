@@ -13,6 +13,7 @@ server.use(cors());
 server.use(helmet());
 server.use(express.json());
 server.use("/api/admin", middleware, adminMiddleware, adminRouter);
+// server.use("/api/admin", adminRouter);
 server.use("/api/grants", grantRouter);
 server.use("/user", userRouter);
 

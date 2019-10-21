@@ -28,6 +28,16 @@ exports.seed = function(knex) {
       auth_id: "google-oauth2|101213116176046442161"
     },
     {
+      // info@zabdielrosario.com
+      role: 'admin',
+      auth_id: "google-oauth2|117212984255811156388"
+    },
+    {
+      // imani.russ@gmail.com
+      role: 'admin',
+      auth_id: 'google-oauth2|109381253001306186777'
+    },
+    {
       // labs16grantly@gmail.com
       role: "user",
       auth_id: "google-oauth2|105085847106269862248"
