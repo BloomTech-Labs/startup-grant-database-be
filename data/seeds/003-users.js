@@ -1,6 +1,8 @@
 const bcrypt = require("bcryptjs");
 exports.seed = function(knex) {
-  // Deletes ALL existing entries
+  // To add an Admin, a user has to create an account with Auth0(either through the app or on the Auth0 dashboard)
+  // And then a new seed has to be added below, with the role and auth_id of that user
+
   return knex("users").insert([
     {
       // phil7j@gmail.com
@@ -29,13 +31,13 @@ exports.seed = function(knex) {
     },
     {
       // info@zabdielrosario.com
-      role: 'admin',
+      role: "admin",
       auth_id: "google-oauth2|117212984255811156388"
     },
     {
       // imani.russ@gmail.com
-      role: 'admin',
-      auth_id: 'google-oauth2|109381253001306186777'
+      role: "admin",
+      auth_id: "google-oauth2|109381253001306186777"
     },
     {
       // labs16grantly@gmail.com

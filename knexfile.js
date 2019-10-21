@@ -1,4 +1,8 @@
-// Update with your config settings.
+// ---- Local Postgres DB configuration ----
+//
+// If you set up a local database, you will need
+// to put in the correct credentials here:
+//
 const localPg = {
   host: "localhost",
   database: "postgres",
@@ -8,6 +12,7 @@ const localPg = {
 
 const dbConnection = process.env.DATABASE_URL || localPg;
 
+// The different DB environment setups
 module.exports = {
   development: {
     client: "pg",
@@ -18,22 +23,6 @@ module.exports = {
     seeds: {
       directory: __dirname + "/data/seeds"
     }
-    // client: "sqlite3",
-    // useNullAsDefault: true,
-    // connection: {
-    //   filename: "./data/grants.db3"
-    // },
-    // pool: {
-    //   afterCreate: (conn, done) => {
-    //     conn.run("PRAGMA foreign_keys = ON", done);
-    //   }
-    // },
-    // migrations: {
-    //   directory: "./data/migrations"
-    // },
-    // seeds: {
-    //   directory: "./data/seeds"
-    // }
   },
 
   production: {
