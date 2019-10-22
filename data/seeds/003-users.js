@@ -29,13 +29,13 @@ exports.seed = function(knex) {
     },
     {
       // info@zabdielrosario.com
-      role: 'admin',
+      role: "admin",
       auth_id: "google-oauth2|117212984255811156388"
     },
     {
       // imani.russ@gmail.com
-      role: 'admin',
-      auth_id: 'google-oauth2|109381253001306186777'
+      role: "admin",
+      auth_id: "google-oauth2|109381253001306186777"
     },
     {
       // labs16grantly@gmail.com
