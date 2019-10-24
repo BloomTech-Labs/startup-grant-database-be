@@ -17,6 +17,7 @@ const checkJwt = jwt({
   }),
 
   // Validate the audience and the issuer.
+  // audience: "https://grantly-staging.herokuapp.com/api/admin",
   audience: "http://localhost:5000/api/admin",
   issuer: `https://founder-grants.auth0.com/`,
   algorithms: ["RS256"]
