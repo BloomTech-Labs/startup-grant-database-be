@@ -1,19 +1,9 @@
 const knex = require("knex");
 
-// const knex = require('knex')({
-//     client: pg,
-//     connection: {
-//         host: 'localhost',
-//         user: 'postgres',
-//         password: 'password',
-//         database: 'grants'
-//     }
-// })
+const config = require("../knexfile.js");
 
-const config = require("../knexfile.js")
-
+// This is needed for the deployed Heroku DB to function
+// If the Heroku ENV isn't there, it will default to the development environment
 const dbEnv = process.env.DB_ENV || "development";
-
-// module.exports = knex
 
 module.exports = knex(config[dbEnv]);
