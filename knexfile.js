@@ -14,14 +14,23 @@ const dbConnection = process.env.DATABASE_URL || localPg;
 
 // The different DB environment setups
 module.exports = {
+  
   development: {
-    client: "pg",
-    connection: dbConnection,
+    client: "sqlite3",
+    useNullAsDefault: true,
+    connection: {
+      filename: "./data/db-config.db3"
+    },
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run("PRAGMA foreign_keys = ON", done);
+      }
+    },
     migrations: {
-      directory: __dirname + "/data/migrations"
+      directory: "./data/migrations"
     },
     seeds: {
-      directory: __dirname + "/data/seeds"
+      directory: "./data/seeds"
     }
   },
 
