@@ -28,7 +28,7 @@ server.use(bodyParser.urlencoded({
 server.use("/api/grants", grantRouter);
 server.use("/user", userRouter);
 // Implement middleware on our protected admin route This is working with test token globally!!!
-server.use("/api/admin", middleware, jwtAuthz(['get:grants'] , { checkAllScopes: true }), adminRouter);
+server.use("/api/admin", middleware, jwtAuthz(['get:adminLocal'] , { checkAllScopes: true }), adminRouter);
 
 server.get("/", (req, res) => {
   res.status(200).json({ server: "running" });
