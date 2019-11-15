@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const grantRouter = require("./routers/grantRouter.js");
 const userRouter = require("./routers/userRouter.js");
 const adminRouter = require("./routers/adminRouter.js");
-
+//This is replacing our middleware
 // Auth0's authentication for all users
 const middleware = require("./auth/middleware.js");
 const jwtAuthz = require("express-jwt-authz"); //jwtAuthz(['batch:upload'])
