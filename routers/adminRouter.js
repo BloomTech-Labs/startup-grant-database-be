@@ -35,16 +35,7 @@ router.put("/:id", async (req, res) => {
     res
     .status(500)
     .json({ message: "There was an error modifying the grant." });
-  }
-  admin
-    .updateGrant(changes, id)
-    .then(grant => {
-    })
-    .catch(error => {
-      res
-        .status(500)
-        .json({ message: "There was an error modifying the grant." });
-    });
+  }  
 });
 
 // ==========DELETE: remove a grant==========
