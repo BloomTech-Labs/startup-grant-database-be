@@ -20,9 +20,10 @@ router.get("/", (req, res) => {
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const changes = req.body;
-
+  res.send({send: changes});
+console.log(changes);
   admin
-    .updateGrant(changes, id)
+    .updateGrant(changes, id)    
     .then(grant => {
       if (grant) {
         res.status(200).json(grant);
