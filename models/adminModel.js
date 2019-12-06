@@ -33,7 +33,10 @@ function getSuggestions() {
 function updateGrant(changes, id) {
   return db("grants")
     .where({ id })
-    .update(changes);
+    .update(changes)
+    .then(() => {
+      return db("grants").where({ id }).first()
+    })
 }
 
 function removeGrant(id) {

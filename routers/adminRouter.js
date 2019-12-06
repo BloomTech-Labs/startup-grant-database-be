@@ -17,26 +17,39 @@ router.get("/", (req, res) => {
 });
 
 // ==========PUT: update a grant==========
-router.put("/:id", (req, res) => {
+router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
-
-  admin
-    .updateGrant(changes, id)
-    .then(grant => {
-      if (grant) {
-        res.status(200).json(grant);
-      } else {
-        res
-          .status(404)
-          .json({ message: "The grant with the specified ID does not exist." });
-      }
-    })
-    .catch(error => {
-      res
-        .status(500)
-        .json({ message: "There was an error modifying the grant." });
-    });
+ try {
+   const grant = await admin.updateGrant(changes, id) 
+  if (grant) {
+    res.status(200).json(grant);
+  } else {
+    res
+      .status(404)
+      .json({ message: "The grant with the specified ID does not exist." });
+  }
+ } catch {
+  res
+  .status(500)
+  .json({ message: "There was an error modifying the grant." });
+ }
+  // admin
+  //   .updateGrant(changes, id)    
+  //   .then(grant => {
+  //     if (grant) {
+  //       res.status(200).json(grant);
+  //     } else {
+  //       res
+  //         .status(404)
+  //         .json({ message: "The grant with the specified ID does not exist." });
+  //     }
+  //   })
+  //   .catch(error => {
+  //     res
+  //       .status(500)
+  //       .json({ message: "There was an error modifying the grant." });
+  //   });
 });
 
 // ==========DELETE: remove a grant==========
