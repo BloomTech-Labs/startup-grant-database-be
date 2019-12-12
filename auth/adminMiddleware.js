@@ -11,9 +11,9 @@ module.exports = (req, res, next) => {
       if (!response) {
         res.status(401).json({ message: "You are not authorized" });
       } else {
-        console.log("In the .then!", response);
+        // console.log("In the .then!", response);
         if (response.role === "admin") {
-          console.log("It worked!");
+          // console.log("It worked!");
           next();
         } else {
           res.status(401).json({ message: "You are not authorized admin" });

@@ -95,4 +95,27 @@ router.delete("/suggestion/:id", (req, res) => {
     });
 });
 
+router.get('/suggestions/:grant_id', (req, res) => {
+  const grant_id = req.params.grant_id;
+
+  // admin.getGrantById(grant_id)
+  //   .then(grant => {
+  //     if (grant) {
+  //       console.log('sug', grant);
+        admin.getSuggestionsByGrantID(grant_id)
+          .then(suggestions => {
+            if (suggestions) {
+              console.log('sug', suggestions);
+              res.status(200).json(suggestions);
+            } else {
+              console.log('sug', suggestions);
+              res.status(404).json({
+                message: "There are no suggestions with the specified grant_id."
+              });
+            }
+          });
+    //   }
+    // })
+})
+
 module.exports = router;
