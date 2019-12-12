@@ -5,7 +5,9 @@ module.exports = {
   updateGrant,
   removeGrant,
   removeSuggestion,
-  getSuggestions
+  getSuggestions,
+  getSuggestionsByGrantID,
+  getGrantById
   // getPendingGrants,
   // putPendingGrants,
 };
@@ -24,6 +26,12 @@ function getGrantsAdmin() {
       }));
     });
   });
+}
+
+function getGrantById(id) {
+  return db("grants")
+    .where({ id })
+    .first();
 }
 
 function getSuggestions() {
@@ -51,6 +59,13 @@ function removeSuggestion(id) {
     .del();
 }
 
+function getSuggestionsByGrantID(grantId){
+  return db('requests')
+    // .innerJoin('grants', 'on', 'requests.grant_id', '=', grantId)
+    // .select("r.*")
+    .where('grant_id', '=', grantId);
+    // .first();
+}
 // function getPendingGrants() {
 //   return db("grants").where({ is_reviewed });
 // }
