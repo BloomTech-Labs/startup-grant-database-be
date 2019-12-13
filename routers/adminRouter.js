@@ -17,26 +17,23 @@ router.get("/", (req, res) => {
 });
 
 // ==========PUT: update a grant==========
-router.put("/:id", (req, res) => {
+router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
-
-  admin
-    .updateGrant(changes, id)
-    .then(grant => {
-      if (grant) {
-        res.status(200).json(grant);
-      } else {
-        res
-          .status(404)
-          .json({ message: "The grant with the specified ID does not exist." });
-      }
-    })
-    .catch(error => {
+  try {
+    const grant = await admin.updateGrant(changes, id);
+    if (grant) {
+      res.status(200).json(grant);
+    } else {
       res
-        .status(500)
-        .json({ message: "There was an error modifying the grant." });
-    });
+        .status(404)
+        .json({ message: "The grant with the specified ID does not exist." });
+    }
+  } catch {
+    res
+      .status(500)
+      .json({ message: "There was an error modifying the grant." });
+  }
 });
 
 // ==========DELETE: remove a grant==========
@@ -80,6 +77,21 @@ router.delete("/suggestion/:id", (req, res) => {
         .status(500)
         .json({ message: "There was an error removing the grant." });
     });
+});
+// ==========GET: gets all grant suggestions==========
+router.get("/suggestions/:grant_id", (req, res) => {
+  const grant_id = req.params.grant_id;
+  admin.getSuggestionsByGrantID(grant_id).then(suggestions => {
+    if (suggestions) {
+      console.log("sug", suggestions);
+      res.status(200).json(suggestions);
+    } else {
+      console.log("sug", suggestions);
+      res.status(404).json({
+        message: "There are no suggestions with the specified grant_id."
+      });
+    }
+  });
 });
 
 module.exports = router;
