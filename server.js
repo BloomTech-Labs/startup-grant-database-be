@@ -35,4 +35,24 @@ server.get("/", (req, res) => {
   res.status(200).json({ server: "running" });
 });
 
+// var request = require("request");
+
+// var options = {
+//   method: 'POST',
+//   url: 'https://founder-grants.auth0.com/oauth/token',
+//   headers: {'content-type': 'application/x-www-form-urlencoded'},
+//   form: {
+//     grant_type: 'client_credentials',
+//     client_id: 'F7IQ07DmUMWVnqKE0D34lJx67vAd3a2e',
+//     client_secret: 'YOUR_CLIENT_SECRET',
+//     audience: 'https://founder-grants.auth0.com/api/v2/'
+//   }
+// };
+
+// request(options, function (error, response, body) {
+//   if (error) throw new Error(error);
+
+//   console.log(body);
+// });
+
 module.exports = server;
