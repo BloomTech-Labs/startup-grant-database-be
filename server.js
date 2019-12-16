@@ -56,7 +56,7 @@ server.get("/", (req, res) => {
 
 // var options = { method: 'GET',
 //   url: 'https://founder-grants.us8.webtask.io/adf6e2f2b84784b57522e3b19dfc9201/api/permissions',
-//   headers: { authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5rTkRNakUyTWpFM05qazBRVU16TTBFNE5VUXlNRFV4UWpKRVJUWkZPVUpFTmtSRk5VRTBOdyJ9.eyJpc3MiOiJodHRwczovL2ZvdW5kZXItZ3JhbnRzLmF1dGgwLmNvbS8iLCJzdWIiOiJaTTRvM3ZtcXo5TWp1NnE0cUREVTloeVk3UG1seE95ekBjbGllbnRzIiwiYXVkIjoidXJuOmF1dGgwLWF1dGh6LWFwaSIsImlhdCI6MTU3NjUzNDY4MywiZXhwIjoxNTc2NjIxMDgzLCJhenAiOiJaTTRvM3ZtcXo5TWp1NnE0cUREVTloeVk3UG1seE95eiIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.nyq96fuWTOTbUu3J_53A4nXDmo0shmZl2V2EmafZcv5fCKqhk6sBOcU2W7SNhBe6ouwGZoHf5PCz6NPYcHnN2_DNPKUPg411IkzQVGAL_-9aEZcmHZOlpYPB36fFFUvWeV0jqtK1qoTzzx2Ytw7G9tWJDcxT880DnqmHTvULV5XtEfIfNt1kAACZMMYf12TQftPZy8gSBSa1vmLq8i-NqXe0YpcY28NDUuhfKWwmM8eJc_Ry49ichTkrEzbbFjRnigunRiVooyg_btCifa9fxU6r_SEr3ti9S0t3YZZTK0eJm177ouMkHRFZ68Of6E_92jmpEbc0NnwCDYoiKN1kyQ' } };
+//   headers: { authorization: 'Bearer ' } };
 
 // request(options, function (error, response, body) {
 //   if (error) throw new Error(error);
