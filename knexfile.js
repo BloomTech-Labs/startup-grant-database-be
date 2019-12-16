@@ -14,6 +14,7 @@ const dbConnection = process.env.DATABASE_URL || localPg;
 
 // The different DB environment setups
 module.exports = {
+  
   development: {
     client: "sqlite3",
     useNullAsDefault: true,
