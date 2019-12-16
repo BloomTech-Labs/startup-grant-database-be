@@ -28,7 +28,6 @@ server.use(bodyParser.urlencoded({
 // Routes
 server.use("/api/grants", grantRouter);
 server.use("/user", userRouter);
-// Implement middleware on our protected admin route This is working with test token globally!!!
 server.use("/api/admin", middleware, adminMiddleware, adminRouter);
 //managem
 
