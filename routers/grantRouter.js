@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+const middleware = require('../auth/middleware.js');
 const grants = require("../models/grantModel.js");
 
 // ==========GET: get all grants==========
@@ -35,7 +35,8 @@ router.get("/:id", (req, res) => {
 });
 
 // ==========POST: posts new grant==========
-router.post("/", (req, res) => {
+//added middleware that checks for an authorized user token before allowing post
+router.post("/", middleware, (req, res) => {
   const grant = req.body;
 
   grants
@@ -50,7 +51,8 @@ router.post("/", (req, res) => {
 });
 
 // ==========POST: posts new grant suggestion==========
-router.post("/suggestion", (req, res) => {
+//added middleware that checks for an authorized user token before allowing post
+router.post("/suggestion", middleware, (req, res) => {
   const suggestion = req.body;
 
   grants

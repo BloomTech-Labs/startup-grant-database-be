@@ -8,8 +8,6 @@ module.exports = {
   getSuggestions,
   getSuggestionsByGrantID,
   getGrantById
-  // getPendingGrants,
-  // putPendingGrants,
 };
 
 function getGrantsAdmin() {
@@ -35,7 +33,7 @@ function getGrantById(id) {
 }
 
 function getSuggestions() {
-  return db('requests')
+  return db("requests");
 }
 
 function updateGrant(changes, id) {
@@ -43,8 +41,10 @@ function updateGrant(changes, id) {
     .where({ id })
     .update(changes)
     .then(() => {
-      return db("grants").where({ id }).first()
-    })
+      return db("grants")
+        .where({ id })
+        .first();
+    });
 }
 
 function removeGrant(id) {
@@ -59,19 +59,6 @@ function removeSuggestion(id) {
     .del();
 }
 
-function getSuggestionsByGrantID(grantId){
-  return db('requests')
-    // .innerJoin('grants', 'on', 'requests.grant_id', '=', grantId)
-    // .select("r.*")
-    .where('grant_id', '=', grantId);
-    // .first();
+function getSuggestionsByGrantID(grantId) {
+  return db("requests").where("grant_id", "=", grantId);
 }
-// function getPendingGrants() {
-//   return db("grants").where({ is_reviewed });
-// }
-
-// function putPendingGrants(changes, id) {
-//   return db("grants")
-//     .where({ id })
-//     .update({ changes });
-// }

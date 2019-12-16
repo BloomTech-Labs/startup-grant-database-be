@@ -20,36 +20,20 @@ router.get("/", (req, res) => {
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
- try {
-   const grant = await admin.updateGrant(changes, id) 
-  if (grant) {
-    res.status(200).json(grant);
-  } else {
+  try {
+    const grant = await admin.updateGrant(changes, id);
+    if (grant) {
+      res.status(200).json(grant);
+    } else {
+      res
+        .status(404)
+        .json({ message: "The grant with the specified ID does not exist." });
+    }
+  } catch {
     res
-      .status(404)
-      .json({ message: "The grant with the specified ID does not exist." });
+      .status(500)
+      .json({ message: "There was an error modifying the grant." });
   }
- } catch {
-  res
-  .status(500)
-  .json({ message: "There was an error modifying the grant." });
- }
-  // admin
-  //   .updateGrant(changes, id)    
-  //   .then(grant => {
-  //     if (grant) {
-  //       res.status(200).json(grant);
-  //     } else {
-  //       res
-  //         .status(404)
-  //         .json({ message: "The grant with the specified ID does not exist." });
-  //     }
-  //   })
-  //   .catch(error => {
-  //     res
-  //       .status(500)
-  //       .json({ message: "There was an error modifying the grant." });
-  //   });
 });
 
 // ==========DELETE: remove a grant==========
@@ -94,28 +78,20 @@ router.delete("/suggestion/:id", (req, res) => {
         .json({ message: "There was an error removing the grant." });
     });
 });
-
-router.get('/suggestions/:grant_id', (req, res) => {
+// ==========GET: gets all grant suggestions==========
+router.get("/suggestions/:grant_id", (req, res) => {
   const grant_id = req.params.grant_id;
-
-  // admin.getGrantById(grant_id)
-  //   .then(grant => {
-  //     if (grant) {
-  //       console.log('sug', grant);
-        admin.getSuggestionsByGrantID(grant_id)
-          .then(suggestions => {
-            if (suggestions) {
-              console.log('sug', suggestions);
-              res.status(200).json(suggestions);
-            } else {
-              console.log('sug', suggestions);
-              res.status(404).json({
-                message: "There are no suggestions with the specified grant_id."
-              });
-            }
-          });
-    //   }
-    // })
-})
+  admin.getSuggestionsByGrantID(grant_id).then(suggestions => {
+    if (suggestions) {
+      console.log("sug", suggestions);
+      res.status(200).json(suggestions);
+    } else {
+      console.log("sug", suggestions);
+      res.status(404).json({
+        message: "There are no suggestions with the specified grant_id."
+      });
+    }
+  });
+});
 
 module.exports = router;
