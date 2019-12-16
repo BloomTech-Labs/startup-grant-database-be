@@ -1,5 +1,4 @@
 const jwt = require("express-jwt");
-const jwtAuthz = require("express-jwt-authz");
 const jwksRsa = require("jwks-rsa");
 
 // Authentication middleware. When used, the
@@ -19,7 +18,8 @@ const checkJwt = jwt({
   // Validate the audience and the issuer.
   // Audience is actually just a bananna term, used to identify the request in Auth0.
   // This can be changed in the Auth0 dashboard.
-  audience: "http://localhost:5000/api/admin",
+  // audience: "http://localhost:5000/api/admin",
+  audience: "https://grantly-staging.herokuapp.com/api/admin",
   issuer: `https://founder-grants.auth0.com/`,
   algorithms: ["RS256"]
 });
