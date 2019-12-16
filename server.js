@@ -13,7 +13,7 @@ const middleware = require("./auth/middleware.js");
 const jwtAuthz = require("express-jwt-authz"); 
 
 // Our own custom middleware to check if user is admin
-// const adminMiddleware = require("./auth/adminMiddleware.js");
+const adminMiddleware = require("./auth/adminMiddleware.js");
 const checkScopesAdmMod = jwtAuthz(['get:adminLocal', 'get:adminProduction', 'get:adminStaging'] , { checkAllScopes: false });
 
 server.use(cors());
@@ -29,7 +29,7 @@ server.use(bodyParser.urlencoded({
 server.use("/api/grants", grantRouter);
 server.use("/user", userRouter);
 // Implement middleware on our protected admin route This is working with test token globally!!!
-server.use("/api/admin", middleware, checkScopesAdmMod, adminRouter);
+server.use("/api/admin", middleware, adminMiddleware, adminRouter);
 //managem
 
 server.get("/", (req, res) => {
