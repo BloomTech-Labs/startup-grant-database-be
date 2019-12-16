@@ -21,6 +21,8 @@ server.use(express.json());
 server.use("/api/grants", grantRouter);
 server.use("/user", userRouter);
 // Implement middleware on our protected admin route
+//new note
+
 server.use("/api/admin", middleware, adminMiddleware, adminRouter);
 
 server.get("/", (req, res) => {
