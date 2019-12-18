@@ -1,5 +1,7 @@
 const db = require("../data/db-config.js");
 
+// Favorite models is being held here as well as general grant models
+
 module.exports = {
   getGrants,
   getGrantById,
@@ -39,6 +41,9 @@ function addSuggestion(suggestion) {
     });
 }
 
+// ========== Favorites Models ==========
+
+// favorites will only be returned if they have been reviewed
 function getFavorites(authId) {
   return db("favorites") 
     .innerJoin("grants", "grants.id", "favorites.grant_id")

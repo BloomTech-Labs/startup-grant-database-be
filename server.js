@@ -12,11 +12,9 @@ const favoriteRouter = require('./routers/favoriteRouter.js');
 // Auth0's authentication for all users
 const middleware = require("./auth/middleware.js");
 const jwtAuthz = require("express-jwt-authz");
-
+const adminMiddleware = require("./auth/adminMiddleware.js")
 //checkAllScopes: false
 const checkScopesAdmMod = jwtAuthz(["get:adminLocal", "get:adminProduction", "get:adminStaging"]);
-//make this array hidden variable & give those to heroku
-
 
 server.use(cors());
 server.use(helmet());
@@ -33,7 +31,8 @@ server.use(
 server.use("/api/grants", grantRouter);
 server.use("/user", userRouter);
 // Implement Auth0 middleware on our protected admin route This is working with test token globally!!!
-server.use("/api/admin", middleware, checkScopesAdmMod, adminRouter);
+// server.use("/api/admin", middleware, checkScopesAdmMod, adminRouter);
+server.use('/api/admin', middleware, adminMiddleware, adminRouter);
 server.use("/api/favorites", middleware, favoriteRouter );
 
 server.get("/", (req, res) => {
