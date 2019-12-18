@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const admin = require("../models/adminModel.js");
 
-// ==========GET: get all grants==========
+// ========== GET: get all grants==========
 router.get("/", (req, res) => {
   admin
     .getGrantsAdmin()
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
     );
 });
 
-// ==========PUT: update a grant==========
+// ========== PUT: update a grant==========
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
@@ -36,7 +36,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// ==========DELETE: remove a grant==========
+// ========== DELETE: remove a grant==========
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
 
@@ -58,7 +58,7 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-// ==========DELETE: remove a suggestion for a grant==========
+// ========== DELETE: remove a suggestion for a grant==========
 router.delete("/suggestion/:id", (req, res) => {
   const { id } = req.params;
   admin
@@ -78,7 +78,7 @@ router.delete("/suggestion/:id", (req, res) => {
         .json({ message: "There was an error removing the grant." });
     });
 });
-// ==========GET: gets all grant suggestions==========
+// ========== GET: gets all grant suggestions==========
 router.get("/suggestions/:grant_id", (req, res) => {
   const grant_id = req.params.grant_id;
   admin.getSuggestionsByGrantID(grant_id).then(suggestions => {
