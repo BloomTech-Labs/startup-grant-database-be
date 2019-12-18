@@ -36,7 +36,8 @@ router.get("/:id", (req, res) => {
 
 // ==========POST: posts new grant==========
 //added middleware that checks for an authorized user token before allowing post
-router.post("/", middleware, (req, res) => {
+// middleware, 
+router.post("/", (req, res) => {
   const grant = req.body;
 
   grants
@@ -52,7 +53,8 @@ router.post("/", middleware, (req, res) => {
 
 // ==========POST: posts new grant suggestion==========
 //added middleware that checks for an authorized user token before allowing post
-router.post("/suggestion", middleware, (req, res) => {
+//middleware,
+router.post("/suggestion",  (req, res) => {
   const suggestion = req.body;
 
   grants
