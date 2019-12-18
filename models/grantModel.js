@@ -41,8 +41,8 @@ function addSuggestion(suggestion) {
 
 function getFavorites(authId) {
   return db("favorites") 
-  .innerJoin("grants", "grants.id", "favorites.grant_id", "favorites.id")
-  .select("favorites.id", "grants.*")
+  .innerJoin("grants", "grants.id", "favorites.grant_id")
+  // .select("""grants.*")
   .where("auth_id", "=", authId)
 }
 
