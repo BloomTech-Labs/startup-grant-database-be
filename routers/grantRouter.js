@@ -67,4 +67,54 @@ router.post("/suggestion", middleware, (req, res) => {
     });
 });
 
+// // ==========POST: posts new favorite==========
+// router.post("/favorites", middleware, (req, res) =>{
+//   const favorite = req.body;
+
+//   grants.addFavorite(favorite)
+//   .then(favorite => {
+//     res.status(201).json(favorite);
+//   })
+//   .catch(error =>{
+//     res.status(500)
+//     .json({message: "There was an error adding the favorite."})
+//   });
+// });
+
+// // ==========GET: all favorites for a user==========
+// router.get("/favorites", middleware, (req, res) => {
+//   const authId = req.body.auth_id;
+//   grants
+//     .getFavorites(authId)
+//     .then(favorite => {
+//       console.log('fav', favorite);
+//       res.status(200).json(favorite);
+//     })
+//     .catch(error => {
+//       res.status(500).json({ message: "Error retrieving all the favorite grants" });
+//     });
+// });
+
+
+// // ==========DELETE: a favorites==========
+// router.delete("/favorites/:id", (req, res) => {
+//   const { id } = req.params;
+//   grant
+//     .removeFavorite(id)
+//     .then(favorite => {
+//       if (favorite) {
+//         res.status(200).json(favorite);
+//       } else {
+//         res.status(404).json({
+//           message: "The favorite with the specified ID does not exist."
+//         });
+//       }
+//     })
+//     .catch(error => {
+//       res
+//         .status(500)
+//         .json({ message: "There was an error removing the favorite grant." });
+//     });
+// });
+
 module.exports = router;

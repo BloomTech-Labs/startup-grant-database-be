@@ -36,6 +36,12 @@ exports.up = function(knex) {
       tbl.increments();
       tbl.string("role").defaultTo("user");
       tbl.string("auth_id", 200);
+    })
+    .createTable("favorites", tbl => {
+      tbl.increments();
+      tbl.integer("grant_id").unsigned().notNullable().references("id").inTable("grants").onDelete("CASCADE").onUpdate("CASCADE");
+      tbl.string("auth_id", 200).notNullable();
+      tbl.unique(["grant_id", "auth_id"]);
     });
 };
 
@@ -43,5 +49,6 @@ exports.down = function(knex) {
   return knex.schema
     .dropTableIfExists("users")
     .dropTableIfExists("requests")
-    .dropTableIfExists("grants");
+    .dropTableIfExists("grants")
+    .dropTableIfExists("favorites");
 };
