@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// const middleware = require('../auth/middleware.js');
 const grants = require("../models/grantModel.js");
 
 // ==========POST: posts new favorite==========
@@ -17,8 +16,9 @@ router.post("/", (req, res) =>{
   });
   
   // ==========GET: all favorites for a user==========
-  router.get("/", (req, res) => {
-    const authId = req.body.auth_id;
+  // rename endpoint to "my favorites" 
+  router.get("/myFavorites", (req, res) => {
+    const authId = req.body.userAuth_id;
     grants
       .getFavorites(authId)
       .then(favorite => {
@@ -32,9 +32,10 @@ router.post("/", (req, res) =>{
   
   
   // ==========DELETE: a favorites==========
-  router.delete("/:id", (req, res) => {
+  router.delete("/myFavorites/:id", (req, res) => {
     const { id } = req.params;
-    grant
+    console.log('req.params={id}',id)
+    grants
       .removeFavorite(id)
       .then(favorite => {
         if (favorite) {

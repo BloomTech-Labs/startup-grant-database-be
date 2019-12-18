@@ -13,11 +13,10 @@ const favoriteRouter = require('./routers/favoriteRouter.js');
 const middleware = require("./auth/middleware.js");
 const jwtAuthz = require("express-jwt-authz");
 
-// Our own custom middleware to check if user is admin
-// const adminMiddleware = require("./auth/adminMiddleware.js");
-//checkAllScopes: false,
-const checkScopesAdmMod = jwtAuthz(
-  ["get:adminLocal", "get:adminProduction", "get:adminStaging"]);
+//checkAllScopes: false
+const checkScopesAdmMod = jwtAuthz(["get:adminLocal", "get:adminProduction", "get:adminStaging"]);
+//make this array hidden variable & give those to heroku
+
 
 server.use(cors());
 server.use(helmet());

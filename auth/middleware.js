@@ -12,14 +12,18 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
+    //this needs to by a hidden variable
     jwksUri: `https://founder-grants.auth0.com/.well-known/jwks.json`
   }),
 
   // Validate the audience and the issuer.
   // Audience is actually just a bananna term, used to identify the request in Auth0.
   // This can be changed in the Auth0 dashboard.
+
+  //make these variables Dynamica and hidden
   audience: "http://localhost:5000/api/admin",
   // audience: "https://grantly-staging.herokuapp.com/api/admin",
+  //make this hidden
   issuer: `https://founder-grants.auth0.com/`,
   algorithms: ["RS256"]
 });

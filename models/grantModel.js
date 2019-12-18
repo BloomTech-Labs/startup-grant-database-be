@@ -41,14 +41,15 @@ function addSuggestion(suggestion) {
 
 function getFavorites(authId) {
   return db("favorites") 
-  .innerJoin("grants", "grants.id", "favorites.grant_id")
-  // .select("""grants.*")
-  .where("auth_id", "=", authId)
+    .innerJoin("grants", "grants.id", "favorites.grant_id")
+    .select("grants.*", "favorites.id as favoriteID")
+    .where("auth_id", "=", authId)
+    .andWhere({ is_reviewed: true })
 }
 
 function getFavoriteByID(favoriteId) {
   return db("favorites")
-    .where({ favoriteId })
+    .where("id", "=", favoriteId )
     .first();
 }
 
@@ -63,6 +64,6 @@ function addFavorite(favorite) {
 
 function removeFavorite(favoriteId) {
   return db("favorites")
-    .where({ favoriteId })
+    .where("id", "=", favoriteId )
     .del();
 }

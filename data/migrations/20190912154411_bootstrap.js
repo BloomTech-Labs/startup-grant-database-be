@@ -39,8 +39,16 @@ exports.up = function(knex) {
     })
     .createTable("favorites", tbl => {
       tbl.increments();
-      tbl.integer("grant_id").unsigned().notNullable().references("id").inTable("grants").onDelete("CASCADE").onUpdate("CASCADE");
-      tbl.string("auth_id", 200).notNullable();
+      tbl.integer("grant_id")
+      .unsigned()
+      .notNullable()
+      .references("id")
+      .inTable("grants")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
+      
+      tbl.string("auth_id", 200)
+      .notNullable();
       tbl.unique(["grant_id", "auth_id"]);
     });
 };
