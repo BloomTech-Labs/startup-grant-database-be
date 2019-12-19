@@ -2,69 +2,45 @@ const router = require("express").Router();
 const grants = require("../models/grantModel.js");
 
 // ========== POST: posts new favorite ==========
-router.post("/",  (req, res) =>{
+router.post("/", (req, res) => {
   
-    const favorite = req.body;
-    // const authId = req.body.userAuth_id;
-    // try {
-      
-    //   console.log('TEST BEFORE IF')
-    //   const changed = await grants.getFavorites(authId);
-    //   console.log('TEST AFTER IF')
-    //   // res.send({changed})
-    //   if (authId) {
-    //     res.status(200).json(changed);
-    //   } else {
-    //     res
-    //       .status(404)
-    //       .json({ message: "Favorite can not be blank." });
-    //   }
-    // } catch (error) {
-    //   res
-    //   .status(500)
-    //   .json({ message: "Error adding all the favorite grants" });
-    // }
-  
-    grants.addFavorite(favorite)
-    .then(favorite => {
-      res.status(201).json(favorite);
-    })
-    .catch(error =>{
-      res.status(501)
-      .json({message: "There was an error adding the favorite."})
-    });
+    const newFavorite = req.body;
+
+    if (!newFavorite.grant_id) {
+      res.status(404).json({ message: 'Favorite cannot be left blank.' })
+    } else if (!newFavorite.auth_id ) {
+      res.status(404).json({ message: 'Auth_id cannot be left blank.' })
+    } else {
+      grants.addFavorite(newFavorite)
+      .then(favorites => {
+        console.log('REQ BODY in then', favorites)
+         res.status(201).json(favorites);
+      })
+      .catch(error =>{
+        res.status(501)
+        .json({message: "There was an error adding the favorite."})
+      });
+    }
   });
   
   // ========== GET: all favorites for a user ==========
-  router.get("/myFavorites", async (req, res) => {
+  router.get("/myFavorites", (req, res) => {
 
     const authId = req.body.userAuth_id;
 
-    try {
-      const changed = await grants.getFavorites(authId);
-      // res.send({changed})
-      if (authId) {
-        res.status(200).json(changed);
-      } else {
-        res
-          .status(404)
-          .json({ message: "The favorite does not exist." });
-      }
-    } catch (error) {
-      res
-      .status(500)
-      .json({ message: "Error retrieving all the favorite grants" });
+    if(!authId) {
+      res.status(404).json({ message: 'userAuth_id cannot be left blank.' })
+    } else {
+       grants
+      .getFavorites(authId)
+      .then(favorite => {
+        res.status(200).json(favorite);
+      })
+      .catch(error => {
+        res.status(500).json({ message: "Error retrieving all the favorite grants" });
+      });
     }
 
-    // grants
-    //   .getFavorites(authId)
-    //   .then(favorite => {
-    //     console.log('fav', favorite);
-    //     res.status(200).json(favorite);
-    //   })
-    //   .catch(error => {
-    //     res.status(500).json({ message: "Error retrieving all the favorite grants" });
-    //   });
   });
   
   
@@ -78,7 +54,7 @@ router.post("/",  (req, res) =>{
           res.status(200).json(favorite);
         } else {
           res.status(404).json({
-            message: "The favorite with the specified ID does not exist."
+            message: "The favorite with the specified ID does not exist or you already deleted it."
           });
         }
       })
