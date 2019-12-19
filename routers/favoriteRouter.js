@@ -2,7 +2,7 @@ const router = require("express").Router();
 const grants = require("../models/grantModel.js");
 
 // ========== POST: posts new favorite ==========
-router.post("/", (req, res) =>{
+router.post("/", async (req, res) =>{
     const favorite = req.body;
 
     try {
