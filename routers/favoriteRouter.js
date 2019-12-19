@@ -3,12 +3,14 @@ const grants = require("../models/grantModel.js");
 
 // ========== POST: posts new favorite ==========
 router.post("/", async (req, res) =>{
-    const favorite = req.body;
+  
+    // const favorite = req.body;
+    const authId = req.body.userAuth_id;
 
     try {
-      const changed = await grants.addFavorite(favorite);
+      const changed = await grants.getFavorites(authId);
       // res.send({changed})
-      if (favorite) {
+      if (authId) {
         res.status(200).json(changed);
       } else {
         res
