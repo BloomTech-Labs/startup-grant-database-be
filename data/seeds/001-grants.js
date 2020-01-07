@@ -364,7 +364,6 @@ exports.seed = function(knex) {
           has_requests: false,
           details_last_updated: '8/23/2017'
         },
-<<<<<<< HEAD
         // {
         //   competition_name: 'J.M.K. Innovation Prize',
           // type: 'Competition',
@@ -1211,7 +1210,6 @@ exports.seed = function(knex) {
         //   has_requests: false,
         //   details_last_updated: "6/11/2019"
         // },
-=======
         {
           competition_name: 'J.M.K. Innovation Prize',
           type: 'Competition',
@@ -2058,7 +2056,6 @@ exports.seed = function(knex) {
           has_requests: false,
           details_last_updated: "6/11/2019"
         },
->>>>>>> master
       ]);
     });
 };
