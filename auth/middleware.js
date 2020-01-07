@@ -1,6 +1,14 @@
 const jwt = require("express-jwt");
-const jwtAuthz = require("express-jwt-authz");
 const jwksRsa = require("jwks-rsa");
+// require('dotenv').config();
+
+// The audeinces need to match on the FE and BE in order for the .env variables to work correctly.
+// See auth.congif.json in FE to align correctly.
+
+let audience = process.env.AUDIENCESTAGING;
+
+let domain = process.env.DOMAIN;
+
 
 // Authentication middleware. When used, the
 // Access Token must exist and be verified against
@@ -13,14 +21,16 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://founder-grants.auth0.com/.well-known/jwks.json`
+    jwksUri: `https://${domain}/.well-known/jwks.json`
   }),
 
   // Validate the audience and the issuer.
   // Audience is actually just a bananna term, used to identify the request in Auth0.
   // This can be changed in the Auth0 dashboard.
-  audience: "http://localhost:5000/api/admin",
-  issuer: `https://founder-grants.auth0.com/`,
+
+  audience: audience,
+  issuer: `https://${domain}/`,
+
   algorithms: ["RS256"]
 });
 
