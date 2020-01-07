@@ -39,16 +39,12 @@ function getSuggestions() {
 function updateGrant(changes, id) {
   return db("grants")
     .where({ id })
-<<<<<<< HEAD
     .update(changes)
     .then(() => {
       return db("grants")
         .where({ id })
         .first();
     });
-=======
-    .update(changes);
->>>>>>> master
 }
 
 function removeGrant(id) {
