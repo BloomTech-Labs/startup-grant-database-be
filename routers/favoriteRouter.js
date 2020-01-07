@@ -24,13 +24,12 @@ router.post("/", (req, res) => {
   });
   
   // ========== GET: all favorites for a user ==========
-  router.get("/myFavorites", (req, res) => {
+  router.get("/myFavorites/:id", (req, res) => {
 
-    const authId = req.body.userAuth_id;
-
-    if(!authId) {
-      res.status(404).json({ message: 'userAuth_id cannot be left blank.' })
-    } else {
+    const authId = req.params.id
+    // if(!authId) {
+    //   res.status(404).json({ message: 'userAuth_id cannot be left blank.' })
+    // } else {
        grants
       .getFavorites(authId)
       .then(favorite => {
@@ -39,8 +38,7 @@ router.post("/", (req, res) => {
       .catch(error => {
         res.status(500).json({ message: "Error retrieving all the favorite grants" });
       });
-    }
-
+    // }
   });
   
   

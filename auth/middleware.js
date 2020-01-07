@@ -4,7 +4,9 @@ const jwksRsa = require("jwks-rsa");
 
 // The audeinces need to match on the FE and BE in order for the .env variables to work correctly.
 // See auth.congif.json in FE to align correctly.
+
 let audience = process.env.AUDIENCESTAGING;
+
 let domain = process.env.DOMAIN;
 
 
