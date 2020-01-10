@@ -12,7 +12,7 @@ const testGrant = {
   amount: "3",
   amount_notes: "test",
   geographic_region: "test",
-  domain_areas: "test",
+  // domain_areas: "test",
   target_entrepreneur_demographic: "test",
   notes: "test",
   early_stage_funding: false,
