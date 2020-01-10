@@ -1,6 +1,6 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex("grants").truncate()
+  return knex("grants")
     .then(function() {
       // Inserts seed entries
       return knex("grants").insert([
