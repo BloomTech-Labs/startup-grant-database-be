@@ -10,7 +10,7 @@ exports.seed = function(knex) {
         {grant_id: 3, auth_id: 'google-oauth2|105085847106269862248'},
         {grant_id: 4, auth_id: 'google-oauth2|105085847106269862248'},
         {grant_id: 5, auth_id: 'google-oauth2|105085847106269862248'},
-        {grant_id: 19, auth_id: 'google-oauth2|105085847106269862248'}
+        // {grant_id: 19, auth_id: 'google-oauth2|105085847106269862248'}
       ]);
     });
 };

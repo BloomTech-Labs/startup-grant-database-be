@@ -32,11 +32,11 @@ exports.up = function(knex) {
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
     })
-    .createTable("users", tbl => {
-      tbl.increments();
-      tbl.string("role").defaultTo("user");
-      tbl.string("auth_id", 200);
-    })
+    // .createTable("users", tbl => {
+    //   tbl.increments();
+    //   tbl.string("role").defaultTo("user");
+    //   tbl.string("auth_id", 200);
+    // })
     .createTable("favorites", tbl => {
       tbl.increments();
       tbl.integer("grant_id")
