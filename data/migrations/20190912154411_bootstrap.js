@@ -32,13 +32,28 @@ exports.up = function(knex) {
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
     })
-    // .createTable("users", tbl => {
-    //   tbl.increments();
-    //   tbl.string("role").defaultTo("user");
-    //   tbl.string("auth_id", 200);
-    // })
-    .createTable("favorites", tbl => {
+    .createTable("users", tbl => {
+      // token row
       tbl.increments();
+      tbl
+        .string('email', 128)
+        .notNullable()
+        .unique()
+      
+      tbl
+        .string("role").defaultTo("user").notNullable();
+    })
+    .createTable("favorites", tbl => {
+      // many to many (grants - users)
+      tbl
+        .integer('email_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+
       tbl.integer("grant_id")
       .unsigned()
       .notNullable()
@@ -46,10 +61,11 @@ exports.up = function(knex) {
       .inTable("grants")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
+      tbl.primary(['email_id', 'grant_id'])
       
-      tbl.string("auth_id", 200)
-      .notNullable();
-      tbl.unique(["grant_id", "auth_id"]);
+      // tbl.string("auth_id", 200)
+      // .notNullable();
+      // tbl.unique(["grant_id", "auth_id"]);
     });
 };
 
