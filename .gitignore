@@ -87,3 +87,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 data/grants.db3
+/data/grantly.db3
+.idea
