@@ -18,6 +18,8 @@ exports.up = function(knex) {
       tbl.boolean("is_reviewed"); //Keep
       tbl.boolean("has_requests"); //Keep
       tbl.date("details_last_updated"); //Keep
+      tbl.string("domain_areas");
+      tbl.string("type");
     })
     .createTable("requests", tbl => {
       tbl.increments();
