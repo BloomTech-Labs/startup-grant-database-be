@@ -25,10 +25,10 @@ router.post("/", (req, res) => {
   
   // ========== GET: all favorites for a user ==========
   router.get("/myFavorites/:id", (req, res) => {
-
-    const id = req.params.id
-    // if(!id) {
-    //   res.status(404).json({ message: 'id cannot be left blank.' })
+    console.log(req.params.id);
+    const authId = req.params.id;
+    // if(!authId) {
+    //   res.status(404).json({ message: 'userAuth_id cannot be left blank.' })
     // } else {
        grants
       .getFavorites(id)
