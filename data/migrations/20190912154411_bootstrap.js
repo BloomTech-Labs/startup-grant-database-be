@@ -40,8 +40,7 @@ exports.up = function(knex) {
         .notNullable()
         .unique()
       
-      tbl
-        .string("role").defaultTo("user").notNullable();
+      tbl.string("role").defaultTo("user").notNullable();
       tbl.string("first_name", 128)
       tbl.string("last_name", 128)
       tbl.string("country", 128)

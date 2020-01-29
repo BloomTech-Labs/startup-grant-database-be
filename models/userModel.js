@@ -6,7 +6,7 @@ module.exports = {
   getUserById,
   // getUserByAuthId,
   addUser,
-  // removeUser,
+  removeUser,
   updateUser,
 };
 
@@ -34,17 +34,17 @@ function getUserBy(filter) {
   return db("users").where(filter);
 }
 
-function getUserById(id) {
-  return db("users")
-    .where({ id })
-    .first();
-}
-
-// function removeUser(id) {
-//   return db('users')
-//     .where('id', Number(id))
-//     .del()
+// function getUserById(id) {
+//   return db("users")
+//     .where({ id })
+//     .first();
 // }
+
+function removeUser(id) {
+  return db('users')
+    .where('id', Number(id))
+    .del()
+}
 
 function updateUser(id, user) {
   return db('users')
