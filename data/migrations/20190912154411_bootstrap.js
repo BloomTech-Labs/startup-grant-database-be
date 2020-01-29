@@ -42,6 +42,15 @@ exports.up = function(knex) {
       
       tbl
         .string("role").defaultTo("user").notNullable();
+      tbl.string("first_name", 128)
+      tbl.string("last_name", 128)
+      tbl.string("country", 128)
+      tbl.string("state", 128)
+      tbl.string("city", 128)
+      tbl.string("street", 128)
+      tbl.string("apartment", 128)
+      tbl.string("postal", 128)
+
     })
     .createTable("favorites", tbl => {
       // many to many (grants - users)
