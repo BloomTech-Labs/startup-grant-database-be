@@ -45,6 +45,7 @@ exports.up = function(knex) {
       tbl.string("role").defaultTo("user").notNullable();
       tbl.string("first_name", 128)
       tbl.string("last_name", 128)
+      tbl.string("phone_number", 128)
       tbl.string("country", 128)
       tbl.string("state", 128)
       tbl.string("city", 128)
@@ -65,17 +66,13 @@ exports.up = function(knex) {
         .onDelete('CASCADE');
 
       tbl.integer("grant_id")
-      .unsigned()
-      .notNullable()
-      .references("id")
-      .inTable("grants")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
-      tbl.primary(['email_id', 'grant_id'])
-      
-      // tbl.string("auth_id", 200)
-      // .notNullable();
-      // tbl.unique(["grant_id", "auth_id"]);
+        .unsigned()
+        .notNullable()
+        .references("id")
+        .inTable("grants")
+        .onDelete("CASCADE")
+        .onUpdate("CASCADE");
+        tbl.primary(['email_id', 'grant_id'])
     });
 };
 

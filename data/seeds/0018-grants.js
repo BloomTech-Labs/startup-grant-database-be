@@ -4,7 +4,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('grants').insert([
-  {
+        {
           competition_name: 'MIT Clean Energy Prize',
           type: 'Competition',
           area_focus: 'Social Entrepreneurship',

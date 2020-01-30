@@ -18,7 +18,7 @@ router.post("/", (req, res) => {
 });
 
 // ==========GET: get specific user by ID==========
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
   const user = req.headers;
 
   users

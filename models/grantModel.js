@@ -44,11 +44,11 @@ function addSuggestion(suggestion) {
 // ========== Favorites Models ==========
 
 // favorites will only be returned if they have been reviewed
-function getFavorites(authId) {
+function getFavorites(id) {
   return db("favorites") 
     .innerJoin("grants", "grants.id", "favorites.grant_id")
     .select("grants.*", "favorites.id as favoriteID")
-    .where("auth_id", "=", authId)
+    .where("id", "=", id)
     .andWhere({ is_reviewed: true })
 }
 
