@@ -40,6 +40,8 @@ router.get("/:id", (req, res) => {
 // put request to User
 router.put('/:id', (req , res) => {
   const id = req.params.id
+  const changes = req.body
+  
   if (!id) {
     res.status(404).json({ message: "No user found with requested ID"})
   }
