@@ -17,12 +17,12 @@ router.post("/", (req, res) => {
     });
 });
 
-// ==========GET: get specific user by auth ID==========
+// ==========GET: get specific user by ID==========
 router.get("/", (req, res) => {
   const user = req.headers;
 
   users
-    .getUserByAuthId(user.auth_id)
+    .getUserById(user.id)
     .then(user => {
       if (user) {
         res.status(200).json(user);
