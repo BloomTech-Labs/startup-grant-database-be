@@ -89,3 +89,5 @@ typings/
 data/grants.db3
 /data/grantly.db3
 .idea
+
+*.db3
