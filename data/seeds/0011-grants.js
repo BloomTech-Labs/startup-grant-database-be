@@ -196,7 +196,7 @@ exports.seed = function(knex) {
           amount: 100000,
           amount_notes: null,
           geographic_region: 'North America',
-          country: 'United States'
+          country: 'United States',
           domain_areas: 'Low-income communities, educational inequity',
           target_entrepreneur_demographic: null,
           notes: 'Must be a Teach for America alum or corps member',
