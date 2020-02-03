@@ -19,7 +19,7 @@ exports.up = function(knex) {
       tbl.boolean("is_reviewed"); //Keep
       tbl.boolean("has_requests"); //Keep
       tbl.date("details_last_updated"); //Keep
-      tbl.string("domain_areas");
+      tbl.string("domain_areas", 500);
       tbl.string("type");
     })
     .createTable("requests", tbl => {
@@ -38,13 +38,9 @@ exports.up = function(knex) {
     .createTable("users", tbl => {
       // token row
       tbl.increments();
-      tbl
-        .string('email', 128)
-        .notNullable()
-        .unique()
-      
-      tbl
-        .string("role").defaultTo("user").notNullable();
+      tbl.string('email').notNullable().unique();
+      tbl.string('sub').notNullable();
+      tbl.timestamps(true, true);
     })
     .createTable("favorites", tbl => {
       // many to many (grants - users)
@@ -74,8 +70,8 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTableIfExists("users")
+    .dropTableIfExists("favorites")
     .dropTableIfExists("requests")
     .dropTableIfExists("grants")
-    .dropTableIfExists("favorites");
+    .dropTableIfExists("users");
 };
