@@ -11,6 +11,7 @@ exports.up = function(knex) {
       tbl.integer("amount"); //Keep
       tbl.string("amount_notes", 1000); //Keep
       tbl.string("geographic_region", 255); //Keep
+      tbl.string("country");
       // tbl.string("domain_areas", 1000); 
       tbl.string("target_entrepreneur_demographic", 255); //Keep
       tbl.string("notes", 5000); //Keep
