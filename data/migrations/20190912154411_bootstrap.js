@@ -39,6 +39,11 @@ exports.up = function (knex) {
             // token row
             tbl.increments();
             tbl.string('email').notNullable().unique();
+            tbl.string('first_name');
+            tbl.string('last_name');
+            tbl.string('role');
+            tbl.string('phone');
+            
         })
         .createTable("favorites", tbl => {
             // many to many (grants - users)
