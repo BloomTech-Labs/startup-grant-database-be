@@ -18,10 +18,8 @@ const dbConnection = process.env.DATABASE_URL || localPg;
 module.exports = {
   
   development: {
-    client: "sqlite3",
-    connection: {
-      filename: './data/grantly.db3',
-    },
+    client: "pg",
+    connection: dbConnection,
     migrations: {
       directory: __dirname + "/data/migrations"
     },
