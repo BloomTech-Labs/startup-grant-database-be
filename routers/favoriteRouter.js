@@ -5,7 +5,7 @@ const grants = require("../models/grantModel.js");
 router.post("/", (req, res) => {
   
     const newFavorite = req.body;
-
+    console.log(newFavorite);
     if (!newFavorite.grant_id) {
       res.status(404).json({ message: 'Favorite cannot be left blank.' })
     } else if (!newFavorite.auth_id ) {
@@ -36,6 +36,7 @@ router.post("/", (req, res) => {
         res.status(200).json(favorite);
       })
       .catch(error => {
+          console.log(error);
         res.status(500).json({ message: "Error retrieving all the favorite grants" });
       });
     // }
