@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const server = express();
+const morgan = require('morgan');
 const bodyParser = require("body-parser");
 
 const grantRouter = require("./routers/grantRouter.js");
@@ -19,6 +20,7 @@ const checkScopesAdmMod = jwtAuthz(["get:adminLocal", "get:adminProduction", "ge
 server.use(cors());
 server.use(helmet());
 server.use(express.json());
+server.use(morgan('dev'));
 // enable the use of request body parsing middleware
 server.use(bodyParser.json());
 server.use(

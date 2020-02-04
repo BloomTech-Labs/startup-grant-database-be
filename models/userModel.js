@@ -4,8 +4,10 @@ module.exports = {
   getUser,
   getUserBy,
   getUserById,
-  getUserByAuthId,
-  addUser
+  // getUserByAuthId,
+  addUser,
+  // removeUser,
+  // updateUser,
 };
 
 function addUser(user) {
@@ -17,9 +19,10 @@ function addUser(user) {
     });
 }
 
-function getUserByAuthId(auth_id) {
+function getUserById(id) {
   return db("users")
-    .where({ auth_id })
+    .where({ id })
+    .select('id', 'email')
     .first();
 }
 
@@ -37,8 +40,14 @@ function getUserById(id) {
     .first();
 }
 
-function getUserbyAuthId(id) {
-  return db("users")
-    .where({AuthId: id})
-    .first()
-}
+// function removeUser(id) {
+//   return db('users')
+//     .where('id', Number(id))
+//     .del()
+// }
+
+// function updateUser(id, user) {
+//   return db('users')
+//     .where('id', Number(id))
+//     .update(user)
+// }

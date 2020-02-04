@@ -63,7 +63,7 @@ function addFavorite(favorite) {
     .insert(favorite, "id")
     .then(ids => {
       const [id] = ids;
-      return getFavoriteByID(id);
+      return getFavorites(favorite.auth_id);
     })
 }
 
