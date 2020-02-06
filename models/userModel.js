@@ -34,11 +34,11 @@ function getUserBy(filter) {
   return db("users").where(filter);
 }
 
-function getUserById(id) {
-  return db("users")
-    .where({ id })
-    .first();
-}
+// function getUserById(id) {
+//   return db("users")
+//     .where({ id })
+//     .first();
+// }
 
 // function removeUser(id) {
 //   return db('users')
