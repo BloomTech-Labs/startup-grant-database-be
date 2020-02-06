@@ -43,7 +43,10 @@ exports.up = function (knex) {
             tbl.string('last_name');
             tbl.string('role');
             tbl.string('phone');
-            
+            tbl.string('company');
+            tbl.string('company_url');
+            tbl.string('about');
+                        
         })
         .createTable("favorites", tbl => {
             // many to many (grants - users)
