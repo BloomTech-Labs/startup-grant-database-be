@@ -7,7 +7,7 @@ module.exports = {
   // getUserByAuthId,
   addUser,
   // removeUser,
-  // updateUser,
+  updateUser,
 };
 
 function addUser(user) {
@@ -46,8 +46,8 @@ function getUserById(id) {
 //     .del()
 // }
 
-// function updateUser(id, user) {
-//   return db('users')
-//     .where('id', Number(id))
-//     .update(user)
-// }
+function updateUser(id, user) {
+  return db('users')
+    .where('id', Number(id))
+    .update(user)
+}
