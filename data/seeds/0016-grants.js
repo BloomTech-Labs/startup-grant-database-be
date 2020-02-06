@@ -240,24 +240,6 @@ exports.seed = function(knex) {
           details_last_updated: "8/23/2017"
         },
         {
-          competition_name: 'Westly Prize',
-          type: 'Competition',
-          area_focus: 'Social Entrepreneurship',
-          sponsoring_entity: 'Westly Foundation',
-          website: 'http://westly.org/westly-prize/',
-          most_recent_application_due_date: "10/15/2017",
-          amount: 20000,
-          amount_notes: null,
-          geographic_region: 'California',
-          domain_areas: 'Novel advancements over existing solutions to a community problem',
-          target_entrepreneur_demographic: null,
-          notes: 'Must be a resident of California at time of application and 28 years or younger by 12/31/2015',
-          early_stage_funding: false,
-          is_reviewed: true,
-          has_requests: false,
-          details_last_updated: "8/23/2017"
-        },
-        {
           competition_name: 'Wireless Innovation Project',
           type: 'Competition',
           area_focus: 'Social Entrepreneurship',
