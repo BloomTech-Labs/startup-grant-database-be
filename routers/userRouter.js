@@ -18,8 +18,10 @@ router.post("/", (req, res) => {
 });
 
 // ==========GET: get specific user by ID==========
+
 router.get("/:id", (req, res) => {
   const user = req.headers;
+
 
   users
     .getUserById(user.id)
@@ -35,6 +37,26 @@ router.get("/:id", (req, res) => {
     .catch(error => {
       res.status(500).json({ message: "Failed to load user." });
     });
+});
+// ==========UPDATE: update specific user by ID==========
+
+router.put("/:id", (req, res) => {
+  const id = req.params.id;
+  const user = req.body;
+  users
+    .updateUser(id, user)
+    .then(user => {
+      if (user){
+        res.status(200).json(user);
+      }
+      else {
+        res.status(404).json({message: "the user with that ID does not exist"})
+      }
+    })
+    .catch(err => {
+      res.status(500).json({message: "failed to update user"});
+    });
+
 });
 
 // put request to User
