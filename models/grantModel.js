@@ -85,6 +85,5 @@ function addFavorite(favorite) {
 function removeFavorite(favoriteId) {
   return db("favorites")
     .where("id", "=", favoriteId )
-    .select()
     .del();
 }
