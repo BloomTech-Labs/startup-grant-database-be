@@ -94,4 +94,18 @@ router.get('/:id/suggestion', middleware, (req, res) => {
 })
 
 
+router.get('/suggestion/:id', middleware, (req, res) => {
+  const {id} = req.params
+
+  grants.getSuggestionById(id)
+  .then(res => { 
+    res.status(201).json(res);
+  })
+  .catch(error => {
+    res.status(500).json({ message: "There was an error removing the suggestion." });
+  });
+})
+
+
+
 module.exports = router;

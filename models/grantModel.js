@@ -12,7 +12,8 @@ module.exports = {
   removeFavorite,
   getFavoriteByID,
   removeSuggestion,
-  fetchSuggestions
+  fetchSuggestions,
+  getSuggestionById
 };
 
 function getGrants() {
@@ -55,6 +56,13 @@ function fetchSuggestions(grant_id) {
     .where('grant_id', "=", grant_id)
   	
 }
+
+function getSuggestionById(id) {
+  return db("requests")
+    .where({ id })
+    .first();
+}
+
 
 // ========== Favorites Models ==========
 
