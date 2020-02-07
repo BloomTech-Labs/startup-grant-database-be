@@ -10,7 +10,9 @@ module.exports = {
   getFavorites,
   addFavorite,
   removeFavorite,
-  getFavoriteByID
+  getFavoriteByID,
+  removeSuggestion,
+  fetchSuggestions
 };
 
 function getGrants() {
@@ -41,6 +43,19 @@ function addSuggestion(suggestion) {
     });
 }
 
+function removeSuggestion(suggestion_id) {
+  return db('requests')
+    .where("id", "=", suggestion_id )
+    .del()
+}
+
+
+function fetchSuggestions(grant_id) {
+  return db('requests')
+    .where('grant_id', "=", grant_id)
+  	
+}
+
 // ========== Favorites Models ==========
 
 // favorites will only be returned if they have been reviewed
@@ -56,7 +71,7 @@ function getFavoriteByID(favoriteId) {
   return db("favorites")
     .where("id", "=", favoriteId )
     .first();
-}
+  }
 
 function addFavorite(favorite) {
   return db("favorites")
@@ -70,5 +85,6 @@ function addFavorite(favorite) {
 function removeFavorite(favoriteId) {
   return db("favorites")
     .where("id", "=", favoriteId )
+    .select()
     .del();
 }
