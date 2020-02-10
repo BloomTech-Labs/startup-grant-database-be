@@ -1,13 +1,14 @@
 const db = require("../data/db-config.js");
 
 module.exports = {
-  getUser,
+  getUsers,
   getUserBy,
   getUserById,
   // getUserByAuthId,
+  getUserByEmail,
   addUser,
-  // removeUser,
-  updateUser,
+  removeUser,
+  updateUser
 };
 
 function addUser(user) {
@@ -22,11 +23,11 @@ function addUser(user) {
 function getUserById(id) {
   return db("users")
     .where({ id })
-    .select('id', 'email')
+    .select("id", "email")
     .first();
 }
 
-function getUser() {
+function getUsers() {
   return db("users");
 }
 
@@ -34,20 +35,25 @@ function getUserBy(filter) {
   return db("users").where(filter);
 }
 
-// function getUserById(id) {
-//   return db("users")
-//     .where({ id })
-//     .first();
-// }
+function getUserById(id) {
+  return db("users")
+    .where({ id })
+    .first();
+}
 
-// function removeUser(id) {
-//   return db('users')
-//     .where('id', Number(id))
-//     .del()
-// }
+function getUserByEmail(id) {
+  return db("users")
+    .where(id, "=", "email")
+    .first();
+}
+function removeUser(email) {
+  return db("users")
+    .where("id", "=", email)
+    .del();
+}
 
 function updateUser(id, user) {
-  return db('users')
-    .where('id', Number(id))
-    .update(user)
+  return db("users")
+    .where("email", "=", id)
+    .update(user);
 }

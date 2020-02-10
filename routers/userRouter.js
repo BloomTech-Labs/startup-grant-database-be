@@ -18,11 +18,12 @@ router.post("/", (req, res) => {
 });
 
 // ==========GET: get specific user by ID==========
-router.get("/", (req, res) => {
-  const user = req.body;
+
+router.get("/:id", (req, res) => {
+  const { user } = req.params.email;
 
   users
-    .getUserById(user.id)
+    .getUserByEmail(user)
     .then(user => {
       if (user) {
         res.status(200).json(user);
@@ -39,22 +40,63 @@ router.get("/", (req, res) => {
 // ==========UPDATE: update specific user by ID==========
 
 router.put("/:id", (req, res) => {
-  const id = req.params.id;
-  const user = req.body;
+  const { user } = req.params;
   users
-    .updateUser(id, user)
+    .updateUser(user)
     .then(user => {
-      if (user){
+      if (user) {
         res.status(200).json(user);
-      }
-      else {
-        res.status(404).json({message: "the user with that ID does not exist"})
+      } else {
+        router.post("/", (req, res) => {
+          users
+            .addUser(user)
+            .then(res => {
+              res.status(201).json({ res });
+            })
+            .catch(err => {
+              res
+                .status(500)
+                .json({ message: "Could not add user, server error." });
+            });
+        });
       }
     })
     .catch(err => {
-      res.status(500).json({message: "failed to update user"});
+      res.status(500).json({ message: "failed to update user" });
     });
+});
 
+// put request to User
+// router.put("/:id", (req, res) => {
+//   const id = req.params.id;
+//   const changes = req.body;
+
+//   if (!id) {
+//     res.status(404).json({ message: "No user found with requested ID" });
+//   }
+//   user
+//     .updateUser(id, changes)
+//     .then(res => {
+//       res.status(200).json(res);
+//     })
+//     .catch(err => {
+//       res.status(500).json({ message: "User could not be updated" });
+//     });
+// });
+
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  if (!id) {
+    res.status(404).json({ message: "No user found with requested ID" });
+  }
+  user
+    .removeUser(id)
+    .then(res => {
+      res.status(200).json(res);
+    })
+    .catch(err => {
+      res.status(500).json({ message: "User could not be removed" });
+    });
 });
 
 module.exports = router;
