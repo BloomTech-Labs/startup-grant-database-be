@@ -10,7 +10,10 @@ module.exports = {
   getFavorites,
   addFavorite,
   removeFavorite,
-  getFavoriteByID
+  getFavoriteByID,
+  removeSuggestion,
+  fetchSuggestions,
+  getSuggestionById
 };
 
 function getGrants() {
@@ -41,14 +44,34 @@ function addSuggestion(suggestion) {
     });
 }
 
+function removeSuggestion(suggestion_id) {
+  return db('requests')
+    .where("id", "=", suggestion_id )
+    .del()
+}
+
+
+function fetchSuggestions(grant_id) {
+  return db('requests')
+    .where('grant_id', "=", grant_id)
+  	
+}
+
+function getSuggestionById(id) {
+  return db("requests")
+    .where({ id })
+    .first();
+}
+
+
 // ========== Favorites Models ==========
 
 // favorites will only be returned if they have been reviewed
-function getFavorites(authId) {
+function getFavorites(id) {
   return db("favorites") 
     .innerJoin("grants", "grants.id", "favorites.grant_id")
     .select("grants.*", "favorites.id as favoriteID")
-    .where("auth_id", "=", authId)
+    .where("id", "=", id)
     .andWhere({ is_reviewed: true })
 }
 
@@ -56,14 +79,14 @@ function getFavoriteByID(favoriteId) {
   return db("favorites")
     .where("id", "=", favoriteId )
     .first();
-}
+  }
 
 function addFavorite(favorite) {
   return db("favorites")
     .insert(favorite, "id")
     .then(ids => {
       const [id] = ids;
-      return getFavoriteByID(id);
+      return getFavorites(favorite.auth_id);
     })
 }
 

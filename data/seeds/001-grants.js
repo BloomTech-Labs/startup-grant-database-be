@@ -94,7 +94,7 @@ exports.seed = function(knex) {
           amount: 1000,
           amount_notes: null,
           geographic_region: 'North America',
-          contry: 'United States',
+          country: 'United States',
           target_entrepreneur_demographic: null,
           notes: 'Innovative ideas from individuals, small businesses, startups, think tanks, anyone with a great plan or idea. Package your idea into a 2-minute video.',
           early_stage_funding: true,

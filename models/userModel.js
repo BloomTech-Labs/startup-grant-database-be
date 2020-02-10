@@ -1,53 +1,55 @@
 const db = require("../data/db-config.js");
+const BaseModel = require('./base.model');
 
-module.exports = {
-  getUser,
-  getUserBy,
-  getUserById,
-  // getUserByAuthId,
-  addUser,
-  // removeUser,
-  // updateUser,
-};
+class UsersModel extends BaseModel {
 
-function addUser(user) {
-  return db("users")
-    .insert(user, "id")
-    .then(ids => {
-      const [id] = ids;
-      return getUserById(id);
-    });
 }
 
-function getUserById(id) {
-  return db("users")
-    .where({ id })
-    .select('id', 'email')
-    .first();
-}
+module.exports = new UsersModel('users');
 
-function getUser() {
-  return db("users");
-}
-
-function getUserBy(filter) {
-  return db("users").where(filter);
-}
-
-function getUserById(id) {
-  return db("users")
-    .where({ id })
-    .first();
-}
-
-// function removeUser(id) {
-//   return db('users')
-//     .where('id', Number(id))
-//     .del()
+// function addUser(user) {
+//   return db("users")
+//     .insert(user, "id")
+//     .then(ids => {
+//       const [id] = ids;
+//       return getUserById(id);
+//     });
 // }
-
+//
+// function getUserById(id) {
+//   return db("users")
+//     .where({ id })
+//     .select("id", "email")
+//     .first();
+// }
+//
+// function getUsers() {
+//   return db("users");
+// }
+//
+// function getUserBy(filter) {
+//   return db("users").where(filter);
+// }
+//
+// function getUserById(id) {
+//   return db("users")
+//     .where({ id })
+//     .first();
+// }
+//
+// function getUserByEmail(id) {
+//   return db("users")
+//     .where(id, "=", "email")
+//     .first();
+// }
+// function removeUser(email) {
+//   return db("users")
+//     .where("id", "=", email)
+//     .del();
+// }
+//
 // function updateUser(id, user) {
-//   return db('users')
-//     .where('id', Number(id))
-//     .update(user)
+//   return db("users")
+//     .where("email", "=", id)
+//     .update(user);
 // }

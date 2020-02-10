@@ -31,7 +31,7 @@ server.use(
 
 // Routes
 server.use("/api/grants", grantRouter);
-server.use("/user", userRouter);
+server.use("/api/users",middleware, userRouter);
 
 // Implement Auth0 middleware on our protected admin route This is working with test token globally!!!
 // server.use("/api/admin", middleware, checkScopesAdmMod, adminRouter);
