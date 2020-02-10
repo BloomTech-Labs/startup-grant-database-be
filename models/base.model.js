@@ -25,3 +25,5 @@ class Model {
         return db(this.name).where({id}).del();
     }
 }
+
+module.exports = Model;
