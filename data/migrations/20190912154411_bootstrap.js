@@ -22,54 +22,8 @@ exports.up = function (knex) {
             tbl.string("domain_areas", 500);
             tbl.string("type");
         })
-        .createTable("requests", tbl => {
-            tbl.increments();
-            tbl.string("subject", 255);
-            tbl.string("suggestion", 1000);
-            tbl
-                .integer("grant_id")
-                .unsigned()
-                .notNullable()
-                .references("id")
-                .inTable("grants")
-                .onDelete("CASCADE")
-                .onUpdate("CASCADE");
-        })
-        .createTable("users", tbl => {
-            // token row
-            tbl.increments();
-            tbl.string('email').notNullable().unique();
-            tbl.string('first_name');
-            tbl.string('last_name');
-            tbl.string('role');
-            tbl.string('phone');
-            tbl.string('company');
-            tbl.string('company_url');
-            tbl.string('about');
-                        
-        })
-        .createTable("favorites", tbl => {
-            // many to many (grants - users)
-            tbl.increments();
-
-            tbl.integer("grant_id")
-                .unsigned()
-                .notNullable()
-                .references("id")
-                .inTable("grants")
-                .onDelete("CASCADE")
-                .onUpdate("CASCADE");
-
-            tbl.string("auth_id", 200)
-                .notNullable();
-            // tbl.unique(["grant_id", "auth_id"]);
-        });
 };
 
 exports.down = function (knex) {
-    return knex.schema
-        .dropTableIfExists("favorites")
-        .dropTableIfExists("requests")
-        .dropTableIfExists("grants")
-        .dropTableIfExists("users");
+    return knex.schema.dropTableIfExists("grants");
 };

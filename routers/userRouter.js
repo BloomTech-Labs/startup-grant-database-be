@@ -1,20 +1,23 @@
 const router = require("express").Router();
 // const bcrypt = require("bcryptjs");
 
-const users = require("../models/userModel.js");
+const Users = require("../models/userModel");
 
-// ==========POST: post new user==========
-router.post("/", (req, res) => {
-  let user = req.body;
-
-  users
-    .addUser(user)
-    .then(user => {
-      res.status(201).json(user);
-    })
-    .catch(error => {
-      res.status(500).json({ message: "Error adding user" });
-    });
+// ==========POST: check to see if there is an existing email, create one if not==========
+router.post("/", async (req, res) => {
+  const {email} = req.body;
+  try {
+      const foundUser = await Users.findBy({email});
+      console.log(foundUser);
+      if (foundUser.length > 0) {
+          return res.json(foundUser[0]);
+      }
+      const [newUser] = await Users.add({email});
+      res.status(201).json(newUser);
+  } catch (error) {
+      console.log(error);
+      res.status(500).json(error);
+  }
 });
 
 // ==========GET: get specific user by ID==========
@@ -39,31 +42,14 @@ router.get("/:id", (req, res) => {
 });
 // ==========UPDATE: update specific user by ID==========
 
-router.put("/:id", (req, res) => {
-  const { user } = req.params;
-  users
-    .updateUser(user)
-    .then(user => {
-      if (user) {
-        res.status(200).json(user);
-      } else {
-        router.post("/", (req, res) => {
-          users
-            .addUser(user)
-            .then(res => {
-              res.status(201).json({ res });
-            })
-            .catch(err => {
-              res
-                .status(500)
-                .json({ message: "Could not add user, server error." });
-            });
-        });
-      }
-    })
-    .catch(err => {
-      res.status(500).json({ message: "failed to update user" });
-    });
+router.put("/:id", async (req, res) => {
+  const {id} = req.params;
+  try {
+      const [updatedUser] = await Users.update(id, req.body);
+      res.json(updatedUser);
+  } catch(error) {
+      res.status(500).json(error);
+  }
 });
 
 // put request to User

@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
     //   res.status(404).json({ message: 'userAuth_id cannot be left blank.' })
     // } else {
        grants
-      .getFavorites(id)
+      .getFavorites({authId})
       .then(favorite => {
         res.status(200).json(favorite);
       })
