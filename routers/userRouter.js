@@ -1,11 +1,21 @@
 const router = require("express").Router();
 // const bcrypt = require("bcryptjs");
 
-const users = require("../models/userModel.js");
+const Users = require("../models/userModel");
 
-// ==========POST: post new user==========
-router.post("/", (req, res) => {
-  let user = req.body;
+// ==========POST: check to see if there is an existing email, create one if not==========
+router.post("/", async (req, res) => {
+  let {email} = req.body;
+  try {
+      const foundUser = await Users.findBy({email});
+      if (foundUser.length > 0) {
+          return res.json(foundUser[0]);
+      }
+      const [newUser] = await Users.add({email});
+      res.status(201).json(newUser);
+  } catch (error) {
+      res.status(500).json(error);
+  }
 
   users
     .addUser(user)
