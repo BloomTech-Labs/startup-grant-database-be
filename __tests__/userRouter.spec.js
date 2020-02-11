@@ -19,10 +19,6 @@ beforeAll(async () => {
 });
 
 
-afterAll(async () => {
-    await db('users').truncate();
-});
-
 describe('Testing environment', () => {
     it('DB_ENV should be testing', () => {
         expect(process.env.DB_ENV).toBe('testing');
