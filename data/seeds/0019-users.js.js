@@ -1,7 +1,8 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('users').del()
-      .then(function () {
+  return knex('users')
+    .del()
+    .then(function() {
       // Inserts seed entries
       return knex('users').insert([
         {
@@ -15,9 +16,8 @@ exports.seed = function(knex) {
           city: 'Tirana',
           street: 'albanian st',
           apartment: '2',
-          postal: '212 3123'
+          postal: '212 3123',
         },
-        
       ]);
     });
 };

@@ -11,8 +11,8 @@ routes(server);
  * proper error handling on the routes.
  */
 server.use((error, req, res) => {
-    console.error(error);
-    res.status(500).json({message: "An Error Has Occurred", error});
+  console.error(error);
+  res.status(500).json({ message: 'An Error Has Occurred', error });
 });
 
 module.exports = server;

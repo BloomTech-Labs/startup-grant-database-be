@@ -1,4 +1,4 @@
-const db = require("../data/db-config.js");
+const db = require('../data/db-config.js');
 
 module.exports = {
   getGrantsAdmin,
@@ -7,58 +7,60 @@ module.exports = {
   removeSuggestion,
   getSuggestions,
   getSuggestionsByGrantID,
-  getGrantById
+  getGrantById,
 };
 
 function getGrantsAdmin() {
-  return db("grants").then(grants => {
+  return db('grants').then(grants => {
     let currentSuggestions;
     let newGrants;
-    return db("requests").then(suggestions => {
-      return (newGrants = grants.map(grant => {
-        currentSuggestions = suggestions.filter(node => {
-          // console.log(node.grant_id);
-          return grant.id === node.grant_id;
-        });
-        return { ...grant, requests: currentSuggestions };
-      }));
-    });
+    return db('requests').then(
+      suggestions =>
+        (newGrants = grants.map(grant => {
+          currentSuggestions = suggestions.filter(
+            node =>
+              // console.log(node.grant_id);
+              grant.id === node.grant_id
+          );
+          return { ...grant, requests: currentSuggestions };
+        }))
+    );
   });
 }
 
 function getGrantById(id) {
-  return db("grants")
+  return db('grants')
     .where({ id })
     .first();
 }
 
 function getSuggestions() {
-  return db("requests");
+  return db('requests');
 }
 
 function updateGrant(changes, id) {
-  return db("grants")
+  return db('grants')
     .where({ id })
     .update(changes)
-    .then(() => {
-      return db("grants")
+    .then(() =>
+      db('grants')
         .where({ id })
-        .first();
-    });
+        .first()
+    );
 }
 
 function removeGrant(id) {
-  return db("grants")
+  return db('grants')
     .where({ id })
     .del();
 }
 
 function removeSuggestion(id) {
-  return db("requests")
+  return db('requests')
     .where({ id })
     .del();
 }
 
 function getSuggestionsByGrantID(grantId) {
-  return db("requests").where("grant_id", "=", grantId);
+  return db('requests').where('grant_id', '=', grantId);
 }

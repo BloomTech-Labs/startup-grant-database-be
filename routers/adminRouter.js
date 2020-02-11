@@ -1,9 +1,9 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-const admin = require("../models/adminModel.js");
+const admin = require('../models/adminModel.js');
 
 // ========== GET: get all grants==========
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   admin
     .getGrantsAdmin()
     .then(grants => {
@@ -12,12 +12,12 @@ router.get("/", (req, res) => {
     .catch(err =>
       res
         .status(500)
-        .json({ message: "There was an error retrieving the grants" })
+        .json({ message: 'There was an error retrieving the grants' })
     );
 });
 
 // ========== PUT: update a grant==========
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
   try {
@@ -27,17 +27,17 @@ router.put("/:id", async (req, res) => {
     } else {
       res
         .status(404)
-        .json({ message: "The grant with the specified ID does not exist." });
+        .json({ message: 'The grant with the specified ID does not exist.' });
     }
   } catch {
     res
       .status(500)
-      .json({ message: "There was an error modifying the grant." });
+      .json({ message: 'There was an error modifying the grant.' });
   }
 });
 
 // ========== DELETE: remove a grant==========
-router.delete("/:id", (req, res) => {
+router.delete('/:id', (req, res) => {
   const { id } = req.params;
 
   admin
@@ -48,18 +48,18 @@ router.delete("/:id", (req, res) => {
       } else {
         res
           .status(404)
-          .json({ message: "The grant with the specified ID does not exist." });
+          .json({ message: 'The grant with the specified ID does not exist.' });
       }
     })
     .catch(error => {
       res
         .status(500)
-        .json({ message: "There was an error removing the grant." });
+        .json({ message: 'There was an error removing the grant.' });
     });
 });
 
 // ========== DELETE: remove a suggestion for a grant==========
-router.delete("/suggestion/:id", (req, res) => {
+router.delete('/suggestion/:id', (req, res) => {
   const { id } = req.params;
   admin
     .removeSuggestion(id)
@@ -68,27 +68,27 @@ router.delete("/suggestion/:id", (req, res) => {
         res.status(200).json(suggestion);
       } else {
         res.status(404).json({
-          message: "The suggestion with the specified ID does not exist."
+          message: 'The suggestion with the specified ID does not exist.',
         });
       }
     })
     .catch(error => {
       res
         .status(500)
-        .json({ message: "There was an error removing the grant." });
+        .json({ message: 'There was an error removing the grant.' });
     });
 });
 // ========== GET: gets all grant suggestions==========
-router.get("/suggestions/:grant_id", (req, res) => {
-  const grant_id = req.params.grant_id;
+router.get('/suggestions/:grant_id', (req, res) => {
+  const { grant_id } = req.params;
   admin.getSuggestionsByGrantID(grant_id).then(suggestions => {
     if (suggestions) {
-      console.log("sug", suggestions);
+      console.log('sug', suggestions);
       res.status(200).json(suggestions);
     } else {
-      console.log("sug", suggestions);
+      console.log('sug', suggestions);
       res.status(404).json({
-        message: "There are no suggestions with the specified grant_id."
+        message: 'There are no suggestions with the specified grant_id.',
       });
     }
   });

@@ -1,21 +1,21 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const middleware = require('../auth/middleware.js');
-const grants = require("../models/grantModel.js");
+const grants = require('../models/grantModel.js');
 
 // ==========GET: get all grants==========
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   grants
     .getGrants()
     .then(grants => {
       res.status(200).json(grants);
     })
     .catch(error => {
-      res.status(500).json({ message: "Error retrieving all grants" });
+      res.status(500).json({ message: 'Error retrieving all grants' });
     });
 });
 
 // ==========GET: get specific grants==========
-router.get("/:id", (req, res) => {
+router.get('/:id', (req, res) => {
   const { id } = req.params;
 
   grants
@@ -26,18 +26,18 @@ router.get("/:id", (req, res) => {
       } else {
         res
           .status(404)
-          .json({ message: "The grant with the specified ID does not exist." });
+          .json({ message: 'The grant with the specified ID does not exist.' });
       }
     })
     .catch(error => {
-      res.status(500).json({ message: "failed to load grant by id" });
+      res.status(500).json({ message: 'failed to load grant by id' });
     });
 });
 
 // ==========POST: posts new grant==========
-//added middleware that checks for an authorized user token before allowing post
-// middleware, 
-router.post("/", middleware, (req, res) => {
+// added middleware that checks for an authorized user token before allowing post
+// middleware,
+router.post('/', middleware, (req, res) => {
   const grant = req.body;
 
   grants
@@ -47,65 +47,71 @@ router.post("/", middleware, (req, res) => {
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({ message: "There was an error adding the grant." });
+      res.status(500).json({ message: 'There was an error adding the grant.' });
     });
 });
 
 // ==========POST: posts new grant suggestion==========
-//added middleware that checks for an authorized user token before allowing post
-//middleware,
-router.post("/suggestion", middleware, (req, res) => {
+// added middleware that checks for an authorized user token before allowing post
+// middleware,
+router.post('/suggestion', middleware, (req, res) => {
   const suggestion = req.body;
 
   grants
     .addSuggestion(suggestion)
-    .then(suggestion => { 
+    .then(suggestion => {
       res.status(201).json(suggestion);
     })
     .catch(error => {
       res
         .status(500)
-        .json({ message: "There was an error adding the suggestion." });
+        .json({ message: 'There was an error adding the suggestion.' });
     });
 });
 
 router.delete('/suggestion/:id', middleware, (req, res) => {
-  const {id} = req.params
+  const { id } = req.params;
 
-  grants.removeSuggestion(id)
-  .then(res => { 
-    res.status(201).json(res);
-  })
-  .catch(error => {
-    res.status(500).json({ message: "There was an error removing the suggestion." });
-  });
-})
+  grants
+    .removeSuggestion(id)
+    .then(res => {
+      res.status(201).json(res);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: 'There was an error removing the suggestion.' });
+    });
+});
 
 router.get('/:id/suggestion', middleware, (req, res) => {
-  const {id} = req.params
+  const { id } = req.params;
 
-  grants.fetchSuggestions(id)
-  .then(res => { 
-    res.status(201).json(res);
-  })
-  .catch(error => {
-    res.status(500).json({ message: "There was an error removing the suggestion." });
-  });
-})
-
+  grants
+    .fetchSuggestions(id)
+    .then(res => {
+      res.status(201).json(res);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: 'There was an error removing the suggestion.' });
+    });
+});
 
 router.get('/suggestion/:id', middleware, (req, res) => {
-  const {id} = req.params
+  const { id } = req.params;
 
-  grants.getSuggestionById(id)
-  .then(res => { 
-    res.status(201).json(res);
-  })
-  .catch(error => {
-    res.status(500).json({ message: "There was an error removing the suggestion." });
-  });
-})
-
-
+  grants
+    .getSuggestionById(id)
+    .then(res => {
+      res.status(201).json(res);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: 'There was an error removing the suggestion.' });
+    });
+});
 
 module.exports = router;
