@@ -6,7 +6,7 @@
   "scripts": {
     "server": "nodemon index.js",
     "local-test": "cross-env DB_ENV=testing jest --verbose --watchAll --coverage --runInBand",
-    "test": "cross-env DB_ENV=testing jest --detectOpenHandles --forceExit",
+    "test": "jest --detectOpenHandles --forceExit",
     "coverage": "jest --coverage --detectOpenHandles --forceExit || true",
     "start": "node index.js"
   },
