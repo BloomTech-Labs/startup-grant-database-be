@@ -8,5 +8,5 @@ module.exports = server => server.use([
     express.json(),
     express.urlencoded({extended: true}),
     cors(),
-    morgan('dev')
+    // morgan('dev')
 ]);

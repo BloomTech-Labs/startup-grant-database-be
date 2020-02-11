@@ -1,7 +1,7 @@
 const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
 
-const audience = process.env.AUDIENCE;
+const audience = process.env.DB_ENV === 'testing' ? process.env.TEST_AUDIENCE : process.env.AUDIENCE;
 const domain = process.env.DOMAIN;
 
 const checkJwt = jwt({
