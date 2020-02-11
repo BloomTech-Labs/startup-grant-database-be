@@ -19,8 +19,8 @@ async function updateUser(req, res, next) {
   try {
     const foundUser = await Users.findBy({ id });
     if (foundUser.length > 0) {
-      const [updatedUser] = await Users.update(id, req.body);
-      res.json(updatedUser);
+      const updatedUser = await Users.update(id, req.body);
+      res.json(updatedUser[0]);
     } else {
       return res.status(404).json({ message: 'User was not found' });
     }

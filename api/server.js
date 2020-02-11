@@ -11,7 +11,7 @@ routes(server);
  * proper error handling on the routes.
  */
 server.use((error, req, res) => {
-  console.error(error);
+  console.log("Called", error);
   res.status(500).json({ message: 'An Error Has Occurred', error });
 });
 

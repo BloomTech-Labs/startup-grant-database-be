@@ -35,8 +35,8 @@ async function addGrant(req, res, next) {
 async function updateGrant(req, res, next) {
   const { id } = req.params;
   try {
-    const [updatedGrant] = await Grants.update(id, req.body);
-    res.json(updatedGrant);
+    const updatedGrant = await Grants.update(id, req.body);
+    res.json(updatedGrant[0]);
   } catch (error) {
     next(error);
   }

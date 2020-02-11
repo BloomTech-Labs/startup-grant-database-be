@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
-    "local-test": "cross-env DB_ENV=testing jest --verbose --watchAll --coverage",
+    "local-test": "cross-env DB_ENV=testing jest --verbose --watchAll --coverage --runInBand",
     "test": "cross-env DB_ENV=testing jest --detectOpenHandles --forceExit",
     "coverage": "jest --coverage --detectOpenHandles --forceExit || true",
     "start": "node index.js"
