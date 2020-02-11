@@ -16,7 +16,6 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
           CI: true
-          DB_ENV: testing
         with:
           coverageCommand: npm run coverage
           debug: true

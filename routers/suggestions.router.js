@@ -1,6 +1,15 @@
 const router = require('express').Router();
-const {allSuggestionsByGrant} = require('../controllers/suggestions.controller');
+const {
+  allSuggestionsByGrant,
+  getSuggestionById,
+  addSuggestion,
+  removeSuggestion,
+} = require('../controllers/suggestions.controller');
 
-router.get('/:id/suggestions', allSuggestionsByGrant);
+router
+  .get('/:id/suggestion', allSuggestionsByGrant)
+  .get('/suggestion/:id', getSuggestionById)
+  .post('/suggestion', addSuggestion)
+  .delete('/suggestion/:id', removeSuggestion);
 
 module.exports = router;

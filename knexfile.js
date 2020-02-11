@@ -15,23 +15,6 @@ const localPg = {
   password: process.env.DB_PASS,
 };
 
-const testingObj = {
-  client: 'sqlite3',
-  connection: {
-    filename: './data/grantlytest.db3'
-  },
-  migrations: {
-    directory: `${__dirname}/data/migrations`,
-  },
-  seeds: {
-    directory: `${__dirname}/data/seeds`,
-  },
-  pool: {
-    afterCreate: (conn, done) => conn.run('PRAGMA foreign_keys = ON', done)
-  },
-  useNullAsDefault: true
-}
-
 const dbConnection = process.env.DATABASE_URL || localPg;
 
 const dbObj = {
@@ -55,7 +38,7 @@ module.exports = {
     ...dbObj,
   },
   testing: {
-    ...testingObj,
+    ...dbObj,
   },
   production: {
     ...dbObj,

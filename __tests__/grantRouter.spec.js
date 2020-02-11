@@ -131,6 +131,7 @@ beforeAll(async () => {
   await db.migrate.rollback();
   await db.migrate.latest();
   await db('grants').insert(grants);
+  console.log('Called');
 });
 
 describe('Grant Routes', () => {
