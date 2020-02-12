@@ -1,9 +1,8 @@
 const Favorites = require('../models/favorites.model');
 
 async function allFavorites(req, res, next) {
-  const { id } = req.params;
   try {
-    const favorites = await Favorites.find(id);
+    const favorites = await Favorites.find();
     res.json(favorites);
   } catch (error) {
     console.log(error);
@@ -12,15 +11,15 @@ async function allFavorites(req, res, next) {
 }
 
 async function getFavoriteById(req, res, next) {
-  const { id } = req.params;
+  const { auth_id } = req.params;
   try {
-    const favorite = await Favorites.findBy({ id });
+    const favorite = await Favorites.findBy({ auth_id });
     if (favorite.length > 0) {
       res.json(favorite[0]);
     } else {
       res
         .status(404)
-        .json({ message: `The Favorite with id:${id} was not found.` });
+        .json({ message: `The Favorite with id:${auth_id} was not found.` });
     }
   } catch (error) {
     next(error);
@@ -29,8 +28,9 @@ async function getFavoriteById(req, res, next) {
 
 async function addFavorite(req, res, next) {
   try {
-    const [favorite] = await Favorites.add(req.body);
-    res.status(201).json(favorite);
+    await Favorites.add(req.body);
+    const newFavoriteList = await Favorites.find(req.body.auth_id);
+    res.status(201).json(newFavoriteList);
   } catch (error) {
     next(error);
   }

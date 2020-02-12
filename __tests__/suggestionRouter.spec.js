@@ -1,7 +1,6 @@
 const request = require('supertest');
 const axios = require('axios');
 const server = require('../api/server');
-const db = require('../data/db-config');
 
 const badToken = 'Bearer BadToken';
 let token = null;

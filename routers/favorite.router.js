@@ -8,7 +8,7 @@ const {
 
 router
   .get('/:id/favorites', allFavorites)
-  .get('/favorites/:id', getFavoriteById)
+  .get('/favorites/:auth_id', getFavoriteById)
   .post('/favorites', addFavorite)
   .delete('/favorites/:id', removeFavorite);
 

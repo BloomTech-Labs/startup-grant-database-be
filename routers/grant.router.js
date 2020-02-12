@@ -5,8 +5,6 @@ const {
   allGrants,
   findGrantById,
   addGrant,
-  updateGrant,
-  deleteGrant,
 } = require('../controllers/grants.controller');
 
 publicGrantRouter.get('/', allGrants).get('/:id', findGrantById);
