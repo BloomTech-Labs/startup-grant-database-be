@@ -6,6 +6,7 @@ async function allFavorites(req, res, next) {
     const favorites = await Favorites.find(id);
     res.json(favorites);
   } catch (error) {
+    console.log(error);
     next(error);
   }
 }
