@@ -32,30 +32,8 @@ async function addGrant(req, res, next) {
   }
 }
 
-async function updateGrant(req, res, next) {
-  const { id } = req.params;
-  try {
-    const updatedGrant = await Grants.update(id, req.body);
-    res.json(updatedGrant[0]);
-  } catch (error) {
-    next(error);
-  }
-}
-
-async function deleteGrant(req, res, next) {
-  const { id } = req.params;
-  try {
-    const count = await Grants.remove(id);
-    res.json(count);
-  } catch (error) {
-    next(error);
-  }
-}
-
 module.exports = {
   findGrantById,
   allGrants,
   addGrant,
-  updateGrant,
-  deleteGrant,
 };

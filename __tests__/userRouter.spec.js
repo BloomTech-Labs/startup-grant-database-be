@@ -30,8 +30,8 @@ describe('Users Router', () => {
   describe('No Token Provided', () => {
     it('should return 401 on GET Route', async () => {
       const res = await request(server).get('/api/users');
-      expect(res.status).toBe(401)
-    })
+      expect(res.status).toBe(401);
+    });
     it('should return 401 on POST Route', async () => {
       const res = await request(server)
         .post('/api/users')
@@ -51,9 +51,11 @@ describe('Users Router', () => {
   });
   describe('Bad Token Provided', () => {
     it('should return 401 on GET Route', async () => {
-      const res = await request(server).get('/api/users').set('Authorization', badToken);
-      expect(res.status).toBe(401)
-    })
+      const res = await request(server)
+        .get('/api/users')
+        .set('Authorization', badToken);
+      expect(res.status).toBe(401);
+    });
     it('should return 401 on POST Route', async () => {
       const res = await request(server)
         .post('/api/users')
@@ -84,9 +86,11 @@ describe('Users Router', () => {
       expect(res.status).toBe(201);
     });
     it('should return 200 on GET Route', async () => {
-      const res = await request(server).get('/api/users').set('Authorization', token);
-      expect(res.status).toBe(200)
-    })
+      const res = await request(server)
+        .get('/api/users')
+        .set('Authorization', token);
+      expect(res.status).toBe(200);
+    });
     it('should return 200 on POST Route when User is in the Database', async () => {
       const res = await request(server)
         .post('/api/users')

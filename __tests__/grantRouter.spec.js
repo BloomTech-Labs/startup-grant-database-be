@@ -161,35 +161,12 @@ describe('Grant Routes', () => {
           .send(testGrant);
         expect(res.status).toBe(401);
       });
-      it('should return 401 on PUT', async () => {
-        const res = await request(server)
-          .put('/api/grants/1')
-          .send(testGrant);
-        expect(res.status).toBe(401);
-      });
-      it('should return 401 on DELETE', async () => {
-        const res = await request(server).delete('/api/grants/1');
-        expect(res.status).toBe(401);
-      });
     });
     describe('Bad Token', () => {
       it('should return 401 on POST', async () => {
         const res = await request(server)
           .post('/api/grants')
           .send(testGrant)
-          .set('Authorization', badToken);
-        expect(res.status).toBe(401);
-      });
-      it('should return 401 on PUT', async () => {
-        const res = await request(server)
-          .put('/api/grants/1')
-          .send(testGrant)
-          .set('Authorization', badToken);
-        expect(res.status).toBe(401);
-      });
-      it('should return 401 on DELETE', async () => {
-        const res = await request(server)
-          .delete('/api/grants/1')
           .set('Authorization', badToken);
         expect(res.status).toBe(401);
       });
@@ -201,19 +178,6 @@ describe('Grant Routes', () => {
           .send(testGrant)
           .set('Authorization', token);
         expect(res.status).toBe(201);
-      });
-      it('should return 200 on PUT', async () => {
-        const res = await request(server)
-          .put('/api/grants/6')
-          .send({ is_reviewed: true })
-          .set('Authorization', token);
-        expect(res.status).toBe(200);
-      });
-      it('should return 200 on DELETE', async () => {
-        const res = await request(server)
-          .delete('/api/grants/6')
-          .set('Authorization', token);
-        expect(res.status).toBe(200);
       });
     });
   });

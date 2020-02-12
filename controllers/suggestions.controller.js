@@ -35,25 +35,8 @@ async function addSuggestion(req, res, next) {
   }
 }
 
-async function removeSuggestion(req, res, next) {
-  const { id } = req.params;
-  try {
-    const count = await Suggestions.remove(id);
-    if (count > 0) {
-      res.json(count);
-    } else {
-      res
-        .status(404)
-        .json({ message: `Suggestion with id:${id} was not found.` });
-    }
-  } catch (error) {
-    next(error);
-  }
-}
-
 module.exports = {
   allSuggestionsByGrant,
   getSuggestionById,
   addSuggestion,
-  removeSuggestion,
 };

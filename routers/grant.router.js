@@ -11,10 +11,7 @@ const {
 
 publicGrantRouter.get('/', allGrants).get('/:id', findGrantById);
 
-privateGrantRouter
-  .post('/', addGrant)
-  .put('/:id', updateGrant)
-  .delete('/:id', deleteGrant);
+privateGrantRouter.post('/', addGrant);
 
 privateGrantRouter.use('/', suggestionRouter);
 

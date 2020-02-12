@@ -9,6 +9,10 @@ class Model {
     return db(this.name);
   }
 
+  findAdmin() {
+    return db(this.name);
+  }
+
   findBy(filter) {
     return db(this.name).where(filter);
   }

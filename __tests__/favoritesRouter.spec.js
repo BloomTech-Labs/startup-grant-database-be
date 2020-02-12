@@ -76,16 +76,22 @@ describe('Favorites Router', () => {
       expect(res.status).toBe(201);
     });
     it('should return 200 on GET list of Favorites with provided user id', async () => {
-      const res = await request(server).get('/api/users/1/favorites').set('Authorization', token);
+      const res = await request(server)
+        .get('/api/users/1/favorites')
+        .set('Authorization', token);
       expect(res.status).toBe(200);
-    })
+    });
     it('should return 200 on GET favorite by id', async () => {
-      const res = await request(server).get('/api/users/favorites/1').set('Authorization', token);
+      const res = await request(server)
+        .get('/api/users/favorites/1')
+        .set('Authorization', token);
       expect(res.status).toBe(200);
-    })
+    });
     it('should return 200 on DELETE Favorite by id', async () => {
-      const res = await request(server).delete('/api/users/favorites/1').set('Authorization', token);
+      const res = await request(server)
+        .delete('/api/users/favorites/1')
+        .set('Authorization', token);
       expect(res.status).toBe(200);
-    })
+    });
   });
 });
