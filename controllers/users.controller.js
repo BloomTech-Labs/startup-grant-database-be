@@ -2,7 +2,7 @@ const Users = require('../models/userModel');
 
 async function findAllUsers(req, res, next) {
   try {
-    const users = Users.find();
+    const users = await Users.find();
     res.json(users);
   } catch (error) {
     next(error);
