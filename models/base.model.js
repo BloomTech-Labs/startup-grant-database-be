@@ -1,29 +1,40 @@
 const db = require('../data/db-config');
 
 class Model {
-    constructor(name) {
-        this.name = name;
-    }
+  constructor(name) {
+    this.name = name;
+  }
 
-    find() {
-        return db(this.name);
-    }
+  find() {
+    return db(this.name);
+  }
 
-    findBy(filter) {
-        return db(this.name).where(filter);
-    }
+  findAdmin() {
+    return db(this.name);
+  }
 
-    add(newItem) {
-        return db(this.name).insert(newItem).returning('*')
-    }
+  findBy(filter) {
+    return db(this.name).where(filter);
+  }
 
-    update(id, updateItem) {
-        return db(this.name).where({id}).update(updateItem).returning('*')
-    }
+  add(newItem) {
+    return db(this.name)
+      .insert(newItem)
+      .returning('*');
+  }
 
-    remove(id) {
-        return db(this.name).where({id}).del();
-    }
+  update(id, updateItem) {
+    return db(this.name)
+      .where({ id })
+      .update(updateItem)
+      .returning('*');
+  }
+
+  remove(id) {
+    return db(this.name)
+      .where({ id })
+      .del();
+  }
 }
 
 module.exports = Model;
