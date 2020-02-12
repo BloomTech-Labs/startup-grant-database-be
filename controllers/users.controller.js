@@ -1,5 +1,14 @@
 const Users = require('../models/userModel');
 
+async function findAllUsers(req, res, next) {
+  try {
+    const users = Users.find();
+    res.json(users);
+  } catch (error) {
+    next(error);
+  }
+}
+
 async function findUser(req, res, next) {
   const { email } = req.body;
   try {
@@ -45,6 +54,7 @@ async function deleteUser(req, res, next) {
 }
 
 module.exports = {
+  findAllUsers,
   findUser,
   updateUser,
   deleteUser,

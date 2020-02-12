@@ -6,7 +6,7 @@
   "scripts": {
     "lint:fix": "eslint . --fix",
     "server": "nodemon index.js",
-    "local-test": "cross-env DB_ENV=testing jest --verbose --watch --coverage",
+    "local-test": "cross-env DB_ENV=testing jest --verbose --watchAll --coverage",
     "test": "jest --detectOpenHandles --forceExit",
     "coverage": "jest --coverage --detectOpenHandles --forceExit || true",
     "start": "node index.js"
