@@ -1,9 +1,28 @@
+const axios = require('axios');
 const Users = require('../models/user.model');
 
+const requestBody = {
+  client_id: process.env.M2M_CLIENT_ID,
+  client_secret: process.env.M2M_CLIENT_SECRET,
+  audience: process.env.M2M_AUDIENCE,
+  grant_type: 'client_credentials',
+};
+
+async function getToken() {
+  const res = await axios.post(
+    `https://${process.env.DOMAIN}/oauth/token`,
+    requestBody
+  );
+  return `Bearer ${res.data.access_token}`;
+}
+
 async function findAllUsers(req, res, next) {
+  const token = await getToken();
   try {
-    const users = await Users.find();
-    res.json(users);
+    const response = await axios.get(`https://${process.env.DOMAIN}/api/v2/users`, {
+      headers: { Authorization: token },
+    });
+    res.json(response.data);
   } catch (error) {
     next(error);
   }
