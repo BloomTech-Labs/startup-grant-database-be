@@ -19,9 +19,12 @@ async function getToken() {
 async function findAllUsers(req, res, next) {
   const token = await getToken();
   try {
-    const response = await axios.get(`https://${process.env.DOMAIN}/api/v2/users`, {
-      headers: { Authorization: token },
-    });
+    const response = await axios.get(
+      `https://${process.env.DOMAIN}/api/v2/users`,
+      {
+        headers: { Authorization: token },
+      }
+    );
     res.json(response.data);
   } catch (error) {
     next(error);
@@ -29,14 +32,17 @@ async function findAllUsers(req, res, next) {
 }
 
 async function findUser(req, res, next) {
-  const { email } = req.body;
+  const { sub } = req.user;
+  const token = await getToken();
+  console.log(req.user);
   try {
-    const foundUser = await Users.findBy({ email });
-    if (foundUser.length > 0) {
-      return res.json(foundUser[0]);
-    }
-    const [newUser] = await Users.add(req.body);
-    res.status(201).json(newUser);
+    const response = await axios.get(
+      `https://${process.env.DOMAIN}/api/v2/users/${sub}`,
+      {
+        headers: { Authorization: token },
+      }
+    );
+    res.json(response.data);
   } catch (error) {
     next(error);
   }
