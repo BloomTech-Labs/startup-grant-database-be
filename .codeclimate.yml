@@ -2,3 +2,5 @@ exclude_patterns:
   - "**/__tests__/"
   - "**/data/seeds/"
   - "**/data/migrations/"
+  - "**/controllers/"
+  - "**/routers/"
