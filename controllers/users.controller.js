@@ -49,38 +49,40 @@ async function findUser(req, res, next) {
 }
 
 async function updateUser(req, res, next) {
-  const { id } = req.params;
+  console.log('req user', req.user);
+  const { sub } = req.user;
+  const token = await getToken();
   try {
-    const foundUser = await Users.findBy({ id });
-    if (foundUser.length > 0) {
-      const updatedUser = await Users.update(id, req.body);
-      res.json(updatedUser[0]);
-    } else {
-      return res.status(404).json({ message: 'User was not found' });
-    }
+    const foundUser = await axios.patch(
+      `https://${process.env.DOMAIN}/api/v2/users/${sub}`, req.body,
+      {
+        headers: { Authorization: token },
+      }
+    );
+    console.log(foundUser)
+   res.status(202).json({message: 'its working!'})
   } catch (error) {
     next(error);
   }
 }
 
-async function deleteUser(req, res, next) {
-  const { id } = req.params;
-  try {
-    const foundUser = await Users.findBy({ id });
-    if (foundUser.length > 0) {
-      const count = await Users.remove(id);
-      res.json(count);
-    } else {
-      res.status(404).json({ message: 'User not found' });
-    }
-  } catch (error) {
-    next(error);
-  }
-}
+// async function deleteUser(req, res, next) {
+//   const { id } = req.params;
+//   try {
+//     const foundUser = await Users.findBy({ id });
+//     if (foundUser.length > 0) {
+//       const count = await Users.remove(id);
+//       res.json(count);
+//     } else {
+//       res.status(404).json({ message: 'User not found' });
+//     }
+//   } catch (error) {
+//     next(error);
+//   }
+// }
 
 module.exports = {
   findAllUsers,
   findUser,
   updateUser,
-  deleteUser,
 };

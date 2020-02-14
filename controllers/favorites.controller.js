@@ -27,8 +27,9 @@ async function getFavoriteById(req, res, next) {
 }
 
 async function addFavorite(req, res, next) {
+  const newFavorite = {...req.body, auth_id: req.user.sub}
   try {
-    await Favorites.add(req.body);
+    await Favorites.add(newFavorite);
     const newFavoriteList = await Favorites.find(req.body.auth_id);
     res.status(201).json(newFavoriteList);
   } catch (error) {

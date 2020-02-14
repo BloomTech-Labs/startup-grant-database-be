@@ -3,15 +3,13 @@ const {
   findAllUsers,
   findUser,
   updateUser,
-  deleteUser,
 } = require('../controllers/users.controller');
 const favoritesRouter = require('./favorite.router');
 
 router
   .get('/', findAllUsers)
   .get('/user', findUser)
-  .put('/', updateUser)
-  .delete('/:id', deleteUser)
+  .patch('/user', updateUser)
   .use('/', favoritesRouter);
 
 
