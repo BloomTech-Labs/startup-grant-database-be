@@ -1,23 +1,48 @@
+const axios = require('axios');
 const Users = require('../models/user.model');
 
+const requestBody = {
+  client_id: process.env.M2M_CLIENT_ID,
+  client_secret: process.env.M2M_CLIENT_SECRET,
+  audience: process.env.M2M_AUDIENCE,
+  grant_type: 'client_credentials',
+};
+
+async function getToken() {
+  const res = await axios.post(
+    `https://${process.env.DOMAIN}/oauth/token`,
+    requestBody
+  );
+  return `Bearer ${res.data.access_token}`;
+}
+
 async function findAllUsers(req, res, next) {
+  const token = await getToken();
   try {
-    const users = await Users.find();
-    res.json(users);
+    const response = await axios.get(
+      `https://${process.env.DOMAIN}/api/v2/users`,
+      {
+        headers: { Authorization: token },
+      }
+    );
+    res.json(response.data);
   } catch (error) {
     next(error);
   }
 }
 
 async function findUser(req, res, next) {
-  const { email } = req.body;
+  const { sub } = req.user;
+  const token = await getToken();
+  console.log(req.user);
   try {
-    const foundUser = await Users.findBy({ email });
-    if (foundUser.length > 0) {
-      return res.json(foundUser[0]);
-    }
-    const [newUser] = await Users.add(req.body);
-    res.status(201).json(newUser);
+    const response = await axios.get(
+      `https://${process.env.DOMAIN}/api/v2/users/${sub}`,
+      {
+        headers: { Authorization: token },
+      }
+    );
+    res.json(response.data);
   } catch (error) {
     next(error);
   }
