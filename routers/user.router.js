@@ -9,9 +9,10 @@ const favoritesRouter = require('./favorite.router');
 
 router
   .get('/', findAllUsers)
-  .post('/', findUser)
-  .put('/:id', updateUser)
+  .get('/user', findUser)
+  .put('/', updateUser)
   .delete('/:id', deleteUser)
   .use('/', favoritesRouter);
+
 
 module.exports = router;
