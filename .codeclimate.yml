@@ -1,4 +1,4 @@
 exclude_patterns:
   - "_tests_/"
   - "**/data/seeds/"
-  - "**/data/migrations"
+  - "**/data/migrations/"
