@@ -9,7 +9,7 @@ const favoritesRouter = require('./favorite.router');
 router
   .get('/', findAllUsers)
   .get('/user', findUser)
-  .patch('/', updateUser)
+  .patch('/user', updateUser)
   .use('/', favoritesRouter);
 
 
