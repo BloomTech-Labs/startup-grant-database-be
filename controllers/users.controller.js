@@ -1,5 +1,4 @@
 const axios = require('axios');
-const Users = require('../models/user.model');
 
 const requestBody = {
   client_id: process.env.M2M_CLIENT_ID,
