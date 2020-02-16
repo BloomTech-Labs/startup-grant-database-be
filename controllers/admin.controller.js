@@ -5,7 +5,6 @@ async function getGrantsAdmin(req, res, next) {
   try {
     const grants = await Grants.findAdmin();
     const suggestions = await Suggestions.findAdmin();
-    console.log(suggestions);
     const newGrantList = grants.map(grant => {
       const requests = suggestions.filter(
         suggestion => suggestion.grant_id === grant.id

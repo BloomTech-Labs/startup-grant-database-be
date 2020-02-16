@@ -17,23 +17,26 @@ async function getToken() {
   return `Bearer ${res.data.access_token}`;
 }
 
-async function axiosWithAuth() {
-  const token = await getToken();
-  return axios.create({
-    baseURL: baseUrl,
-    headers: {
-      Authorization: token,
-    },
-  });
-}
+const config = token => ({
+  baseURL: baseUrl,
+  headers: {
+    Authorization: token,
+  },
+});
 
-function getData(url) {
-  return axiosWithAuth().get(url);
+function getData(url, token) {
+  return axios.get(url, config(token));
 }
 
 async function findAllUsers(req, res, next) {
+  const token = await getToken();
   try {
-    const users = await getData('/users');
+    const users = await axios.get('/users', {
+      baseURL: baseUrl,
+      headers: {
+        Authorization: token,
+      },
+    });
     res.json(users.data);
   } catch (error) {
     next(error);
@@ -42,9 +45,16 @@ async function findAllUsers(req, res, next) {
 
 async function findUser(req, res, next) {
   const { sub } = req.user;
+  const token = await getToken();
   try {
-    const userData = await getData(`/users/${sub}`);
-    const roleData = await getData(`/users/${sub}/roles`);
+    const userData = await axios.get(`/users/${sub}`, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
+    const roleData = await axios.get(`/users/${sub}/roles`, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
     res.json({ ...userData.data, roles: roleData.data });
   } catch (error) {
     next(error);
@@ -54,8 +64,16 @@ async function findUser(req, res, next) {
 async function updateUser(req, res, next) {
   const { sub } = req.user;
   try {
-    const updatedUser = await axiosWithAuth().patch(`/users/${sub}`, req.body);
-    const roleData = await getData(`/users/${sub}/roles`);
+    const updatedUser = await axios.patch(
+      `/users/${sub}`,
+      req.body,
+      `/users/${sub}`,
+      { baseURL: baseUrl, headers: { Authorization: token } }
+    );
+    const roleData = await axios.get(`/users/${sub}/roles`, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
     res.status(200).json({ ...updatedUser.data, roles: roleData.data });
   } catch (error) {
     next(error);
@@ -63,9 +81,41 @@ async function updateUser(req, res, next) {
 }
 
 async function getAllRoles(req, res, next) {
+  const token = await getToken();
   try {
-    const roles = await getData(`/roles`);
+    const roles = await axios.get(`/roles`, {
+      baseURL: baseUrl,
+      headers: {
+        Authorization: token
+      }
+    });
     res.json(roles.data);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function promoteModerator(req, res, next) {
+  const { userId } = req.params;
+  const { roleId } = req.body;
+  try {
+    const body = { roles: [roleId] };
+    const response = await axiosWithAuth().post(`/users/${userId}/roles`, body);
+    res.status(response.status);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function demoteModerator(req, res, next) {
+  const { userId } = req.params;
+  try {
+    const body = { roles: [''] };
+    const response = await axiosWithAuth().delete(
+      `/users/${userId}/roles`,
+      body
+    );
+    res.status(response.status);
   } catch (error) {
     next(error);
   }
@@ -91,4 +141,6 @@ module.exports = {
   findUser,
   updateUser,
   getAllRoles,
+  promoteModerator,
+  demoteModerator,
 };
