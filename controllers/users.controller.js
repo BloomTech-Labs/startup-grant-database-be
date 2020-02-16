@@ -17,8 +17,9 @@ async function getToken() {
   return `Bearer ${res.data.access_token}`;
 }
 
-function getRoles(userId, token) {
-  return axios.get(`/users/${userId}/roles`, {
+async function axiosWithAuth() {
+  const token = await getToken();
+  return axios.create({
     baseURL: baseUrl,
     headers: {
       Authorization: token,
@@ -26,14 +27,14 @@ function getRoles(userId, token) {
   });
 }
 
+function getData(url) {
+  return axiosWithAuth().get(url);
+}
+
 async function findAllUsers(req, res, next) {
-  const token = await getToken();
   try {
-    const response = await axios.get(`/users`, {
-      baseURL: baseUrl,
-      headers: { Authorization: token },
-    });
-    res.json(response.data);
+    const users = await getData('/users');
+    res.json(users.data);
   } catch (error) {
     next(error);
   }
@@ -41,31 +42,30 @@ async function findAllUsers(req, res, next) {
 
 async function findUser(req, res, next) {
   const { sub } = req.user;
-  const token = await getToken();
   try {
-    const userData = await axios.get(`/users/${sub}`, {
-      baseURL: baseUrl,
-      headers: { Authorization: token },
-    });
-    const roleData = await getRoles(sub, token);
-    const user = { ...userData.data, roles: roleData.data };
-    res.json(user);
+    const userData = await getData(`/users/${sub}`);
+    const roleData = await getData(`/users/${sub}/roles`);
+    res.json({ ...userData.data, roles: roleData.data });
   } catch (error) {
     next(error);
   }
 }
 
 async function updateUser(req, res, next) {
-  console.log('req user', req.user);
   const { sub } = req.user;
-  const token = await getToken();
   try {
-    const foundUser = await axios.patch(`/users/${sub}`, req.body, {
-      baseURL: baseUrl,
-      headers: { Authorization: token },
-    });
-    const roleData = await getRoles(sub, token);
-    res.status(200).json({ ...foundUser.data, roles: roleData.data });
+    const updatedUser = await axiosWithAuth().patch(`/users/${sub}`, req.body);
+    const roleData = await getData(`/users/${sub}/roles`);
+    res.status(200).json({ ...updatedUser.data, roles: roleData.data });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function getAllRoles(req, res, next) {
+  try {
+    const roles = await getData(`/roles`);
+    res.json(roles.data);
   } catch (error) {
     next(error);
   }
@@ -90,4 +90,5 @@ module.exports = {
   findAllUsers,
   findUser,
   updateUser,
+  getAllRoles,
 };
