@@ -7,6 +7,8 @@ const requestBody = {
   grant_type: 'client_credentials',
 };
 
+const baseUrl = `https://${process.env.DOMAIN}/api/v2`;
+
 async function getToken() {
   const res = await axios.post(
     `https://${process.env.DOMAIN}/oauth/token`,
@@ -15,15 +17,22 @@ async function getToken() {
   return `Bearer ${res.data.access_token}`;
 }
 
+function getRoles(userId, token) {
+  return axios.get(`/users/${userId}/roles`, {
+    baseURL: baseUrl,
+    headers: {
+      Authorization: token,
+    },
+  });
+}
+
 async function findAllUsers(req, res, next) {
   const token = await getToken();
   try {
-    const response = await axios.get(
-      `https://${process.env.DOMAIN}/api/v2/users`,
-      {
-        headers: { Authorization: token },
-      }
-    );
+    const response = await axios.get(`/users`, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
     res.json(response.data);
   } catch (error) {
     next(error);
@@ -33,15 +42,14 @@ async function findAllUsers(req, res, next) {
 async function findUser(req, res, next) {
   const { sub } = req.user;
   const token = await getToken();
-  console.log(req.user);
   try {
-    const response = await axios.get(
-      `https://${process.env.DOMAIN}/api/v2/users/${sub}`,
-      {
-        headers: { Authorization: token },
-      }
-    );
-    res.json(response.data);
+    const userData = await axios.get(`/users/${sub}`, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
+    const roleData = await getRoles(sub, token);
+    const user = { ...userData.data, roles: roleData.data };
+    res.json(user);
   } catch (error) {
     next(error);
   }
@@ -52,15 +60,12 @@ async function updateUser(req, res, next) {
   const { sub } = req.user;
   const token = await getToken();
   try {
-    const foundUser = await axios.patch(
-      `https://${process.env.DOMAIN}/api/v2/users/${sub}`,
-      req.body,
-      {
-        headers: { Authorization: token },
-      }
-    );
-    console.log(foundUser);
-    res.status(202).json({ message: 'its working!' });
+    const foundUser = await axios.patch(`/users/${sub}`, req.body, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
+    const roleData = await getRoles(sub, token);
+    res.status(200).json({ ...foundUser.data, roles: roleData.data });
   } catch (error) {
     next(error);
   }
