@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const usersRouter = require('../../routers/user.router');
+const {userRouter} = require('../../routers/user.router');
 const { privateGrantRouter } = require('../../routers/grant.router');
 
-router.use('/users', usersRouter);
+router.use('/users', userRouter);
 router.use('/grants', privateGrantRouter);
 
 module.exports = router;

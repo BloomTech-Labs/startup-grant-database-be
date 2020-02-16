@@ -1,4 +1,6 @@
-const router = require('express').Router();
+const userRouter = require('express').Router();
+const adminRouter = require('express').Router();
+
 const {
   findAllUsers,
   findUser,
@@ -6,11 +8,11 @@ const {
 } = require('../controllers/users.controller');
 const favoritesRouter = require('./favorite.router');
 
-router
-  .get('/', findAllUsers)
+userRouter
   .get('/user', findUser)
   .patch('/user', updateUser)
   .use('/', favoritesRouter);
 
+adminRouter.get('/', findAllUsers);
 
-module.exports = router;
+module.exports = { userRouter, adminRouter };

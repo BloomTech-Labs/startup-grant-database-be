@@ -53,13 +53,14 @@ async function updateUser(req, res, next) {
   const token = await getToken();
   try {
     const foundUser = await axios.patch(
-      `https://${process.env.DOMAIN}/api/v2/users/${sub}`, req.body,
+      `https://${process.env.DOMAIN}/api/v2/users/${sub}`,
+      req.body,
       {
         headers: { Authorization: token },
       }
     );
-    console.log(foundUser)
-   res.status(202).json({message: 'its working!'})
+    console.log(foundUser);
+    res.status(202).json({ message: 'its working!' });
   } catch (error) {
     next(error);
   }

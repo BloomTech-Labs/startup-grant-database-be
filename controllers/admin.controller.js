@@ -3,8 +3,9 @@ const Suggestions = require('../models/suggestion.model');
 
 async function getGrantsAdmin(req, res, next) {
   try {
-    const grants = Grants.findAdmin();
-    const suggestions = Suggestions.findAdmin();
+    const grants = await Grants.findAdmin();
+    const suggestions = await Suggestions.findAdmin();
+    console.log(suggestions);
     const newGrantList = grants.map(grant => {
       const requests = suggestions.filter(
         suggestion => suggestion.grant_id === grant.id
