@@ -1,7 +1,11 @@
 ALL ENDPOINTS
 
+GET
+    /api/admin/users
+        get all Users from Auth0
+
 GET 
-    /api/admin/
+    /api/admin/grants
         gets all grants including grant suggestions
 
 PUT 
@@ -17,7 +21,7 @@ DELETE
         removes a specific suggestion
 
 GET
-    /api/grants/
+    /api/grants/grants
         gets all grants including grant suggestions
 
 GET

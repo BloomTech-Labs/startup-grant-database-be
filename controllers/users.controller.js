@@ -1,5 +1,4 @@
 const axios = require('axios');
-const Users = require('../models/user.model');
 
 const requestBody = {
   client_id: process.env.M2M_CLIENT_ID,
@@ -7,6 +6,8 @@ const requestBody = {
   audience: process.env.M2M_AUDIENCE,
   grant_type: 'client_credentials',
 };
+
+const baseUrl = `https://${process.env.DOMAIN}/api/v2`;
 
 async function getToken() {
   const res = await axios.post(
@@ -16,16 +17,27 @@ async function getToken() {
   return `Bearer ${res.data.access_token}`;
 }
 
+const config = token => ({
+  baseURL: baseUrl,
+  headers: {
+    Authorization: token,
+  },
+});
+
+function getData(url, token) {
+  return axios.get(url, config(token));
+}
+
 async function findAllUsers(req, res, next) {
   const token = await getToken();
   try {
-    const response = await axios.get(
-      `https://${process.env.DOMAIN}/api/v2/users`,
-      {
-        headers: { Authorization: token },
-      }
-    );
-    res.json(response.data);
+    const users = await axios.get('/users', {
+      baseURL: baseUrl,
+      headers: {
+        Authorization: token,
+      },
+    });
+    res.json(users.data);
   } catch (error) {
     next(error);
   }
@@ -34,33 +46,76 @@ async function findAllUsers(req, res, next) {
 async function findUser(req, res, next) {
   const { sub } = req.user;
   const token = await getToken();
-  console.log(req.user);
   try {
-    const response = await axios.get(
-      `https://${process.env.DOMAIN}/api/v2/users/${sub}`,
-      {
-        headers: { Authorization: token },
-      }
-    );
-    res.json(response.data);
+    const userData = await axios.get(`/users/${sub}`, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
+    const roleData = await axios.get(`/users/${sub}/roles`, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
+    res.json({ ...userData.data, roles: roleData.data });
   } catch (error) {
     next(error);
   }
 }
 
 async function updateUser(req, res, next) {
-  console.log('req user', req.user);
   const { sub } = req.user;
+  try {
+    const updatedUser = await axios.patch(
+      `/users/${sub}`,
+      req.body,
+      `/users/${sub}`,
+      { baseURL: baseUrl, headers: { Authorization: token } }
+    );
+    const roleData = await axios.get(`/users/${sub}/roles`, {
+      baseURL: baseUrl,
+      headers: { Authorization: token },
+    });
+    res.status(200).json({ ...updatedUser.data, roles: roleData.data });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function getAllRoles(req, res, next) {
   const token = await getToken();
   try {
-    const foundUser = await axios.patch(
-      `https://${process.env.DOMAIN}/api/v2/users/${sub}`, req.body,
-      {
-        headers: { Authorization: token },
+    const roles = await axios.get(`/roles`, {
+      baseURL: baseUrl,
+      headers: {
+        Authorization: token
       }
+    });
+    res.json(roles.data);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function promoteModerator(req, res, next) {
+  const { userId } = req.params;
+  const { roleId } = req.body;
+  try {
+    const body = { roles: [roleId] };
+    const response = await axiosWithAuth().post(`/users/${userId}/roles`, body);
+    res.status(response.status);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function demoteModerator(req, res, next) {
+  const { userId } = req.params;
+  try {
+    const body = { roles: [''] };
+    const response = await axiosWithAuth().delete(
+      `/users/${userId}/roles`,
+      body
     );
-    console.log(foundUser)
-   res.status(202).json({message: 'its working!'})
+    res.status(response.status);
   } catch (error) {
     next(error);
   }
@@ -85,4 +140,7 @@ module.exports = {
   findAllUsers,
   findUser,
   updateUser,
+  getAllRoles,
+  promoteModerator,
+  demoteModerator,
 };
