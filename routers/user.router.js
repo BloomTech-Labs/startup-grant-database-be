@@ -1,5 +1,6 @@
 const userRouter = require('express').Router();
 const adminRouter = require('express').Router();
+const moderatorRouter = require('express').Router();
 
 const {
   findAllUsers,
@@ -16,10 +17,10 @@ userRouter
   .patch('/user', updateUser)
   .use('/', favoritesRouter);
 
+moderatorRouter.get('/', findAllUsers).get('/roles', getAllRoles);
+
 adminRouter
-  .get('/', findAllUsers)
-  .get('/roles', getAllRoles)
   .post('/moderator/:userId', promoteModerator)
   .delete('/moderator/:userId', demoteModerator);
 
-module.exports = { userRouter, adminRouter };
+module.exports = { userRouter, adminRouter, moderatorRouter };
