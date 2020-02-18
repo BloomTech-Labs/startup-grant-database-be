@@ -26,7 +26,9 @@ async function findGrantById(req, res, next) {
 async function addGrant(req, res, next) {
   try {
     const [newGrant] = await Grants.add(req.body);
-    res.status(201).json(newGrant);
+    const grants = await Grants.find();
+    const grantsAdmin = await Grants.findAdmin();
+    res.status(201).json({grants, grantsAdmin, newGrant});
   } catch (error) {
     next(error);
   }
