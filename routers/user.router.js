@@ -17,7 +17,7 @@ userRouter
   .patch('/user', updateUser)
   .use('/', favoritesRouter);
 
-moderatorRouter.get('/', findAllUsers).get('/roles', getAllRoles);
+moderatorRouter.get('/users', findAllUsers).get('/roles', getAllRoles);
 
 adminRouter
   .post('/moderator/:userId', promoteModerator)
