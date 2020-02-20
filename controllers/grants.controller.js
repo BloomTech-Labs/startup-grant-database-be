@@ -39,7 +39,7 @@ async function updateLogoUrl(req, res, next) {
   const { id } = req.params;
   const { url } = req.body;
   try {
-    const [updatedGrant] = await Grants.update(id, {url});
+    const [updatedGrant] = await Grants.update(id, {logo: url});
     res.json(updatedGrant);
   } catch (error) {
     next(error);
