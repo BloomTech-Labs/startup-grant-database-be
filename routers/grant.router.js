@@ -5,11 +5,14 @@ const {
   allGrants,
   findGrantById,
   addGrant,
-    updateLogoUrl
+  updateLogoUrl,
 } = require('../controllers/grants.controller');
 
 publicGrantRouter.get('/', allGrants).get('/:id', findGrantById);
 
-privateGrantRouter.post('/', addGrant).use('/', suggestionRouter).put('/:id', updateLogoUrl);
+privateGrantRouter
+  .post('/', addGrant)
+  .use('/', suggestionRouter)
+  .put('/:id', updateLogoUrl);
 
 module.exports = { publicGrantRouter, privateGrantRouter };

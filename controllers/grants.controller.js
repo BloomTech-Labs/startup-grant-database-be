@@ -28,7 +28,7 @@ async function addGrant(req, res, next) {
     const [newGrant] = await Grants.add(req.body);
     const grants = await Grants.find();
     const grantsAdmin = await Grants.findAdmin();
-    res.status(201).json({grants, grantsAdmin, newGrant});
+    res.status(201).json({ grants, grantsAdmin, newGrant });
   } catch (error) {
     next(error);
   }
@@ -36,12 +36,12 @@ async function addGrant(req, res, next) {
 
 async function updateLogoUrl(req, res, next) {
   const { id } = req.params;
-  const {url} = req.body;
+  const { url } = req.body;
   try {
-    const [updatedGrant] = await Grants.update(id, {logo: url});
-    res.json(updatedGrant)
+    const [updatedGrant] = await Grants.update(id, { logo: url });
+    res.json(updatedGrant);
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
 
@@ -49,5 +49,5 @@ module.exports = {
   findGrantById,
   allGrants,
   addGrant,
-  updateLogoUrl
+  updateLogoUrl,
 };
