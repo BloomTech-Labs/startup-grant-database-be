@@ -1,31 +1,11 @@
 const axios = require('axios');
-const Users = require('../models/user.model');
-
-const requestBody = {
-  client_id: process.env.M2M_CLIENT_ID,
-  client_secret: process.env.M2M_CLIENT_SECRET,
-  audience: process.env.M2M_AUDIENCE,
-  grant_type: 'client_credentials',
-};
-
-async function getToken() {
-  const res = await axios.post(
-    `https://${process.env.DOMAIN}/oauth/token`,
-    requestBody
-  );
-  return `Bearer ${res.data.access_token}`;
-}
+const { config, getToken } = require('../data/auth0.config');
 
 async function findAllUsers(req, res, next) {
   const token = await getToken();
   try {
-    const response = await axios.get(
-      `https://${process.env.DOMAIN}/api/v2/users`,
-      {
-        headers: { Authorization: token },
-      }
-    );
-    res.json(response.data);
+    const users = await axios.get('/users', config(token));
+    res.json(users.data);
   } catch (error) {
     next(error);
   }
@@ -34,33 +14,70 @@ async function findAllUsers(req, res, next) {
 async function findUser(req, res, next) {
   const { sub } = req.user;
   const token = await getToken();
-  console.log(req.user);
   try {
-    const response = await axios.get(
-      `https://${process.env.DOMAIN}/api/v2/users/${sub}`,
-      {
-        headers: { Authorization: token },
-      }
-    );
-    res.json(response.data);
+    const userData = await axios.get(`/users/${sub}`, config(token));
+    const roleData = await axios.get(`/users/${sub}/roles`, config(token));
+    res.json({ ...userData.data, roles: roleData.data });
   } catch (error) {
     next(error);
   }
 }
 
 async function updateUser(req, res, next) {
-  console.log('req user', req.user);
   const { sub } = req.user;
   const token = await getToken();
   try {
-    const foundUser = await axios.patch(
-      `https://${process.env.DOMAIN}/api/v2/users/${sub}`, req.body,
-      {
-        headers: { Authorization: token },
-      }
+    const updatedUser = await axios.patch(
+      `/users/${sub}`,
+      req.body,
+      config(token)
     );
-    console.log(foundUser)
-   res.status(202).json({message: 'its working!'})
+    const roleData = await axios.get(`/users/${sub}/roles`, config(token));
+    res.status(200).json({ ...updatedUser.data, roles: roleData.data });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function getAllRoles(req, res, next) {
+  const token = await getToken();
+  try {
+    const roles = await axios.get(`/roles`, config(token));
+    res.json(roles.data);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function promoteModerator(req, res, next) {
+  const token = await getToken();
+  const { userId } = req.params;
+  const { roleId } = req.body;
+  try {
+    const body = { roles: [roleId] };
+    const response = await axios.post(
+      `/users/${userId}/roles`,
+      body,
+      config(token)
+    );
+    res.status(response.status);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function demoteModerator(req, res, next) {
+  const { userId } = req.params;
+  const { roleId } = req.body;
+  const token = await getToken();
+  try {
+    const body = { roles: [roleId] };
+    const response = await axios.post(
+      `/users/${userId}/roles`,
+      body,
+      config(token)
+    );
+    res.status(response.status);
   } catch (error) {
     next(error);
   }
@@ -85,4 +102,7 @@ module.exports = {
   findAllUsers,
   findUser,
   updateUser,
+  getAllRoles,
+  promoteModerator,
+  demoteModerator,
 };
