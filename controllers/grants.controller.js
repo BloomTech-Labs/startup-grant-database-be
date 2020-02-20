@@ -1,3 +1,4 @@
+const axios = require('axios');
 const Grants = require('../models/grant.model');
 
 async function allGrants(req, res, next) {
@@ -28,7 +29,21 @@ async function addGrant(req, res, next) {
     const [newGrant] = await Grants.add(req.body);
     const grants = await Grants.find();
     const grantsAdmin = await Grants.findAdmin();
-    res.status(201).json({grants, grantsAdmin, newGrant});
+    res.status(201).json({ grants, grantsAdmin, newGrant });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function updateLogoUrl(req, res, next) {
+  const { id } = req.params;
+  const { url } = req.body;
+  try {
+    const logoUrl = await axios.get(`https://logo.clearbit.com/${url}?size=75`);
+    const [updatedGrant] = await Grants.update(id, {
+      logo: logoUrl.config.url,
+    });
+    res.json(updatedGrant);
   } catch (error) {
     next(error);
   }
@@ -38,4 +53,5 @@ module.exports = {
   findGrantById,
   allGrants,
   addGrant,
+  updateLogoUrl,
 };
