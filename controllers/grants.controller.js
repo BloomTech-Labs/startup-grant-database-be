@@ -39,10 +39,7 @@ async function updateLogoUrl(req, res, next) {
   const { id } = req.params;
   const { url } = req.body;
   try {
-    const logoUrl = await axios.get(`https://logo.clearbit.com/${url}?size=75`);
-    const [updatedGrant] = await Grants.update(id, {
-      logo: logoUrl.config.url,
-    });
+    const [updatedGrant] = await Grants.update(id, {url});
     res.json(updatedGrant);
   } catch (error) {
     next(error);
