@@ -1,3 +1,4 @@
+const axios = require('axios');
 const Grants = require('../models/grant.model');
 
 async function allGrants(req, res, next) {
@@ -38,7 +39,10 @@ async function updateLogoUrl(req, res, next) {
   const { id } = req.params;
   const { url } = req.body;
   try {
-    const [updatedGrant] = await Grants.update(id, { logo: url });
+    const logoUrl = await axios.get(`https://logo.clearbit.com/${url}?size=75`);
+    const [updatedGrant] = await Grants.update(id, {
+      logo: logoUrl.config.url,
+    });
     res.json(updatedGrant);
   } catch (error) {
     next(error);
