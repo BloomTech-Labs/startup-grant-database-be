@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Grants = require('../models/grant.model');
+const modifiedUrl = require('../data/helpers/modifyUrl');
 
 async function allGrants(req, res, next) {
   try {
@@ -26,7 +27,8 @@ async function findGrantById(req, res, next) {
 
 async function addGrant(req, res, next) {
   try {
-    const [newGrant] = await Grants.add(req.body);
+    const logo = `https://logo.clearbit.com/${modifiedUrl(req.body.website)}?size=75`
+    const [newGrant] = await Grants.add({...req.body, logo});
     const grants = await Grants.find();
     const grantsAdmin = await Grants.findAdmin();
     res.status(201).json({ grants, grantsAdmin, newGrant });
@@ -39,7 +41,7 @@ async function updateLogoUrl(req, res, next) {
   const { id } = req.params;
   const { url } = req.body;
   try {
-    const [updatedGrant] = await Grants.update(id, {logo: url});
+    const [updatedGrant] = await Grants.update(id, { logo: url });
     res.json(updatedGrant);
   } catch (error) {
     next(error);
@@ -51,13 +53,13 @@ async function whichLogoToUse(req, res, next) {
   const selectedGrants = grants.filter(grant => grant.use_logo === null);
   selectedGrants.forEach(async grant => {
     try {
-      const res = await axios.get(grant.logo);
-      await Grants.update(grant.id, {use_logo: true});
+      const response = await axios.get(grant.logo);
+      await Grants.update(grant.id, { use_logo: true });
     } catch (error) {
-      await Grants.update(grant.id, {use_logo: false});
+      await Grants.update(grant.id, { use_logo: false });
     }
   });
-  next()
+  next();
 }
 
 module.exports = {
@@ -65,5 +67,5 @@ module.exports = {
   allGrants,
   addGrant,
   updateLogoUrl,
-  whichLogoToUse
+  whichLogoToUse,
 };

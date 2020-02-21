@@ -24,7 +24,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '6/11/2019',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://cep.mit.edu/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://cep.mit.edu/'
+        )}?size=75`,
       },
       {
         competition_name: 'J.M.K. Innovation Prize',
@@ -44,7 +46,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.jmkfund.org/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.jmkfund.org/'
+        )}?size=75`,
       },
       {
         competition_name: 'Lipman Family Prize',
@@ -65,7 +69,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('https://lipmanfamilyprize.wharton.upenn.edu/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://lipmanfamilyprize.wharton.upenn.edu/'
+        )}?size=75`,
       },
       {
         competition_name: 'March Open Challenge',
@@ -85,7 +91,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('https://www.globalgiving.org/open-challenge-nomination/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://www.globalgiving.org/open-challenge-nomination/'
+        )}?size=75`,
       },
       {
         competition_name: 'Milken-Penn GSE Education Business Plan Competition',
@@ -104,7 +112,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.educationcompetition.org/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.educationcompetition.org/'
+        )}?size=75`,
       },
       {
         competition_name: 'MIT Clean Energy Prize',
@@ -126,7 +136,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://cep.mit.edu/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://cep.mit.edu/'
+        )}?size=75`,
       },
       {
         competition_name: 'Morgan Stanley Sustainable Investing Challenge',
@@ -147,7 +159,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://sustainableinvestingchallenge.org/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://sustainableinvestingchallenge.org/'
+        )}?size=75`,
       },
     ]);
   });

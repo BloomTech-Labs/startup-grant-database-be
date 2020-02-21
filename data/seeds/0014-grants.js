@@ -23,7 +23,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://gsvc.org/apply/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://gsvc.org/apply/'
+        )}?size=75`,
       },
       {
         competition_name: 'Pacific Venture Capital Conference and Competition',
@@ -43,7 +45,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.ubcpvcc.com/competition/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.ubcpvcc.com/competition/'
+        )}?size=75`,
       },
       {
         competition_name: 'Millennial Impact Fellow Video Competition',
@@ -64,7 +68,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.newprofit.org/gathering-leaders-millennial-impact-fellow-video-competition/?utm_source=New+Profit+MASTER+List+%28updated+1.23.17%29&utm_campaign=da3dc04d0d-EMAIL_CAMPAIGN_2017_01_24&utm_medium=email&utm_term=0_dee2859061-da3dc04d0d-430297581')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.newprofit.org/gathering-leaders-millennial-impact-fellow-video-competition/?utm_source=New+Profit+MASTER+List+%28updated+1.23.17%29&utm_campaign=da3dc04d0d-EMAIL_CAMPAIGN_2017_01_24&utm_medium=email&utm_term=0_dee2859061-da3dc04d0d-430297581'
+        )}?size=75`,
       },
       {
         competition_name: 'Citi Tech for Integrity Challenge',
@@ -84,7 +90,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.techforintegritychallenge.com/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.techforintegritychallenge.com/'
+        )}?size=75`,
       },
       {
         competition_name:
@@ -105,7 +113,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://cep.mit.edu/')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://cep.mit.edu/'
+        )}?size=75`,
       },
       {
         competition_name: 'Natural Launchpad',
@@ -126,7 +136,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
-        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.burtsbees.com/content/inaugural-natural-launchpad-winners/natural-launchpad-inaugural.html')}?size=75`
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.burtsbees.com/content/inaugural-natural-launchpad-winners/natural-launchpad-inaugural.html'
+        )}?size=75`,
       },
     ]);
   });
