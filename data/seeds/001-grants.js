@@ -1,3 +1,5 @@
+const modifiedUrl = require('../helpers/modifyUrl');
+
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('grants').then(function() {
@@ -20,6 +22,7 @@ exports.seed = function(knex) {
         is_reviewed: false,
         has_requests: true,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.gistnetwork.org/content/gist-tech-i')}?size=75`
       },
       {
         competition_name: 'Africa Angels Network Award',
@@ -37,6 +40,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: true,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.healliance.org/africa_angels_network_award.pdf')}?size=75`
       },
       {
         competition_name: 'Alaska Airlines Environmental Challenge',
@@ -57,6 +61,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: true,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://foster.uw.edu/centers/buerk-ctr-entrepreneurship/entrepreneurship-competitions/eic/')}?size=75`
       },
       {
         competition_name: 'APTE Impact IdeaPitch Competition',
@@ -73,6 +78,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: true,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.aptesummit.org/bizcomp-judges/')}?size=75`
       },
       {
         competition_name: 'ARPA-E: Open Funding Opportunity Announcement',
@@ -90,6 +96,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl( 'https://arpa-e-foa.energy.gov/#FoaIdce3cc85c-75cb-4d73-baa5-3cee39bb6bc7')}?size=75`
       },
       {
         competition_name: 'AT&T Experts: Grant for Greatness',
@@ -108,6 +115,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.attexperts.com/grant')}?size=75`
       },
       {
         competition_name: 'BASES Challenge 2017',
@@ -126,6 +134,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://bases.stanford.edu/programs/')}?size=75`
       },
       {
         competition_name: 'Big Ideas @ Berkeley',
@@ -144,6 +153,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://bigideas.berkeley.edu/')}?size=75`
       },
       {
         competition_name: 'Business for Good',
@@ -161,6 +171,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://nashvillesocialenterprise.org/business-for-good/')}?size=75`
       },
       {
         competition_name: 'CommonBond Social Impact Award',
@@ -179,6 +190,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.commonbond-sia.co/')}?size=75`
       },
       {
         competition_name: 'Eco-Audit Grant',
@@ -198,6 +210,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://ecorise.org/programs-services/eco-audit-grant/')}?size=75`
       },
       {
         competition_name: 'Education Business Plan Competition (EBPC)',
@@ -218,6 +231,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://yaleeducationconference.com/education-business-plan-competition/')}?size=75`
       },
       {
         competition_name: 'Fish 2.0',
@@ -236,6 +250,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.fish20.org/')}?size=75`
       },
       {
         competition_name:
@@ -255,6 +270,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://fletcher.tufts.edu/D-Prize')}?size=75`
       },
       {
         competition_name: 'Food + City Challenge Prize',
@@ -271,6 +287,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.foodandcity.org/challenge-prize/')}?size=75`
       },
       {
         competition_name: 'Fuller Challenge',
@@ -287,6 +304,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('https://bfi.org/challenge/')}?size=75`
       },
       {
         competition_name: 'GHIC Innovation Prize',
@@ -304,6 +322,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.uniteforsight.org/conference/innovation-prize')}?size=75`
       },
       {
         competition_name: 'Grinnell College Innovator for Social Justice Prize',
@@ -321,6 +340,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.grinnell.edu/grinnellprize')}?size=75`
       },
       {
         competition_name: 'Hult Prize',
@@ -339,6 +359,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.hultprize.org/')}?size=75`
       },
       {
         competition_name: 'Innovation Corps (I-Corps)',
@@ -357,6 +378,7 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl('http://www.nsf.gov/news/special_reports/i-corps/')}?size=75`
       },
     ]);
   });
