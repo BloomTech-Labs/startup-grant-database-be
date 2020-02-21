@@ -1,3 +1,5 @@
+const modifiedUrl = require('../helpers/modifyUrl');
+
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('grants').then(function() {
@@ -24,6 +26,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.bayareaglobalhealthchallenge.com/'
+        )}?size=75`,
       },
       {
         competition_name: 'Clinton Global Initiative University 2017',
@@ -44,6 +49,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://www.clintonfoundation.org/clinton-global-initiative/meetings/cgi-university/apply/before-you-apply'
+        )}?size=75`,
       },
       {
         competition_name:
@@ -65,6 +73,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://cep.mit.edu/'
+        )}?size=75`,
       },
       {
         competition_name: 'Roddenberry Prize',
@@ -85,6 +96,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://roddenberryprize.org/'
+        )}?size=75`,
       },
       {
         competition_name: 'BridgeBuilder Challenge',
@@ -107,6 +121,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://challenges.openideo.com/challenge/bridgebuilder/brief?utm_medium=email&utm_source=outreach&utm_campaign=bridge+ideas+briefjason'
+        )}?size=75`,
       },
       {
         competition_name: 'Westly Prize',
@@ -125,6 +142,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '7/7/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://westly.org/westly-prize/'
+        )}?size=75`,
       },
       {
         competition_name: 'MIT Climate CoLab',
@@ -143,6 +163,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '7/7/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://news.climatecolab.com/2017/06/2024/'
+        )}?size=75`,
       },
       {
         competition_name: 'Denver Food Access Project',
@@ -162,6 +185,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '7/7/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://foodaccessproject.org/'
+        )}?size=75`,
       },
       {
         competition_name: 'D-Prize',
@@ -182,6 +208,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '7/7/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://www.d-prize.org/'
+        )}?size=75`,
       },
       {
         competition_name: 'The Pollination Project',
@@ -201,6 +230,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '7/7/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://thepollinationproject.org/about-us/'
+        )}?size=75`,
       },
       {
         competition_name: 'GLG Social Impact Fellowship',
@@ -220,6 +252,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '7/7/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://glgsocialimpact.com/fellows/'
+        )}?size=75`,
       },
       {
         competition_name: 'NatGeo Chasing Genius Challenge',
@@ -239,6 +274,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/22/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.natgeochasinggenius.com/'
+        )}?size=75`,
       },
       {
         competition_name: 'City Innovate (80+ Challenges to Improve Cities)',
@@ -258,6 +296,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '10/17/2018',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://startupinresidence.org/search/'
+        )}?size=75`,
       },
       {
         competition_name: 'Biomimicry Challenge',
@@ -276,6 +317,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '10/24/2018',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://challenge.biomimicry.org/'
+        )}?size=75`,
       },
       {
         competition_name: 'Map the System',
@@ -296,6 +340,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '2/13/2019',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.oxfordglobalchallenge.com'
+        )}?size=75`,
       },
       {
         competition_name: 'Social Business Creation',
@@ -315,6 +362,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '2/13/2019',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://socialbusinesscreation.hec.ca/'
+        )}?size=75`,
       },
     ]);
   });

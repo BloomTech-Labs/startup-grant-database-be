@@ -1,3 +1,5 @@
+const modifiedUrl = require('../helpers/modifyUrl');
+
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('grants').then(function() {
@@ -20,6 +22,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.nextenergy.org/nextchallenge/'
+        )}?size=75`,
       },
       {
         competition_name: 'Notre Dame Global Adaptation Index Prize',
@@ -39,6 +44,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://gain.org/nd-gain-prize'
+        )}?size=75`,
       },
       {
         competition_name: 'Powerful Answers Award',
@@ -59,6 +67,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.verizon.com/about/portal/powerful-answers/'
+        )}?size=75`,
       },
       {
         competition_name: 'Rice University Business Plan Competition',
@@ -78,6 +89,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://alliance.rice.edu/rbpc.aspx'
+        )}?size=75`,
       },
       {
         competition_name: 'Social Innovation Award',
@@ -97,6 +111,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.onedayallkids.org/awards-fellowships/social-innovation-award'
+        )}?size=75`,
       },
       {
         competition_name: 'Social Venture Challenge',
@@ -118,6 +135,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.resolutionproject.org/about-social-venture-challenges'
+        )}?size=75`,
       },
       {
         competition_name:
@@ -139,6 +159,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.socentchallenge.org/'
+        )}?size=75`,
       },
       {
         competition_name: 'Start-Up Challenge',
@@ -158,6 +181,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.dukestartupchallenge.org/'
+        )}?size=75`,
       },
       {
         competition_name: 'Sunshot Catalyst Program',
@@ -177,6 +203,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://energy.gov/eere/sunshot/sunshot-catalyst-program'
+        )}?size=75`,
       },
       {
         competition_name: 'Sustainable Business Plan Collaboration',
@@ -197,6 +226,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://mentorcapitalnet.org/home/program/'
+        )}?size=75`,
       },
       {
         competition_name: 'Tech Award for Global Good',
@@ -217,6 +249,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://www.thetech.org/tech-global-good'
+        )}?size=75`,
       },
       {
         competition_name: 'UCLA Anderson Challenges in Energy Case Competition',
@@ -235,6 +270,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://andersonemg.weebly.com/case-competition.html'
+        )}?size=75`,
       },
       {
         competition_name: 'Venture Philanthropy Grant',
@@ -256,6 +294,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.pfs-llc.net/foundations/margoes-foundation/grantseekers/venture-philanthropy'
+        )}?size=75`,
       },
       {
         competition_name: 'Wireless Innovation Project',
@@ -276,6 +317,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://vodafone-us.com/wireless-innovation-project/'
+        )}?size=75`,
       },
       {
         competition_name: 'Government of Chile - Ministry of Energy',
@@ -296,6 +340,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'https://www.impactaenergia.cl/en'
+        )}?size=75`,
       },
       {
         competition_name: 'Project Entrepreneur',
@@ -316,6 +363,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://projectentrepreneur.org/'
+        )}?size=75`,
       },
       {
         competition_name:
@@ -338,6 +388,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://sustainableinvestingchallenge.org/compete/'
+        )}?size=75`,
       },
       {
         competition_name: 'Global Social Venture Competition',
@@ -358,6 +411,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://gsvc.org/apply/'
+        )}?size=75`,
       },
       {
         competition_name: 'EMA Innovator Challenge',
@@ -378,6 +434,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '8/23/2017',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://www.makeanimpact2017.com/'
+        )}?size=75`,
       },
     ]);
   });

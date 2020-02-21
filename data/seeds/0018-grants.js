@@ -1,3 +1,5 @@
+const modifiedUrl = require('../helpers/modifyUrl');
+
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('grants').then(function() {
@@ -22,6 +24,9 @@ exports.seed = function(knex) {
         is_reviewed: true,
         has_requests: false,
         details_last_updated: '6/11/2019',
+        logo: `https://logo.clearbit.com/${modifiedUrl(
+          'http://cep.mit.edu/'
+        )}?size=75`,
       },
     ]);
   });
