@@ -27,8 +27,10 @@ async function findGrantById(req, res, next) {
 
 async function addGrant(req, res, next) {
   try {
-    const logo = `https://logo.clearbit.com/${modifiedUrl(req.body.website)}?size=75`
-    const [newGrant] = await Grants.add({...req.body, logo});
+    const logo = `https://logo.clearbit.com/${modifiedUrl(
+      req.body.website
+    )}?size=75`;
+    const [newGrant] = await Grants.add({ ...req.body, logo });
     const grants = await Grants.find();
     const grantsAdmin = await Grants.findAdmin();
     res.status(201).json({ grants, grantsAdmin, newGrant });
