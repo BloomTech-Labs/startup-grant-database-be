@@ -4,6 +4,9 @@
   "description": "The Backend for the Founder Grants app",
   "main": "index.js",
   "scripts": {
+    "docs": "npm run docs:generate && npm run docs:markdown",
+    "docs:generate": "apidoc -i ./controllers -o ./apidoc/",
+    "docs:markdown": "apidoc-markdown2 -p apidoc -o ./docs/routes.md",
     "lint:fix": "eslint . --fix",
     "server": "nodemon index.js",
     "local-test": "cross-env DB_ENV=testing jest --verbose --watchAll --coverage",
@@ -50,6 +53,8 @@
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
+    "apidoc": "^0.20.0",
+    "apidoc-markdown2": "^0.3.7",
     "babel-eslint": "^9.0.0",
     "cross-env": "^5.2.1",
     "eslint": "^5.14.1",

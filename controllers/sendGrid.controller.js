@@ -90,7 +90,7 @@ module.exports = { sendMail, sendHTMLMail, sendNewsletter };
  */
 
 /**
- *  @api {post} /api/mail/individual/web Sends an email to a user in plain text
+ *  @api {post} /api/mail/individual/web Sends an email to a user HTML Markup
  *  @apiUse ServerError
  *  @apiUse SuccessResponse
  *  @apiName IndividualMailHTML
