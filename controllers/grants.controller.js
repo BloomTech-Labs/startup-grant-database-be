@@ -53,13 +53,71 @@ async function whichLogoToUse(req, res, next) {
   next();
 }
 
+function checkUrl(req, res, next) {
+  const {website} = req.body;
+  if (!website) {
+    return res.status(400).json({message: "Website is Required"});
+  }
+  try {
+    const newUrl = new URL(website)
+    next()
+  } catch {
+    res.status(400).json({message: "Website is not properly formed"})
+  }
+}
+
 module.exports = {
   findGrantById,
   allGrants,
   addGrant,
-  whichLogoToUse,
+  whichLogoToUse, checkUrl
 };
 
 /**
- *
+ * @apiDefine GrantNotFound
+ * @apiError {json} Grant Not Found
+ * @apiErrorExample {json} Error-Response:
+ * {
+ *   "message": "Grant with id:1 was not found"
+ * }
+ */
+
+/**
+ * @api {get} /api/grants Get All Grants
+ * @apiName All Grants
+ * @apiGroup Grants
+ * @apiPermission none
+ * @apiDescription Public
+ * @apiSuccess {json} grants An Array of all grants that have been reviewed
+ */
+
+/**
+ *  @api {get} /api/grants/:id Get Grant By Id
+ *  @apiUse GrantNotFound
+ *  @apiName Grant By Id
+ *  @apiGroup Grants
+ *  @apiPermission none
+ *  @apiDescription Public
+ *  @apiParam {integer} id Grant Id
+ *  @apiSuccess {json} grant The grant with the provided id
+ */
+
+/**
+ *  @api {post} /api/grants Add Grant
+ *  @apiName Add Grant
+ *  @apiGroup Grants
+ *  @apiPermission token
+ *  @apiDescription Requires token
+ *  @apiParam {String} competition_name Competition Name
+ *  @apiParam {String} area_focus Area Focus
+ *  @apiParam {String} sponsoring_entity Sponsoring Entity
+ *  @apiParam {String} website Grant Website *Required
+ *  @apiParam {Date} most_recent_application_due_date Application Due Date
+ *  @apiParam {Integer} amount Grant Amount
+ *  @apiParam {String} amount_notes Grant Amount Notes
+ *  @apiParam {String} geographic_region Grant Geographic Region
+ *  @apiParam {String} target_entrepreneur_demographic Target Demographic
+ *  @apiParam {String} notes Grant Notes
+ *  @apiParam {Boolean} early_stage_funding Early Stage Funding
+ *  @apiParam {Date} details_last_updated Last Update of Grant
  */

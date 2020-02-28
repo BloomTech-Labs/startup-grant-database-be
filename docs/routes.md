@@ -3,6 +3,11 @@
 
 The backend for our Founder Grants app
 
+- [Grants](#grants)
+	- [Add Grant](#add-grant)
+	- [Get All Grants](#get-all-grants)
+	- [Get Grant By Id](#get-grant-by-id)
+	
 - [Mail](#mail)
 	- [Sends an email to a user in plain text](#sends-an-email-to-a-user-in-plain-text)
 	
@@ -21,6 +26,91 @@ The backend for our Founder Grants app
 	
 
 
+# <a name='grants'></a> Grants
+
+## <a name='add-grant'></a> Add Grant
+[Back to top](#top)
+
+<p>Requires token</p>
+
+	POST /api/grants
+
+
+
+
+
+### Parameter Parameters
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  competition_name | String | <p>Competition Name</p>|
+|  area_focus | String | <p>Area Focus</p>|
+|  sponsoring_entity | String | <p>Sponsoring Entity</p>|
+|  website | String | <p>Grant Website *Required</p>|
+|  most_recent_application_due_date | Date | <p>Application Due Date</p>|
+|  amount | Integer | <p>Grant Amount</p>|
+|  amount_notes | String | <p>Grant Amount Notes</p>|
+|  geographic_region | String | <p>Grant Geographic Region</p>|
+|  target_entrepreneur_demographic | String | <p>Target Demographic</p>|
+|  notes | String | <p>Grant Notes</p>|
+|  early_stage_funding | Boolean | <p>Early Stage Funding</p>|
+|  details_last_updated | Date | <p>Last Update of Grant</p>|
+
+
+
+
+## <a name='get-all-grants'></a> Get All Grants
+[Back to top](#top)
+
+<p>Public</p>
+
+	GET /api/grants
+
+
+
+
+
+
+### Success 200
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  grants | json | <p>An Array of all grants that have been reviewed</p>|
+
+## <a name='get-grant-by-id'></a> Get Grant By Id
+[Back to top](#top)
+
+<p>Public</p>
+
+	GET /api/grants/:id
+
+
+
+
+
+### Parameter Parameters
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  id | integer | <p>Grant Id</p>|
+
+
+
+### Success 200
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  grant | json | <p>The grant with the provided id</p>|
+
+### Error Response
+
+Error-Response:
+
+```
+{
+  "message": "The Grant with id:999 was not found."
+}
+```
 # <a name='mail'></a> Mail
 
 ## <a name='sends-an-email-to-a-user-in-plain-text'></a> Sends an email to a user in plain text
