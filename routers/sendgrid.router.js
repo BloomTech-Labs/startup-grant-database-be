@@ -1,16 +1,13 @@
 const privateMailRouter = require('express').Router();
-const moderatorMailRouter = require('express').Router();
 
 const {
   sendMail,
-  sendHTMLMail,
-  sendNewsletter,
+  checkText,
+  contactFounderGrants,
 } = require('../controllers/sendGrid.controller');
 
 privateMailRouter
-  .post('/individual', sendMail)
-  .post('/individual/web', sendHTMLMail);
+  .post('/individual', checkText, sendMail)
+  .post('/contact', checkText, contactFounderGrants);
 
-moderatorMailRouter.post('/newsletter', sendNewsletter);
-
-module.exports = { privateMailRouter, moderatorMailRouter };
+module.exports = { privateMailRouter };

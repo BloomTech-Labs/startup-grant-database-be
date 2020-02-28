@@ -9,6 +9,8 @@ const {
   getAllRoles,
   promoteModerator,
   demoteModerator,
+  checkUser,
+  checkRoleId,
 } = require('../controllers/users.controller');
 const favoritesRouter = require('./favorite.router');
 
@@ -20,7 +22,7 @@ userRouter
 moderatorRouter.get('/users', findAllUsers).get('/roles', getAllRoles);
 
 adminRouter
-  .post('/moderator/:userId', promoteModerator)
-  .delete('/moderator/:userId', demoteModerator);
+  .post('/moderator/:userId', checkRoleId, checkUser, promoteModerator)
+  .delete('/moderator/:userId', checkRoleId, checkUser, demoteModerator);
 
 module.exports = { userRouter, adminRouter, moderatorRouter };

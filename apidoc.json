@@ -1,0 +1,7 @@
+{
+  "name":"startup-grant-database-be",
+  "version": "1.7.0",
+  "description": "The backend for our Founder Grants app",
+  "title": "Founder Grants",
+  "url": "https://labs16-grantly.herokuapp.com/"
+}
