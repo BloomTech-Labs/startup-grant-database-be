@@ -20,10 +20,6 @@ function sendMail(req, res, next) {
   }
 }
 
-
-
-
-
 function checkText(req, res, next) {
   const { to, subject, text } = req.body;
   if (!to || !subject || !text) {
