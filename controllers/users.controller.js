@@ -142,7 +142,18 @@ module.exports = {
  */
 
 /**
+ * @apiDefine RequiredHeaders
+ * @apiHeader {String} token Users AccessToken from Auth0
+ * @apiHeaderExample {json} Sample-Header:
+ * {
+ *   "Content-Type": "application/json",
+ *   "authorization": "Bearer token"
+ * }
+ */
+
+/**
  * @api {get} /api/moderator/users Gets All Users from Auth0
+ * @apiUse RequiredHeaders
  * @apiName Get All Users
  * @apiGroup Users
  * @apiPermission token, moderator
@@ -152,6 +163,7 @@ module.exports = {
 
 /**
  * @api {get} /api/users/user Gets current Logged in User
+ * @apiUse RequiredHeaders
  * @apiName Get Logged In User
  * @apiGroup Users
  * @apiPermission token
@@ -161,6 +173,7 @@ module.exports = {
 
 /**
  * @api {patch} /api/users/user Updates the User Information
+ * @apiUse RequiredHeaders
  * @apiName Update current Logged in User
  * @apiGroup Users
  * @apiPermission token
@@ -177,6 +190,7 @@ module.exports = {
 
 /**
  *  @api {get} /api/moderator/roles Retrieves all Roles form Auth0
+ *  @apiUse RequiredHeaders
  *  @apiName Get All Auth0 Roles
  *  @apiGroup Users
  *  @apiPermission token, moderator
@@ -186,6 +200,7 @@ module.exports = {
 
 /**
  *  @api {post} /api/admin/moderator/:userId Promotes an User to Moderator with Provided User ID
+ *  @apiUse RequiredHeaders
  *  @apiUse RoleIdValidation
  *  @apiName Promote Moderator
  *  @apiGroup Users
@@ -201,6 +216,7 @@ module.exports = {
 
 /**
  *  @api {delete} /api/admin/moderator/:userId Demotes an User with Provided User Id
+ *  @apiUse RequiredHeaders
  *  @apiUse RoleIdValidation
  *  @apiName Demote Moderator
  *  @apiGroup Users

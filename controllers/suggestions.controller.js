@@ -80,6 +80,16 @@ module.exports = {
  */
 
 /**
+ * @apiDefine RequiredHeaders
+ * @apiHeader {String} token Users AccessToken from Auth0
+ * @apiHeaderExample {json} Sample-Header:
+ * {
+ *   "Content-Type": "application/json",
+ *   "authorization": "Bearer token"
+ * }
+ */
+
+/**
  * @apiDefine GrantNotFound
  * @apiError (404) {json} GrantNotFound Grant with grant_id was not found
  * @apiErrorExample {json} Error-Response:
@@ -99,6 +109,7 @@ module.exports = {
 
 /**
  *  @api {get} /api/grants/:id/suggestions Retrieves all the suggestion with the provided Grant Id
+ *  @apiUse RequiredHeaders
  *  @apiName All Suggestions By Grant Id
  *  @apiGroup Suggestion
  *  @apiPermission Token
@@ -110,6 +121,7 @@ module.exports = {
 
 /**
  *  @api {get} /api/grants/suggestion/:id Gets a suggestion by Suggestion Id
+ *  @apiUse RequiredHeaders
  *  @apiUse SuggestionNotFound
  *  @apiName Suggestion By Suggestion Id
  *  @apiGroup Suggestion
@@ -121,6 +133,7 @@ module.exports = {
 
 /**
  *  @api {post} /api/grants/suggestion Adds a new Suggestion
+ *  @apiUse RequiredHeaders
  *  @apiUse GrantNotFound
  *  @apiUse ValidationError
  *  @apiName Add Suggestion

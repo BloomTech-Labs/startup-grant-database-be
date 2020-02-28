@@ -54,15 +54,15 @@ async function whichLogoToUse(req, res, next) {
 }
 
 function checkUrl(req, res, next) {
-  const {website} = req.body;
+  const { website } = req.body;
   if (!website) {
-    return res.status(400).json({message: "Website is Required"});
+    return res.status(400).json({ message: 'Website is Required' });
   }
   try {
-    const newUrl = new URL(website)
-    next()
+    const newUrl = new URL(website);
+    next();
   } catch {
-    res.status(400).json({message: "Website is not properly formed"})
+    res.status(400).json({ message: 'Website is not properly formed' });
   }
 }
 
@@ -70,7 +70,8 @@ module.exports = {
   findGrantById,
   allGrants,
   addGrant,
-  whichLogoToUse, checkUrl
+  whichLogoToUse,
+  checkUrl,
 };
 
 /**
@@ -108,6 +109,12 @@ module.exports = {
  *  @apiGroup Grants
  *  @apiPermission token
  *  @apiDescription Requires token
+ *  @apiHeader {String} token Users AccessToken from Auth0
+ *  @apiHeaderExample {json} Sample-Header:
+ *  {
+ *    "Content-Type": "application/json",
+ *    "authorization": "Bearer token"
+ *  }
  *  @apiParam {String} competition_name Competition Name
  *  @apiParam {String} area_focus Area Focus
  *  @apiParam {String} sponsoring_entity Sponsoring Entity
@@ -120,4 +127,5 @@ module.exports = {
  *  @apiParam {String} notes Grant Notes
  *  @apiParam {Boolean} early_stage_funding Early Stage Funding
  *  @apiParam {Date} details_last_updated Last Update of Grant
+ *  @apiSuccess {json} grant The newly created Grant
  */

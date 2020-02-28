@@ -9,7 +9,8 @@ The backend for our Founder Grants app
 	- [Get Grant By Id](#get-grant-by-id)
 	
 - [Mail](#mail)
-	- [Sends an email to a user in plain text](#sends-an-email-to-a-user-in-plain-text)
+	- [Sends an Email to Founder Grants](#sends-an-email-to-founder-grants)
+	- [Sends an email to a registered user](#sends-an-email-to-a-registered-user)
 	
 - [Suggestion](#suggestion)
 	- [Adds a new Suggestion](#adds-a-new-suggestion)
@@ -35,7 +36,23 @@ The backend for our Founder Grants app
 
 	POST /api/grants
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -58,6 +75,11 @@ The backend for our Founder Grants app
 
 
 
+### Success 200
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  grant | json | <p>The newly created Grant</p>|
 
 ## <a name='get-all-grants'></a> Get All Grants
 [Back to top](#top)
@@ -113,14 +135,103 @@ Error-Response:
 ```
 # <a name='mail'></a> Mail
 
-## <a name='sends-an-email-to-a-user-in-plain-text'></a> Sends an email to a user in plain text
+## <a name='sends-an-email-to-founder-grants'></a> Sends an Email to Founder Grants
 [Back to top](#top)
 
 <p>Sends an email to a specified user</p>
 
 	POST /api/mail/individual
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
+
+
+
+### Parameter Parameters
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  to | String | <p>Email address to the user</p>|
+|  subject | String | <p>Email subject</p>|
+|  text | String | <p>Email Body</p>|
+
+### Param Examples
+
+(json)
+Sample-Request:
+
+```
+{
+  "from": "test@test.com"
+  "subject": "Test Email",
+  "text": "This is a test of the Founder Grants Email System.  This is only a test"
+}
+```
+
+### Success Response
+
+Success-Response:
+
+```
+{
+  "message": "Mail has been sent successfully"
+}
+```
+
+### Success 200
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  message | json | <p>Success message</p>|
+
+### Error Response
+
+Error-Response:
+
+```
+{
+  "message": "grant_id, subject, and suggestion is required."
+}
+```
+## <a name='sends-an-email-to-a-registered-user'></a> Sends an email to a registered user
+[Back to top](#top)
+
+<p>Sends an email to a specified user</p>
+
+	POST /api/mail/individual
+
+### Headers
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -179,7 +290,23 @@ Error-Response:
 
 	POST /api/grants/suggestion
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -246,7 +373,23 @@ Error-Response:
 
 	GET /api/grants/:id/suggestions
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -271,7 +414,23 @@ Error-Response:
 
 	GET /api/grants/suggestion/:id
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -307,7 +466,23 @@ Error-Response:
 
 	DELETE /api/admin/moderator/:userId
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -347,7 +522,23 @@ Error-Response:
 
 	GET /api/moderator/roles
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -365,7 +556,23 @@ Error-Response:
 
 	GET /api/moderator/users
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -383,7 +590,23 @@ Error-Response:
 
 	GET /api/users/user
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -401,7 +624,23 @@ Error-Response:
 
 	POST /api/admin/moderator/:userId
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 
@@ -441,7 +680,23 @@ Error-Response:
 
 	PATCH /api/users/user
 
+### Headers
 
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| token | String | <p>Users AccessToken from Auth0</p>|
+
+
+### Header Examples
+
+Sample-Header:
+
+```
+{
+  "Content-Type": "application/json",
+  "authorization": "Bearer token"
+}
+```
 
 
 

@@ -1,8 +1,7 @@
 const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-const from = 'foundergrants@gmail.com';
+const founderGrant = 'foundergrants@gmail.com'
 
 function sendMail(req, res, next) {
   const { to, subject, text } = req.body;
@@ -11,7 +10,7 @@ function sendMail(req, res, next) {
       to,
       subject,
       text,
-      from,
+      from: founderGrant
     };
     sgMail.send(msg);
     res.json({ message: 'Mail has been sent successfully' });
@@ -19,6 +18,24 @@ function sendMail(req, res, next) {
     next(error);
   }
 }
+
+function contactFounderGrants(req, res, next) {
+  const {from, subject, text} = req.body;
+  try {
+    const msg = {
+      to: founderGrant,
+      subject,
+      text,
+      from
+    }
+    sgMail.send(msg);
+    res.json({message: "Mail has been sent successfully"});
+  } catch (error) {
+    next(error)
+  }
+}
+
+
 
 function checkText(req, res, next) {
   const { to, subject, text } = req.body;
@@ -30,7 +47,7 @@ function checkText(req, res, next) {
 
 module.exports = {
   sendMail,
-  checkText,
+  checkText, contactFounderGrants
 };
 
 /**
@@ -38,6 +55,15 @@ module.exports = {
  *  @apiError ServerError An Internal Server Error has occurred
  */
 
+/**
+ * @apiDefine RequiredHeaders
+ * @apiHeader {String} token Users AccessToken from Auth0
+ * @apiHeaderExample {json} Sample-Header:
+ * {
+ *   "Content-Type": "application/json",
+ *   "authorization": "Bearer token"
+ * }
+ */
 /**
  * @apiDefine ValidationError
  * @apiError ValidationError A Required Field is missing
@@ -53,11 +79,12 @@ module.exports = {
  */
 
 /**
- *  @api {post} /api/mail/individual Sends an email to a user in plain text
+ *  @api {post} /api/mail/individual Sends an email to a registered user
+ *  @apiUse RequiredHeaders
  *  @apiUse ServerError
  *  @apiUse ValidationError
  *  @apiUse SuccessResponse
- *  @apiName IndividualMail
+ *  @apiName Send Mail To User
  *  @apiGroup Mail
  *  @apiPermission token
  *  @apiDescription Sends an email to a specified user
@@ -67,6 +94,28 @@ module.exports = {
  *  @apiParamExample {json} Sample-Request:
  *  {
  *    "to": "test@gmail.com",
+ *    "subject": "Test Email",
+ *    "text": "This is a test of the Founder Grants Email System.  This is only a test"
+ *  }
+ *
+ */
+
+/**
+ *  @api {post} /api/mail/individual Sends an Email to Founder Grants
+ *  @apiUse RequiredHeaders
+ *  @apiUse ServerError
+ *  @apiUse ValidationError
+ *  @apiUse SuccessResponse
+ *  @apiName Contact Founder Grants
+ *  @apiGroup Mail
+ *  @apiPermission token
+ *  @apiDescription Sends an email to a specified user
+ *  @apiParam {String} to Email address to the user
+ *  @apiParam {String} subject Email subject
+ *  @apiParam {String} text Email Body
+ *  @apiParamExample {json} Sample-Request:
+ *  {
+ *    "from": "test@test.com"
  *    "subject": "Test Email",
  *    "text": "This is a test of the Founder Grants Email System.  This is only a test"
  *  }
