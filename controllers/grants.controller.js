@@ -39,17 +39,6 @@ async function addGrant(req, res, next) {
   }
 }
 
-async function updateLogoUrl(req, res, next) {
-  const { id } = req.params;
-  const { url } = req.body;
-  try {
-    const [updatedGrant] = await Grants.update(id, { logo: url });
-    res.json(updatedGrant);
-  } catch (error) {
-    next(error);
-  }
-}
-
 async function whichLogoToUse(req, res, next) {
   const grants = await Grants.findAdmin();
   const selectedGrants = grants.filter(grant => grant.use_logo === null);
@@ -68,6 +57,9 @@ module.exports = {
   findGrantById,
   allGrants,
   addGrant,
-  updateLogoUrl,
   whichLogoToUse,
 };
+
+/**
+ *
+ */
