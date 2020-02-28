@@ -40,3 +40,27 @@ module.exports = {
   getSuggestionById,
   addSuggestion,
 };
+
+/**
+ *  @apiDefine SuggestionNotFound
+ *  @apiError SuggestionNotFound Suggestion with ID not Found
+ *  @apiErrorExample {json} Error-Response:
+ *  {
+ *    "message": "Suggestion with id:1 was not found."
+ *  }
+ */
+
+/**
+ *  @api {get} /api/grants/:id/suggestions Retrieves all the suggestion with the provided Grant Id
+ *  @apiName AllSuggestionsByGrantId
+ *  @apiGroup Registered User
+ *  @apiPermission Token
+ *  @apiDescription Retrieves all the suggestion with the provided Grant Id
+ *  @apiParam {Integer} id The Grant Id
+ *  @apiSuccess {json} Suggestions An Array of Suggestions based on the Grant Id
+ *
+ */
+
+/**
+ *  @api {get} /api/grants
+ */

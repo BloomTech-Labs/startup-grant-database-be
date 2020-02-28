@@ -5,12 +5,15 @@ const {
   sendMail,
   sendHTMLMail,
   sendNewsletter,
+  checkText,
+  checkHTML,
+  checkNewsLetter,
 } = require('../controllers/sendGrid.controller');
 
 privateMailRouter
-  .post('/individual', sendMail)
-  .post('/individual/web', sendHTMLMail);
+  .post('/individual', checkText, sendMail)
+  .post('/individual/web', checkHTML, sendHTMLMail);
 
-moderatorMailRouter.post('/newsletter', sendNewsletter);
+moderatorMailRouter.post('/newsletter', checkNewsLetter, sendNewsletter);
 
 module.exports = { privateMailRouter, moderatorMailRouter };
