@@ -111,7 +111,7 @@ module.exports = {
  *  @apiUse ValidationError
  *  @apiUse SuccessResponse
  *  @apiName IndividualMail
- *  @apiGroup Registered User
+ *  @apiGroup Mail
  *  @apiPermission token
  *  @apiDescription Sends an email to a specified user
  *  @apiParam {String} to Email address to the user
@@ -132,7 +132,7 @@ module.exports = {
  *  @apiUse ValidationError
  *  @apiUse SuccessResponse
  *  @apiName IndividualMailHTML
- *  @apiGroup Registered User
+ *  @apiGroup Mail
  *  @apiPermission token
  *  @apiDescription Sends an email to a specified user
  *  @apiParam {String} to Email address to the user
@@ -152,13 +152,13 @@ module.exports = {
  * @apiUse ServerError
  * @apiUse ValidationError
  * @apiName Newsletter
- * @apiGroup Moderator
+ * @apiGroup Mail
  * @apiPermission token, moderator
- * @apiDescription Sends a newsletter out to Registered Users
+ * @apiDescription Token, Moderator
  * @apiParam {String[]} bcc Email addresses in an array format
  * @apiParam {String} subject Email subject
  * @apiParam {String} html Email Body using Markup
- * @apiParamExample {json} Sample-Request:Registered User
+ * @apiParamExample {json} Sample-Request
  * {
  *   "bcc": ["test@gmail.com", "test2@gmail.com"],
  *   "subject": "Test Email",
