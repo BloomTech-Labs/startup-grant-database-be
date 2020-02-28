@@ -12,9 +12,6 @@ publicGrantRouter
   .get('/', whichLogoToUse, allGrants)
   .get('/:id', findGrantById);
 
-privateGrantRouter
-  .post('/', addGrant)
-  .use('/', suggestionRouter)
-
+privateGrantRouter.post('/', addGrant).use('/', suggestionRouter);
 
 module.exports = { publicGrantRouter, privateGrantRouter };

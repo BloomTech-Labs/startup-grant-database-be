@@ -44,7 +44,7 @@ async function whichLogoToUse(req, res, next) {
   const selectedGrants = grants.filter(grant => grant.use_logo === null);
   selectedGrants.forEach(async grant => {
     try {
-      const response = await axios.get(grant.logo);
+      await axios.get(grant.logo);
       await Grants.update(grant.id, { use_logo: true });
     } catch (error) {
       await Grants.update(grant.id, { use_logo: false });
