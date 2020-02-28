@@ -12,8 +12,11 @@ The backend for our Founder Grants app
 	- [Gets a suggestion by Suggestion Id](#gets-a-suggestion-by-suggestion-id)
 	
 - [Users](#users)
+	- [Demotes an User with Provided User Id](#demotes-an-user-with-provided-user-id)
+	- [Retrieves all Roles form Auth0](#retrieves-all-roles-form-auth0)
 	- [Gets All Users from Auth0](#gets-all-users-from-auth0)
 	- [Gets current Logged in User](#gets-current-logged-in-user)
+	- [Promotes an User to Moderator with Provided User ID](#promotes-an-user-to-moderator-with-provided-user-id)
 	- [Updates the User Information](#updates-the-user-information)
 	
 
@@ -207,6 +210,64 @@ Error-Response:
 ```
 # <a name='users'></a> Users
 
+## <a name='demotes-an-user-with-provided-user-id'></a> Demotes an User with Provided User Id
+[Back to top](#top)
+
+<p>Requires token, admin</p>
+
+	DELETE /api/admin/moderator/:userId
+
+
+
+
+
+### Parameter Parameters
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  userId | String | <p>The userId you want to promote</p>|
+|  roleId | String | <p>The roleId you want to give the user</p>|
+
+### Param Examples
+
+(json)
+Sample-Request
+
+```
+{
+  "roleId": "Auth0 Role Id"
+}
+```
+
+
+
+### Error Response
+
+Error-Response:
+
+```
+{
+  "message": "roleId is required"
+}
+```
+## <a name='retrieves-all-roles-form-auth0'></a> Retrieves all Roles form Auth0
+[Back to top](#top)
+
+<p>Requires token, moderator</p>
+
+	GET /api/moderator/roles
+
+
+
+
+
+
+### Success 200
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  roles | json | <p>Roles data from Auth0</p>|
+
 ## <a name='gets-all-users-from-auth0'></a> Gets All Users from Auth0
 [Back to top](#top)
 
@@ -243,6 +304,46 @@ Error-Response:
 |:---------|:-----------|:--------------------------------------|
 |  user | json | <p>Current logged in user</p>|
 
+## <a name='promotes-an-user-to-moderator-with-provided-user-id'></a> Promotes an User to Moderator with Provided User ID
+[Back to top](#top)
+
+<p>Requires token, admin</p>
+
+	POST /api/admin/moderator/:userId
+
+
+
+
+
+### Parameter Parameters
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  userId | String | <p>The userId you want to promote</p>|
+|  roleId | String | <p>The roleId you want to give the user</p>|
+
+### Param Examples
+
+(json)
+Sample-Request
+
+```
+{
+  "roleId": "Auth0 Role Id"
+}
+```
+
+
+
+### Error Response
+
+Error-Response:
+
+```
+{
+  "message": "roleId is required"
+}
+```
 ## <a name='updates-the-user-information'></a> Updates the User Information
 [Back to top](#top)
 

@@ -174,3 +174,42 @@ module.exports = {
  * @apiParam {String} role User's Role
  * @apiSuccess {json} user_metadata User's MetaData update from Auth 0
  */
+
+/**
+ *  @api {get} /api/moderator/roles Retrieves all Roles form Auth0
+ *  @apiName Get All Auth0 Roles
+ *  @apiGroup Users
+ *  @apiPermission token, moderator
+ *  @apiDescription Requires token, moderator
+ *  @apiSuccess {json} roles Roles data from Auth0
+ */
+
+/**
+ *  @api {post} /api/admin/moderator/:userId Promotes an User to Moderator with Provided User ID
+ *  @apiUse RoleIdValidation
+ *  @apiName Promote Moderator
+ *  @apiGroup Users
+ *  @apiPermission token, admin
+ *  @apiDescription Requires token, admin
+ *  @apiParam {String} userId The userId you want to promote
+ *  @apiParam {String} roleId The roleId you want to give the user
+ *  @apiParamExample {json} Sample-Request
+ *  {
+ *    "roleId": "Auth0 Role Id"
+ *  }
+ */
+
+/**
+ *  @api {delete} /api/admin/moderator/:userId Demotes an User with Provided User Id
+ *  @apiUse RoleIdValidation
+ *  @apiName Demote Moderator
+ *  @apiGroup Users
+ *  @apiPermission token, admin
+ *  @apiDescription Requires token, admin
+ *  @apiParam {String} userId The userId you want to promote
+ *  @apiParam {String} roleId The roleId you want to give the user
+ *  @apiParamExample {json} Sample-Request
+ *  {
+ *    "roleId": "Auth0 Role Id"
+ *  }
+ */
