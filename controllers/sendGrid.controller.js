@@ -1,7 +1,7 @@
 const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-const founderGrant = 'foundergrants@gmail.com'
+const founderGrant = 'foundergrants@gmail.com';
 
 function sendMail(req, res, next) {
   const { to, subject, text } = req.body;
@@ -10,7 +10,7 @@ function sendMail(req, res, next) {
       to,
       subject,
       text,
-      from: founderGrant
+      from: founderGrant,
     };
     sgMail.send(msg);
     res.json({ message: 'Mail has been sent successfully' });
@@ -20,22 +20,20 @@ function sendMail(req, res, next) {
 }
 
 function contactFounderGrants(req, res, next) {
-  const {from, subject, text} = req.body;
+  const { from, subject, text } = req.body;
   try {
     const msg = {
       to: founderGrant,
       subject,
       text,
-      from
-    }
+      from,
+    };
     sgMail.send(msg);
-    res.json({message: "Mail has been sent successfully"});
+    res.json({ message: 'Mail has been sent successfully' });
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
-
-
 
 function checkText(req, res, next) {
   const { to, subject, text } = req.body;
@@ -47,7 +45,8 @@ function checkText(req, res, next) {
 
 module.exports = {
   sendMail,
-  checkText, contactFounderGrants
+  checkText,
+  contactFounderGrants,
 };
 
 /**
