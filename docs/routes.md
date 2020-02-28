@@ -13,6 +13,11 @@ The backend for our Founder Grants app
 	- [Retrieves all the suggestion with the provided Grant Id](#retrieves-all-the-suggestion-with-the-provided-grant-id)
 	- [Gets a suggestion by Suggestion Id](#gets-a-suggestion-by-suggestion-id)
 	
+- [Users](#users)
+	- [Gets All Users from Auth0](#gets-all-users-from-auth0)
+	- [Gets current Logged in User](#gets-current-logged-in-user)
+	- [Updates the User Information](#updates-the-user-information)
+	
 
 
 # <a name='mail'></a> Mail
@@ -316,3 +321,72 @@ Error-Response:
   "message": "Suggestion with id:1 was not found."
 }
 ```
+# <a name='users'></a> Users
+
+## <a name='gets-all-users-from-auth0'></a> Gets All Users from Auth0
+[Back to top](#top)
+
+<p>requires token, moderator</p>
+
+	GET /api/moderator/users
+
+
+
+
+
+
+### Success 200
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  users | json | <p>All Users in Auth0</p>|
+
+## <a name='gets-current-logged-in-user'></a> Gets current Logged in User
+[Back to top](#top)
+
+<p>requires token</p>
+
+	GET /api/users/user
+
+
+
+
+
+
+### Success 200
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  user | json | <p>Current logged in user</p>|
+
+## <a name='updates-the-user-information'></a> Updates the User Information
+[Back to top](#top)
+
+<p>requires token</p>
+
+	PATCH /api/users/user
+
+
+
+
+
+### Parameter Parameters
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  first_name | String | <p>User's First Name</p>|
+|  last_name | String | <p>User's Last Name</p>|
+|  about | String | <p>User's About Information</p>|
+|  company | String | <p>User's Company</p>|
+|  company_url | String | <p>User's Company URL</p>|
+|  phone | String | <p>User's Phone Number</p>|
+|  role | String | <p>User's Role</p>|
+
+
+
+### Success 200
+
+| Name     | Type       | Description                           |
+|:---------|:-----------|:--------------------------------------|
+|  user_metadata | json | <p>User's MetaData update from Auth 0</p>|
+

@@ -83,6 +83,29 @@ async function demoteModerator(req, res, next) {
   }
 }
 
+function checkRoleId(req, res, next) {
+  const { roleId } = req.body;
+  if (!roleId) {
+    res.status(400).json({ message: 'roleId is required' });
+  }
+  next();
+}
+
+async function checkUser(req, res, next) {
+  const { userId } = req.params;
+  const token = await getToken();
+  try {
+    const foundUser = await axios.get(`/users/${userId}`, config(token));
+    if (foundUser.status === 200) {
+      next();
+    } else {
+      res.status(foundUser.status).json({ message: 'Something went wrong' });
+    }
+  } catch (error) {
+    res.status(error.status).json({ message: 'An Error has occurred', error });
+  }
+}
+
 // async function deleteUser(req, res, next) {
 //   const { id } = req.params;
 //   try {
@@ -105,4 +128,49 @@ module.exports = {
   getAllRoles,
   promoteModerator,
   demoteModerator,
+  checkRoleId,
+  checkUser,
 };
+
+/**
+ * @apiDefine RoleIdValidation
+ * @apiError (400) {json} ValidationError
+ * @apiErrorExample {json} Error-Response:
+ * {
+ *   "message": "roleId is required"
+ * }
+ */
+
+/**
+ * @api {get} /api/moderator/users Gets All Users from Auth0
+ * @apiName Get All Users
+ * @apiGroup Users
+ * @apiPermission token, moderator
+ * @apiDescription requires token, moderator
+ * @apiSuccess {json} users All Users in Auth0
+ */
+
+/**
+ * @api {get} /api/users/user Gets current Logged in User
+ * @apiName Get Logged In User
+ * @apiGroup Users
+ * @apiPermission token
+ * @apiDescription requires token
+ * @apiSuccess {json} user Current logged in user
+ */
+
+/**
+ * @api {patch} /api/users/user Updates the User Information
+ * @apiName Update current Logged in User
+ * @apiGroup Users
+ * @apiPermission token
+ * @apiDescription requires token
+ * @apiParam {String} first_name User's First Name
+ * @apiParam {String} last_name User's Last Name
+ * @apiParam {String} about User's About Information
+ * @apiParam {String} company User's Company
+ * @apiParam {String} company_url User's Company URL
+ * @apiParam {String} phone User's Phone Number
+ * @apiParam {String} role User's Role
+ * @apiSuccess {json} user_metadata User's MetaData update from Auth 0
+ */
