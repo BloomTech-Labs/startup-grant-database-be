@@ -37,31 +37,37 @@ async function addSuggestion(req, res, next) {
 }
 
 async function findGrant(req, res, next) {
-  const {grant_id} = req.body;
+  const { grant_id } = req.body;
   try {
-    const foundGrant = await Grants.findBy({id: grant_id});
+    const foundGrant = await Grants.findBy({ id: grant_id });
     if (foundGrant.length > 0) {
-      next()
+      next();
     } else {
-      res.status(404).json({message: `The Grant with id:${grant_id} was not found.`})
+      res
+        .status(404)
+        .json({ message: `The Grant with id:${grant_id} was not found.` });
     }
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
 
 function checkSuggestion(req, res, next) {
-  const {grant_id, subject, suggestion} = req.body;
+  const { grant_id, subject, suggestion } = req.body;
   if (!grant_id || !subject || !suggestion) {
-    res.status(400).json({message: "grant_id, subject, and suggestion is required."})
+    res
+      .status(400)
+      .json({ message: 'grant_id, subject, and suggestion is required.' });
   }
-  next()
+  next();
 }
 
 module.exports = {
   allSuggestionsByGrant,
   getSuggestionById,
-  addSuggestion, findGrant, checkSuggestion
+  addSuggestion,
+  findGrant,
+  checkSuggestion,
 };
 
 /**
