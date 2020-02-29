@@ -101,7 +101,6 @@ module.exports = {
 
 /**
  *  @api {post} /api/mail/contact Contact Form Endpoint
- *  @apiUse RequiredHeaders
  *  @apiUse ServerError
  *  @apiUse ValidationError
  *  @apiUse SuccessResponse
