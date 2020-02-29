@@ -1,4 +1,5 @@
 const privateMailRouter = require('express').Router();
+const publicMailRouter = require('express').Router();
 
 const {
   sendMail,
@@ -6,8 +7,8 @@ const {
   contactFounderGrants,
 } = require('../controllers/sendGrid.controller');
 
-privateMailRouter
-  .post('/individual', checkText, sendMail)
-  .post('/contact', checkText, contactFounderGrants);
+privateMailRouter.post('/individual', checkText, sendMail);
 
-module.exports = { privateMailRouter };
+publicMailRouter.post('/contact', checkText, contactFounderGrants);
+
+module.exports = { privateMailRouter, publicMailRouter };
