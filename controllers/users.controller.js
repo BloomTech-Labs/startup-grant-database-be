@@ -77,7 +77,7 @@ async function demoteModerator(req, res, next) {
       body,
       config(token)
     );
-    res.status(response.status).send("OK");
+    res.status(response.status).send('OK');
   } catch (error) {
     next(error);
   }
@@ -95,7 +95,6 @@ async function checkUser(req, res, next) {
   const { userId } = req.params;
   const token = await getToken();
   try {
-
     const foundUser = await axios.get(`/users/${userId}`, config(token));
     if (foundUser.status === 200) {
       next();
