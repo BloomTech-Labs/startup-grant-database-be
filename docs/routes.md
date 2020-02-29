@@ -9,7 +9,7 @@ The backend for our Founder Grants app
 	- [Get Grant By Id](#get-grant-by-id)
 	
 - [Mail](#mail)
-	- [Sends an Email to Founder Grants](#sends-an-email-to-founder-grants)
+	- [Contact Form Endpoint](#contact-form-endpoint)
 	- [Sends an email to a registered user](#sends-an-email-to-a-registered-user)
 	
 - [Suggestion](#suggestion)
@@ -135,12 +135,12 @@ Error-Response:
 ```
 # <a name='mail'></a> Mail
 
-## <a name='sends-an-email-to-founder-grants'></a> Sends an Email to Founder Grants
+## <a name='contact-form-endpoint'></a> Contact Form Endpoint
 [Back to top](#top)
 
-<p>Sends an email to a specified user</p>
+<p>Contact From End Point</p>
 
-	POST /api/mail/individual
+	POST /api/mail/contact
 
 ### Headers
 
@@ -166,7 +166,7 @@ Sample-Header:
 
 | Name     | Type       | Description                           |
 |:---------|:-----------|:--------------------------------------|
-|  to | String | <p>Email address to the user</p>|
+|  from | String | <p>Email address to the user</p>|
 |  subject | String | <p>Email subject</p>|
 |  text | String | <p>Email Body</p>|
 
