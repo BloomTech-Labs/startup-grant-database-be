@@ -100,7 +100,7 @@ module.exports = {
  */
 
 /**
- *  @api {post} /api/mail/individual Sends an Email to Founder Grants
+ *  @api {post} /api/mail/contact Contact Form Endpoint
  *  @apiUse RequiredHeaders
  *  @apiUse ServerError
  *  @apiUse ValidationError
@@ -108,8 +108,8 @@ module.exports = {
  *  @apiName Contact Founder Grants
  *  @apiGroup Mail
  *  @apiPermission token
- *  @apiDescription Sends an email to a specified user
- *  @apiParam {String} to Email address to the user
+ *  @apiDescription Contact From End Point
+ *  @apiParam {String} from Email address to the user
  *  @apiParam {String} subject Email subject
  *  @apiParam {String} text Email Body
  *  @apiParamExample {json} Sample-Request:

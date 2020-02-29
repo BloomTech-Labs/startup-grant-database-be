@@ -60,7 +60,7 @@ async function promoteModerator(req, res, next) {
       body,
       config(token)
     );
-    res.status(response.status);
+    res.status(response.status).send('OK');
   } catch (error) {
     next(error);
   }
@@ -77,7 +77,7 @@ async function demoteModerator(req, res, next) {
       body,
       config(token)
     );
-    res.status(response.status);
+    res.status(response.status).send('OK');
   } catch (error) {
     next(error);
   }
