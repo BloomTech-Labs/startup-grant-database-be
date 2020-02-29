@@ -20,6 +20,8 @@ exports.up = function(knex) {
     tbl.date('details_last_updated'); // Keep
     tbl.string('domain_areas', 500);
     tbl.string('type');
+    tbl.string('logo', 255).defaultTo(null);
+    tbl.boolean('use_logo').defaultTo(null);
   });
 };
 
