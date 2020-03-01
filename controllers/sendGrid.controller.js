@@ -101,13 +101,12 @@ module.exports = {
 
 /**
  *  @api {post} /api/mail/contact Contact Form Endpoint
- *  @apiUse RequiredHeaders
  *  @apiUse ServerError
  *  @apiUse ValidationError
  *  @apiUse SuccessResponse
  *  @apiName Contact Founder Grants
  *  @apiGroup Mail
- *  @apiPermission token
+ *  @apiPermission none
  *  @apiDescription Contact From End Point
  *  @apiParam {String} from Email address to the user
  *  @apiParam {String} subject Email subject

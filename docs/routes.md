@@ -142,23 +142,7 @@ Error-Response:
 
 	POST /api/mail/contact
 
-### Headers
 
-| Name    | Type      | Description                          |
-|---------|-----------|--------------------------------------|
-| token | String | <p>Users AccessToken from Auth0</p>|
-
-
-### Header Examples
-
-Sample-Header:
-
-```
-{
-  "Content-Type": "application/json",
-  "authorization": "Bearer token"
-}
-```
 
 
 
