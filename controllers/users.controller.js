@@ -99,7 +99,9 @@ async function checkUser(req, res, next) {
     if (foundUser.status === 200) {
       next();
     } else {
-      res.status(foundUser.status).json({ message: 'Something went wrong' });
+      return res
+        .status(foundUser.status)
+        .json({ message: 'Something went wrong' });
     }
   } catch (error) {
     res.status(error.status).json({ message: 'An Error has occurred', error });
