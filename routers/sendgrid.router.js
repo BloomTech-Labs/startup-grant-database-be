@@ -5,10 +5,11 @@ const {
   sendMail,
   checkText,
   contactFounderGrants,
+  checkContact,
 } = require('../controllers/sendGrid.controller');
 
 privateMailRouter.post('/individual', checkText, sendMail);
 
-publicMailRouter.post('/contact', checkText, contactFounderGrants);
+publicMailRouter.post('/contact', checkContact, contactFounderGrants);
 
 module.exports = { privateMailRouter, publicMailRouter };

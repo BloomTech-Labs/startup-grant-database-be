@@ -55,7 +55,7 @@ async function findGrant(req, res, next) {
 function checkSuggestion(req, res, next) {
   const { grant_id, subject, suggestion } = req.body;
   if (!grant_id || !subject || !suggestion) {
-    res
+    return res
       .status(400)
       .json({ message: 'grant_id, subject, and suggestion is required.' });
   }

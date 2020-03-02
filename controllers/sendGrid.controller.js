@@ -38,7 +38,19 @@ function contactFounderGrants(req, res, next) {
 function checkText(req, res, next) {
   const { to, subject, text } = req.body;
   if (!to || !subject || !text) {
-    res.status(400).json({ message: 'To, Subject, and Text are required' });
+    return res
+      .status(400)
+      .json({ message: 'To, Subject, and Text are required' });
+  }
+  next();
+}
+
+function checkContact(req, res, next) {
+  const { from, subject, text } = req.body;
+  if (!from || !subject || !text) {
+    return res
+      .status(400)
+      .json({ message: 'From, Subject, and Text are required' });
   }
   next();
 }
@@ -47,6 +59,7 @@ module.exports = {
   sendMail,
   checkText,
   contactFounderGrants,
+  checkContact,
 };
 
 /**
