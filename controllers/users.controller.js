@@ -7,20 +7,17 @@ async function roleData(userId, token) {
 }
 
 async function findAllUsers(req, res, next) {
-  console.log('Req.user: %j', req.user);
   const token = await getToken();
   try {
     const users = await axios.get('/users', config(token));
     const tempUsersMap = await users.data.map(async individual => {
-      console.log(individual);
       const roles = await axios.get(
         `/users/${individual.user_id}/roles`,
         config(token)
       );
-      console.log(roles.data);
       return { ...individual, roles: roles.data };
     });
-    console.log('Will this shit work: %j', tempUsersMap);
+    console.log('Will this smurf freaking work: %j', tempUsersMap);
     res.json(users.data);
   } catch (error) {
     next(error);
