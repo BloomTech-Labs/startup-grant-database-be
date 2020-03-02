@@ -9,16 +9,21 @@ async function roleData(userId, token) {
 async function findAllUsers(req, res, next) {
   const token = await getToken();
   try {
+    const tempUsersMap = [];
+    /**
+     * This needs to be looked into
+     * There has to be a better way of getting roles
+     * on All Users
+     */
     const users = await axios.get('/users', config(token));
-    const tempUsersMap = await users.data.map(async individual => {
+    for (const user of users.data) {
       const roles = await axios.get(
-        `/users/${individual.user_id}/roles`,
+        `/users/${user.user_id}/roles`,
         config(token)
       );
-      return { ...individual, roles: roles.data };
-    });
-    console.log('Will this smurf freaking work: %j', tempUsersMap);
-    res.json(users.data);
+      tempUsersMap.push({ ...user, roles: roles.data });
+    }
+    res.json(tempUsersMap);
   } catch (error) {
     next(error);
   }
