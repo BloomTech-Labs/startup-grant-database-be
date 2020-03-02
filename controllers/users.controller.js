@@ -1,11 +1,26 @@
 const axios = require('axios');
 const { config, getToken } = require('../data/auth0.config');
 
+async function roleData(userId, token) {
+  const response = await axios.get(`/users/${userId}/roles`, config(token));
+  return response.data;
+}
+
 async function findAllUsers(req, res, next) {
   console.log('Req.user: %j', req.user);
   const token = await getToken();
   try {
     const users = await axios.get('/users', config(token));
+    const tempUsersMap = await users.data.map(async individual => {
+      console.log(individual);
+      const roles = await axios.get(
+        `/users/${individual.user_id}/roles`,
+        config(token)
+      );
+      console.log(roles.data);
+      return { ...individual, roles: roles.data };
+    });
+    console.log('Will this shit work: %j', tempUsersMap);
     res.json(users.data);
   } catch (error) {
     next(error);
@@ -17,8 +32,8 @@ async function findUser(req, res, next) {
   const token = await getToken();
   try {
     const userData = await axios.get(`/users/${sub}`, config(token));
-    const roleData = await axios.get(`/users/${sub}/roles`, config(token));
-    res.json({ ...userData.data, roles: roleData.data });
+    const roles = await roleData(sub, token);
+    res.json({ ...userData.data, roles });
   } catch (error) {
     next(error);
   }
@@ -33,8 +48,8 @@ async function updateUser(req, res, next) {
       req.body,
       config(token)
     );
-    const roleData = await axios.get(`/users/${sub}/roles`, config(token));
-    res.status(200).json({ ...updatedUser.data, roles: roleData.data });
+    const roleData1 = await axios.get(`/users/${sub}/roles`, config(token));
+    res.status(200).json({ ...updatedUser.data, roles: roleData1.data });
   } catch (error) {
     next(error);
   }
