@@ -131,7 +131,6 @@ beforeAll(async () => {
   await db.migrate.rollback();
   await db.migrate.latest();
   await db('grants').insert(grants);
-  console.log('Called');
 });
 
 describe('Grant Routes', () => {
@@ -172,10 +171,18 @@ describe('Grant Routes', () => {
       });
     });
     describe('Good Token', () => {
-      it('should return 201 on POST', async () => {
+      it('should return 400 on POST with bad website', async () => {
         const res = await request(server)
           .post('/api/grants')
           .send(testGrant)
+          .set('Authorization', token);
+        expect(res.status).toBe(400);
+      });
+
+      it('should return 201 on POST', async () => {
+        const res = await request(server)
+          .post('/api/grants')
+          .send({ ...testGrant, website: 'https://www.foundergrants.com' })
           .set('Authorization', token);
         expect(res.status).toBe(201);
       });

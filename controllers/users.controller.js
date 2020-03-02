@@ -2,6 +2,7 @@ const axios = require('axios');
 const { config, getToken } = require('../data/auth0.config');
 
 async function findAllUsers(req, res, next) {
+  console.log('Req.user: %j', req.user);
   const token = await getToken();
   try {
     const users = await axios.get('/users', config(token));

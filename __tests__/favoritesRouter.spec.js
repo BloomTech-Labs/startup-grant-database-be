@@ -77,7 +77,7 @@ describe('Favorites Router', () => {
     });
     it('should return 200 on GET list of Favorites with provided user id', async () => {
       const res = await request(server)
-        .get('/api/users/1/favorites')
+        .get('/api/users/9wxzo3C30d8bDIsv8KcLBZCiVB5cEm7@clients/favorites')
         .set('Authorization', token);
       expect(res.status).toBe(200);
     });
