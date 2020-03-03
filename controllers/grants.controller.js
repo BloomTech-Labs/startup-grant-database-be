@@ -62,7 +62,8 @@ function checkUrl(req, res, next) {
     const newUrl = new URL(website);
     next();
   } catch {
-    res.status(400).json({ message: 'Website is not properly formed' });
+    req.body = {...req.body, use_logo: false}
+    next()
   }
 }
 
