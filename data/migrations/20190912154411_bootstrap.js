@@ -13,7 +13,8 @@ exports.up = function(knex) {
     tbl.string('country');
     // tbl.string("domain_areas", 1000);
     tbl.string('target_entrepreneur_demographic', 255); // Keep
-    tbl.string('notes', 5000); // Keep
+    tbl.string('notes', 5000); // KeepOptions for --register-aws
+
     tbl.boolean('early_stage_funding'); // Keep
     tbl.boolean('is_reviewed'); // Keep
     tbl.boolean('has_requests'); // Keep

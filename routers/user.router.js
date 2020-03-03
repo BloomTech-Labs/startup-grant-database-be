@@ -23,6 +23,6 @@ moderatorRouter.get('/users', findAllUsers).get('/roles', getAllRoles);
 
 adminRouter
   .post('/moderator/:userId', checkRoleId, checkUser, promoteModerator)
-  .delete('/moderator/:userId', checkRoleId, checkUser, demoteModerator);
+  .post('/moderator/remove/:userId', checkRoleId, checkUser, demoteModerator);
 
 module.exports = { userRouter, adminRouter, moderatorRouter };
