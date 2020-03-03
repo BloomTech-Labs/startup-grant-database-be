@@ -19,6 +19,4 @@ const checkJwt = jwt({
   algorithms: ['RS256'],
 });
 
-console.log(checkJwt.unless);
-
 module.exports = checkJwt;

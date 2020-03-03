@@ -6,7 +6,7 @@ exports.up = function(knex) {
     tbl.string('area_focus', 255); // Keep
     tbl.string('sponsoring_entity', 255); // Keep
     tbl.string('website', 500); // Keep
-    tbl.date('most_recent_application_due_date'); // Keep
+    tbl.string('most_recent_application_due_date'); // Keep
     tbl.integer('amount'); // Keep
     tbl.string('amount_notes', 1000); // Keep
     tbl.string('geographic_region', 255); // Keep
@@ -17,7 +17,7 @@ exports.up = function(knex) {
     tbl.boolean('early_stage_funding'); // Keep
     tbl.boolean('is_reviewed'); // Keep
     tbl.boolean('has_requests'); // Keep
-    tbl.date('details_last_updated'); // Keep
+    tbl.string('details_last_updated'); // Keep
     tbl.string('domain_areas', 500);
     tbl.string('type');
     tbl.string('logo', 255).defaultTo(null);
