@@ -126,21 +126,6 @@ async function checkUser(req, res, next) {
   }
 }
 
-// async function deleteUser(req, res, next) {
-//   const { id } = req.params;
-//   try {
-//     const foundUser = await Users.findBy({ id });
-//     if (foundUser.length > 0) {
-//       const count = await Users.remove(id);
-//       res.json(count);
-//     } else {
-//       res.status(404).json({ message: 'User not found' });
-//     }
-//   } catch (error) {
-//     next(error);
-//   }
-// }
-
 module.exports = {
   findAllUsers,
   findUser,
