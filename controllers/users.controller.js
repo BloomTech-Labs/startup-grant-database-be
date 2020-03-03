@@ -90,11 +90,11 @@ async function demoteModerator(req, res, next) {
   const token = await getToken();
   try {
     const body = { roles: [roleId] };
-    const response = await axios.post(
-      `/users/${userId}/roles`,
-      body,
-      config(token)
-    );
+    const axiosConfig = config(token);
+    const response = await axios.delete(`/users/${userId}/roles`, {
+      ...axiosConfig,
+      data: { ...body },
+    });
     res.status(response.status).send('OK');
   } catch (error) {
     next(error);
@@ -104,7 +104,7 @@ async function demoteModerator(req, res, next) {
 function checkRoleId(req, res, next) {
   const { roleId } = req.body;
   if (!roleId) {
-    res.status(400).json({ message: 'roleId is required' });
+    return res.status(400).json({ message: 'roleId is required' });
   }
   next();
 }
