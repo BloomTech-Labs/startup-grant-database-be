@@ -1,7 +1,7 @@
 const admin = require('express').Router();
 const moderator = require('express').Router();
 
-const { adminRouter } = require('./user.router');
+const { adminUserRouter } = require('./user.router');
 const {
   getGrantsAdmin,
   updateGrant,
@@ -10,13 +10,13 @@ const {
   getSuggestionByGrantId,
 } = require('../controllers/admin.controller');
 
-admin.use('/users', adminRouter);
+admin.use('/users', adminUserRouter);
 
 moderator
   .get('/grants', getGrantsAdmin)
   .get('/suggestions/:grant_id', getSuggestionByGrantId)
-  .put('/:id', updateGrant)
-  .delete('/:id', deleteGrant)
+  .put('/grant/:id', updateGrant)
+  .delete('/grant/:id', deleteGrant)
   .delete('/suggestion/:id', removeSuggestion);
 
 module.exports = { admin, moderator };

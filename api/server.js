@@ -11,7 +11,11 @@ routes(server);
  * proper error handling on the routes.
  */
 server.use((error, req, res, next) => {
-  console.log('Called', error);
+  if (error && error.name && error.name === 'UnauthorizedError') {
+    return res.status(error.status).json({ message: error.message });
+  }
+  // console.log('Req: %j', JSON.stringify(req))
+  console.log('Missed Error Handling Opportunity: %j', error);
   res.status(500).json({ message: 'An Error Has Occurred', error });
 });
 

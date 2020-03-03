@@ -18,6 +18,7 @@ async function getGrantsAdmin(req, res, next) {
 }
 
 async function updateGrant(req, res, next) {
+  console.log('Admin Update Grant: %j', req.body);
   const { id } = req.params;
   try {
     const grant = await Grants.findBy({ id });

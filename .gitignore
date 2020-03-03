@@ -88,3 +88,4 @@ typings/
 .dynamodb/
 ./data/*.db3
 .idea
+/apidoc/

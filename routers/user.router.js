@@ -1,5 +1,5 @@
 const userRouter = require('express').Router();
-const adminRouter = require('express').Router();
+const adminUserRouter = require('express').Router();
 const moderatorRouter = require('express').Router();
 
 const {
@@ -9,6 +9,8 @@ const {
   getAllRoles,
   promoteModerator,
   demoteModerator,
+  checkUser,
+  checkRoleId,
 } = require('../controllers/users.controller');
 const favoritesRouter = require('./favorite.router');
 
@@ -19,8 +21,8 @@ userRouter
 
 moderatorRouter.get('/users', findAllUsers).get('/roles', getAllRoles);
 
-adminRouter
-  .post('/moderator/:userId', promoteModerator)
-  .delete('/moderator/:userId', demoteModerator);
+adminUserRouter
+  .post('/moderator/:userId', checkRoleId, checkUser, promoteModerator)
+  .post('/moderator/remove/:userId', checkRoleId, checkUser, demoteModerator);
 
-module.exports = { userRouter, adminRouter, moderatorRouter };
+module.exports = { userRouter, adminUserRouter, moderatorRouter };

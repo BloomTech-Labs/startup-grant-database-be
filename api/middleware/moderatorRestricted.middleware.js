@@ -9,9 +9,13 @@ async function checkModerator(req, res, next) {
     if (userRoles.data.filter(role => role.name === 'Moderator').length > 0) {
       next();
     } else {
-      res.status(401).json({ message: 'You shall not pass' });
+      res.status(403).json({ message: 'Forbidden' });
     }
   } catch (error) {
+    console.log('Error in Moderator: %j', error);
+    if (error.response.status === 401) {
+      return res.status(401).json(error.response.data);
+    }
     next(error);
   }
 }

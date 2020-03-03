@@ -4,6 +4,9 @@
   "description": "The Backend for the Founder Grants app",
   "main": "index.js",
   "scripts": {
+    "docs": "npm run docs:generate && npm run docs:markdown",
+    "docs:generate": "apidoc -i ./controllers -o ./apidoc/",
+    "docs:markdown": "apidoc-markdown2 -p apidoc -o ./docs/routes.md",
     "lint:fix": "eslint . --fix",
     "server": "nodemon index.js",
     "local-test": "cross-env DB_ENV=testing jest --verbose --watchAll --coverage",
@@ -17,7 +20,10 @@
       "**/*.{js,jsx}",
       "!**/node_modules/**",
       "!**/vendor/**",
-      "!**/__tests__/**"
+      "!**/__tests__/**",
+      "!**/data/migrations/**",
+      "!**/data/seeds/**",
+      "!**/coverage/**"
     ]
   },
   "repository": {
@@ -32,6 +38,7 @@
   },
   "homepage": "https://github.com/Lambda-School-Labs/startup-grant-database-be#readme",
   "dependencies": {
+    "@sendgrid/mail": "^6.5.3",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -49,6 +56,8 @@
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
+    "apidoc": "^0.20.0",
+    "apidoc-markdown2": "^0.3.7",
     "babel-eslint": "^9.0.0",
     "cross-env": "^5.2.1",
     "eslint": "^5.14.1",
@@ -61,7 +70,9 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.3.0",
+    "husky": "^4.2.3",
     "jest": "^24.9.0",
+    "moment": "^2.24.0",
     "nodemon": "^1.19.4",
     "prettier": "^1.16.4",
     "supertest": "^4.0.2"
