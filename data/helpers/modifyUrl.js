@@ -1,4 +1,8 @@
 module.exports = url => {
-  const loc = new URL(url);
-  return loc.hostname;
+  try {
+    const loc = new URL(url);
+    return loc.hostname;
+  } catch(error) {
+    return url
+  }
 };
