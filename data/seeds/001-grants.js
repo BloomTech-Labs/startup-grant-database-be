@@ -7,7 +7,7 @@ exports.seed = function(knex) {
     return knex("grants").insert([
       {
         competition_name: "GIST Tech-I Competition",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Global Innovation Through Science and Technology",
         website: "http://www.gistnetwork.org/content/gist-tech-i",
         most_recent_application_due_date: null,
@@ -28,7 +28,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Africa Angels Network Award",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Harambe Entrepreneur Alliance",
         website: "http://www.healliance.org/africa_angels_network_award.pdf",
         most_recent_application_due_date: null,
@@ -48,7 +48,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Alaska Airlines Environmental Challenge",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Alaska Airlines",
         website:
           "http://foster.uw.edu/centers/buerk-ctr-entrepreneurship/entrepreneurship-competitions/eic/",
@@ -71,7 +71,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "APTE Impact IdeaPitch Competition",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Alleviating Poverty Through Entrepreneurship",
         website: "http://www.aptesummit.org/bizcomp-judges/",
         most_recent_application_due_date: null,
@@ -90,7 +90,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "ARPA-E: Open Funding Opportunity Announcement",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "ARPA-E",
         website:
           "https://arpa-e-foa.energy.gov/#FoaIdce3cc85c-75cb-4d73-baa5-3cee39bb6bc7",
@@ -110,7 +110,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "AT&T Experts: Grant for Greatness",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "AT&T Experts",
         website: "http://www.attexperts.com/grant",
         most_recent_application_due_date: null,
@@ -131,7 +131,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "BASES Challenge 2017",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity:
           "Business Association of Stanford Entrepreneurial Students",
         website: "http://bases.stanford.edu/programs/",
@@ -152,10 +152,10 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Big Ideas @ Berkeley",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "University of California, Berkeley",
         website: "http://bigideas.berkeley.edu/",
-        most_recent_application_due_date: null
+        most_recent_application_due_date: null,
         amount: 5000,
         amount_notes: "$5,000-$10,000",
         geographic_region: "North America",
@@ -173,7 +173,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Business for Good",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Nashville Social Enterprise Alliance",
         website: "http://nashvillesocialenterprise.org/business-for-good/",
         most_recent_application_due_date: null,
@@ -193,7 +193,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "CommonBond Social Impact Award",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "CommonBond",
         website: "http://www.commonbond-sia.co/",
         most_recent_application_due_date: null,
@@ -214,7 +214,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Eco-Audit Grant",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity:
           "EcoRise Youth & City of Austin Office of Sustainability",
         website: "http://ecorise.org/programs-services/eco-audit-grant/",
@@ -236,7 +236,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Education Business Plan Competition (EBPC)",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity:
           "University of Chicago Booth School of Business & Yale School of Management",
         website:
@@ -259,7 +259,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Fish 2.0",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Fish 2.0",
         website: "http://www.fish20.org/",
         most_recent_application_due_date: null,
@@ -281,7 +281,7 @@ exports.seed = function(knex) {
       {
         competition_name:
           "Fletcher D-Prize: Poverty Solutions Venture Competition",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity:
           "Fletcher School of Law and Diplomacy, Tufts University",
         website: "http://fletcher.tufts.edu/D-Prize",
@@ -302,7 +302,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Food + City Challenge Prize",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "University of Texas at Austin",
         website: "http://www.foodandcity.org/challenge-prize/",
         most_recent_application_due_date: null,
@@ -321,7 +321,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Fuller Challenge",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Buckminster Fuller Institute",
         website: "https://bfi.org/challenge/",
         most_recent_application_due_date: null,
@@ -340,7 +340,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "GHIC Innovation Prize",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Unite For Sight",
         website: "http://www.uniteforsight.org/conference/innovation-prize",
         most_recent_application_due_date: null,
@@ -360,7 +360,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Grinnell College Innovator for Social Justice Prize",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "Grinnell College",
         website: "http://www.grinnell.edu/grinnellprize",
         most_recent_application_due_date: null,
@@ -380,7 +380,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Hult Prize",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity:
           "Hult International Business School & Clinton Global Initiative",
         website: "http://www.hultprize.org/",
@@ -401,7 +401,7 @@ exports.seed = function(knex) {
       },
       {
         competition_name: "Innovation Corps (I-Corps)",
-        area_focus: "Social Entrepreneurship",
+        area_focus: "Business",
         sponsoring_entity: "National Science Foundation",
         website: "http://www.nsf.gov/news/special_reports/i-corps/",
         most_recent_application_due_date: null,
