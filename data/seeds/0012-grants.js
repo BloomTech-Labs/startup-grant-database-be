@@ -15,7 +15,7 @@ exports.seed = function(knex) {
         amount: 80000,
         amount_notes: null,
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         domain_areas:
           'Financially sustainable or profitable, scalable long term, social and/or environmental bottom line,',
         target_entrepreneur_demographic: null,

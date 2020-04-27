@@ -37,7 +37,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Our focus is on makers, hackers, and scientists interested in working outside tracked institutions because we believe that the path geared towards higher education is not for all.',
         target_entrepreneur_demographic: null,

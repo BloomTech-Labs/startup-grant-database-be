@@ -59,7 +59,7 @@ const grants = [
     amount_notes:
       '$15,000 Grand Prize\n $10,000 2nd Place\n $5,000 Clean Energy\n $2,500 Honorable Mentions',
     geographic_region: 'North America',
-    country: 'United States',
+    country: 'North America',
     target_entrepreneur_demographic: null,
     notes:
       'One team member must be a student of a college or university in Washington, Alaska, Wyoming, Idaho, or Montana',

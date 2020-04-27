@@ -57,7 +57,7 @@ exports.seed = function(knex) {
         amount_notes:
           '$15,000 Grand Prize\n $10,000 2nd Place\n $5,000 Clean Energy\n $2,500 Honorable Mentions',
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes:
           'One team member must be a student of a college or university in Washington, Alaska, Wyoming, Idaho, or Montana',
@@ -117,7 +117,7 @@ exports.seed = function(knex) {
         amount: 1000,
         amount_notes: null,
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes:
           'Innovative ideas from individuals, small businesses, startups, think tanks, anyone with a great plan or idea. Package your idea into a 2-minute video.',
@@ -159,7 +159,7 @@ exports.seed = function(knex) {
         amount: 5000,
         amount_notes: '$5,000-$10,000',
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes:
           'At least one member of each team must be a matriculated student at an eligible campus to enter the contest',
@@ -180,7 +180,7 @@ exports.seed = function(knex) {
         amount: 10000,
         amount_notes: null,
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes: null,
         early_stage_funding: true,
@@ -200,7 +200,7 @@ exports.seed = function(knex) {
         amount: 10000,
         amount_notes: null,
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes:
           'Company is looking to honor and celebrate a social entrepreneur who is creating positive social impact locally or globally',
@@ -222,7 +222,7 @@ exports.seed = function(knex) {
         amount: 500,
         amount_notes: '$500/project and campuses are limited to $2,000/year',
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes:
           'Eligible parties include teachers, campus administrators, or club advisors at a K-12 public or private school. Different timelines for fall and spring applications',
@@ -245,7 +245,7 @@ exports.seed = function(knex) {
         amount: 10000,
         amount_notes: null,
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes:
           'Open to undergraduates and graduates. Do not need to be affiliated with a university to apply.',
@@ -267,7 +267,7 @@ exports.seed = function(knex) {
         amount_notes:
           'Two finalists in each track will receive $5,000 each. Sponsors can offer finalists additional awards.',
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes: null,
         early_stage_funding: false,
@@ -408,7 +408,7 @@ exports.seed = function(knex) {
         amount: 50000,
         amount_notes: '$50,000 (to selected teams)',
         geographic_region: 'North America',
-        country: 'United States',
+        country: 'North America',
         target_entrepreneur_demographic: null,
         notes:
           'Must have an active NSF award or one that has been active within the previous five years. Each team member must commit a minimum of 15 hours per week to the program, which offers a combination of in-\u00adperson “bootcamp” training and webinars over the course of a 7-\u00adweek period. If interested, contact Taryn Upchurch at taryn@stanford.edu',

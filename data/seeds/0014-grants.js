@@ -14,7 +14,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 80000,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         // domain_areas: 'Financially sustainable or profitable, scalable long term, social and/or environmental bottom line,',
         target_entrepreneur_demographic: null,
         notes:
@@ -36,7 +36,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         // domain_areas: 'Pacific Venture Capital Conference and Competition (PVCC) is an international competition and conference designed for two types of students: ones with entrepreneurial ideas, and ones with a passion for start-up valuations.',
         target_entrepreneur_demographic: null,
         notes:
@@ -59,7 +59,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'Atlanta',
+        geographic_region: 'North America',
         // domain_areas: 'Participate in one of the most dynamic social impact-focused events of the year, where you’ll get to meet and collaborate with legendary social justice leaders, social entrepreneurs, and other changemakers.',
         target_entrepreneur_demographic: null,
         notes:
@@ -81,7 +81,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         // domain_areas: 'The Citi Tech for Integrity Challenge (T4I) is an open innovation challenge to source solutions that promote integrity, accountability and transparency in the public sector. Solve for real-life problem statements that are relevant to government organizations globally.',
         target_entrepreneur_demographic: null,
         notes:
@@ -127,7 +127,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 10000,
         amount_notes: null,
-        geographic_region: 'Unspecified',
+        geographic_region: 'Global',
         // domain_areas: 'At Burt\'s Bees, we take our cue from nature. We\'ve committed ourselves to making the world a little greener, a little cleaner, by doing what bees do best: working hard on natural products that people love. That\'s why, for example, we\'ve committed ourselves to a policy of sending zero waste to landfill and also serious about energy use.',
         target_entrepreneur_demographic: null,
         notes:

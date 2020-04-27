@@ -103,7 +103,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 100000,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas: 'Low-income communities, educational inequity',
         target_entrepreneur_demographic: null,
         notes: 'Must be a Teach for America alum or corps member',
@@ -173,7 +173,7 @@ exports.seed = function(knex) {
         amount_notes:
           '1st place: $50,000\n Open competition prizes: $10,000\n Top 15 student teams: $500 each\n AARP Foundation Prize: $5,000',
         geographic_region: 'Global',
-        domain_areas: 'Unspecified',
+        domain_areas: 'North America',
         target_entrepreneur_demographic: null,
         notes: 'For Duke students/alumni only',
         early_stage_funding: true,
@@ -193,7 +193,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: 'Prizes vary',
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas: 'Solar',
         target_entrepreneur_demographic: null,
         notes:
@@ -283,7 +283,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 50000,
         amount_notes: '$50,000 per year (for 3 years)',
-        geographic_region: 'San Francisco Bay Area',
+        geographic_region: 'North America',
         domain_areas:
           'College access for low-income and underrepresented students',
         target_entrepreneur_demographic: null,
@@ -329,7 +329,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 107000,
         amount_notes: '$7,000-$107,000',
-        geographic_region: 'Chile',
+        geographic_region: 'South America',
         domain_areas:
           'Improve renewable energy and meet hosehold demands efficently',
         target_entrepreneur_demographic: null,
@@ -352,7 +352,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 10000,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Have an existing prototype or beta technology and plan to build high-growth companies',
         target_entrepreneur_demographic: null,
@@ -377,7 +377,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Have an idea that has a sustainable impact through an investment strategy that uses finance and investment tools to create an innovative solution to an environmental or societal challenge',
         target_entrepreneur_demographic: null,
@@ -400,7 +400,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 80000,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Financially sustainable or profitable, scalable long term, social and/or environmental bottom line,',
         target_entrepreneur_demographic: null,
@@ -423,7 +423,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 100000,
         amount_notes: null,
-        geographic_region: 'Beverly Hills',
+        geographic_region: 'North America',
         domain_areas:
           "EMA serves as a valuable link between the world of media and the environmental community, working tirelessly to bring the planet's most pressing issues to the forefront of pop culture and make true change by inspiring the next generation of filmmakers and entrepreneurs.",
         target_entrepreneur_demographic: null,

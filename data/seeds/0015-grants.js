@@ -37,7 +37,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 175000,
         amount_notes: '$175,000 (for each of the 10 winners)',
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Cultural heritage, human rights, the built environment, the natural environment',
         target_entrepreneur_demographic: null,

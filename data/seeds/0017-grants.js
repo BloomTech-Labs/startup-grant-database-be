@@ -16,7 +16,7 @@ exports.seed = function(knex) {
         amount: 10000,
         amount_notes:
           '$10,000 in seed funding, and will have the opportunity to engage a high-level cohort of judges and speakers.',
-        geographic_region: 'Bay Area',
+        geographic_region: 'North America',
         domain_areas:
           'We offer student teams from universities worldwide the opportunity to present their ideas for low-cost, high-impact, and scalable global health innovations.',
         target_entrepreneur_demographic: null,
@@ -40,7 +40,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'CGI U challenges young leaders and entrepreneurs to become agents of positive social change by developing a Commitment to Action: a new, specific, and measurable plan to address a challenge in one of CGI U’s five focus areas.',
         target_entrepreneur_demographic: null,
@@ -86,7 +86,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 1000000,
         amount_notes: '$1 MILLION IN AWARDS',
-        geographic_region: 'Unspecified',
+        geographic_region: 'Global',
         domain_areas:
           'Whether it spoke to the arts, science and tech, education, healthcare or human rights, or came from a group or individuals, working locally or globally—what mattered was the potential for impact. What mattered was moving the needle. Welcoming a wide range of solutions was designed to spur cross-topic innovation and broaden the reach of potential applicants and issue areas addressed.',
         target_entrepreneur_demographic: null,
@@ -111,7 +111,7 @@ exports.seed = function(knex) {
         amount: 1000000,
         amount_notes:
           'Receive a share of $1 million in funding from GHR Foundation.',
-        geographic_region: 'Unspecified',
+        geographic_region: 'Global',
         domain_areas:
           'In the BridgeBuilder Challenge, we are collaboratively designing solutions that address urgent global challenges in radically new ways such as: working at the intersection, collaborating across divides, and focusing on process and infrastructure.',
         target_entrepreneur_demographic: null,
@@ -134,8 +134,8 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 25000,
         amount_notes: null,
-        geographic_region: 'California',
-        domain_areas: 'Any',
+        geographic_region: 'North America',
+        domain_areas: 'Global',
         target_entrepreneur_demographic: null,
         notes: 'For novel solutions to community challenges',
         early_stage_funding: true,
@@ -155,7 +155,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 10000,
         amount_notes: null,
-        geographic_region: 'Any',
+        geographic_region: 'Global',
         domain_areas: 'Climate / Environmental',
         target_entrepreneur_demographic: null,
         notes: 'Seven different specific challenges',
@@ -176,7 +176,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'Denver',
+        geographic_region: 'North America',
         domain_areas: 'Food Access',
         target_entrepreneur_demographic: null,
         notes:
@@ -198,7 +198,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 20000,
         amount_notes: 'up to $20,000',
-        geographic_region: 'Any',
+        geographic_region: 'Global',
         domain_areas:
           'Girl\'s Education, Agriculture, Energy, Global Health, Education, Governance and Infrastructure, "Propose your own',
         target_entrepreneur_demographic: null,
@@ -221,7 +221,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: 1000,
         amount_notes: null,
-        geographic_region: 'Any',
+        geographic_region: 'Global',
         domain_areas: 'Social Change',
         target_entrepreneur_demographic: null,
         notes:
@@ -243,7 +243,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'Any',
+        geographic_region: 'Global',
         domain_areas: 'Social',
         target_entrepreneur_demographic: null,
         notes:
@@ -287,7 +287,7 @@ exports.seed = function(knex) {
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas: 'GovTech',
         target_entrepreneur_demographic: null,
         notes:
