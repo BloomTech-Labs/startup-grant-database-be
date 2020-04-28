@@ -8,10 +8,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'NextChallenge: Smart Cities',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Science',
         sponsoring_entity: 'NextEnergy Center',
         website: 'http://www.nextenergy.org/nextchallenge/',
-        most_recent_application_due_date: '8/18/2017',
+        most_recent_application_due_date: null,
         amount: 80000,
         amount_notes: null,
         geographic_region: 'Global',
@@ -29,7 +29,7 @@ exports.seed = function(knex) {
       {
         competition_name: 'Notre Dame Global Adaptation Index Prize',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Science',
         sponsoring_entity:
           'University of Notre Dame Environmental Change Initiative',
         website: 'http://gain.org/nd-gain-prize',
@@ -51,10 +51,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'Powerful Answers Award',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'Verizon',
         website: 'http://www.verizon.com/about/portal/powerful-answers/',
-        most_recent_application_due_date: '6/18/2015',
+        most_recent_application_due_date: null,
         amount: 1000000,
         amount_notes:
           '1 per category:\n 1st place: $1M\n 2nd place: $500K\n 3rd place: $250K',
@@ -74,11 +74,11 @@ exports.seed = function(knex) {
       {
         competition_name: 'Rice University Business Plan Competition',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity:
           'Rice University Alliance for Technology and Entrepreneurship',
         website: 'http://alliance.rice.edu/rbpc.aspx',
-        most_recent_application_due_date: '2/10/2017',
+        most_recent_application_due_date: null,
         amount: 1500000,
         amount_notes: '$1.5 million in prizes',
         geographic_region: 'Global',
@@ -96,14 +96,14 @@ exports.seed = function(knex) {
       {
         competition_name: 'Social Innovation Award',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Social',
         sponsoring_entity: 'Teach for America',
         website:
           'http://www.onedayallkids.org/awards-fellowships/social-innovation-award',
-        most_recent_application_due_date: '1/9/2017',
+        most_recent_application_due_date: null,
         amount: 100000,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas: 'Low-income communities, educational inequity',
         target_entrepreneur_demographic: null,
         notes: 'Must be a Teach for America alum or corps member',
@@ -118,7 +118,7 @@ exports.seed = function(knex) {
       {
         competition_name: 'Social Venture Challenge',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Social',
         sponsoring_entity: 'The Resolution Project',
         website:
           'http://www.resolutionproject.org/about-social-venture-challenges',
@@ -140,13 +140,12 @@ exports.seed = function(knex) {
         )}?size=75`,
       },
       {
-        competition_name:
-          'Southern California Social Entrepreneurship Challenge',
+        competition_name: 'Southern California Business Challenge',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
-        sponsoring_entity: 'Academies for Social Entrepreneurship',
+        area_focus: 'Business',
+        sponsoring_entity: 'Academies for Business',
         website: 'http://www.socentchallenge.org/',
-        most_recent_application_due_date: '7/31/2017',
+        most_recent_application_due_date: null,
         amount: 100000,
         amount_notes:
           '$100,000 in combined cash, extensive coaching, and investment advisory services',
@@ -166,15 +165,15 @@ exports.seed = function(knex) {
       {
         competition_name: 'Start-Up Challenge',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'Duke University',
         website: 'http://www.dukestartupchallenge.org/',
-        most_recent_application_due_date: '10/30/2016',
+        most_recent_application_due_date: null,
         amount: 50000,
         amount_notes:
           '1st place: $50,000\n Open competition prizes: $10,000\n Top 15 student teams: $500 each\n AARP Foundation Prize: $5,000',
         geographic_region: 'Global',
-        domain_areas: 'Unspecified',
+        domain_areas: 'North America',
         target_entrepreneur_demographic: null,
         notes: 'For Duke students/alumni only',
         early_stage_funding: true,
@@ -188,13 +187,13 @@ exports.seed = function(knex) {
       {
         competition_name: 'Sunshot Catalyst Program',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'U.S. Department of Energy',
         website: 'http://energy.gov/eere/sunshot/sunshot-catalyst-program',
         most_recent_application_due_date: null,
         amount: null,
         amount_notes: 'Prizes vary',
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas: 'Solar',
         target_entrepreneur_demographic: null,
         notes:
@@ -210,10 +209,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'Sustainable Business Plan Collaboration',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'Mentor Capital Network',
         website: 'http://mentorcapitalnet.org/home/program/',
-        most_recent_application_due_date: '10/16/2017',
+        most_recent_application_due_date: null,
         amount: 50000,
         amount_notes:
           'Up to $50,000 worth of cash and professional services will be divided among the finalists each year',
@@ -233,7 +232,7 @@ exports.seed = function(knex) {
       {
         competition_name: 'Tech Award for Global Good',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Social',
         sponsoring_entity: 'Tech Museum of Innovation',
         website: 'https://www.thetech.org/tech-global-good',
         most_recent_application_due_date: null,
@@ -256,10 +255,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'UCLA Anderson Challenges in Energy Case Competition',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'UCLA Anderson School of Management',
         website: 'http://andersonemg.weebly.com/case-competition.html',
-        most_recent_application_due_date: '1/29/2017',
+        most_recent_application_due_date: null,
         amount: 5000,
         amount_notes: null,
         geographic_region: 'Global',
@@ -277,14 +276,14 @@ exports.seed = function(knex) {
       {
         competition_name: 'Venture Philanthropy Grant',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'Margoes Foundation',
         website:
           'http://www.pfs-llc.net/foundations/margoes-foundation/grantseekers/venture-philanthropy',
         most_recent_application_due_date: null,
         amount: 50000,
         amount_notes: '$50,000 per year (for 3 years)',
-        geographic_region: 'San Francisco Bay Area',
+        geographic_region: 'North America',
         domain_areas:
           'College access for low-income and underrepresented students',
         target_entrepreneur_demographic: null,
@@ -301,10 +300,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'Wireless Innovation Project',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'Vodafone Americas Foundation',
         website: 'http://vodafone-us.com/wireless-innovation-project/',
-        most_recent_application_due_date: '11/1/2017',
+        most_recent_application_due_date: null,
         amount: 300000,
         amount_notes:
           '1st place: $300,000\n 2nd place: $200,000\n 3rd place: $100,000',
@@ -324,13 +323,13 @@ exports.seed = function(knex) {
       {
         competition_name: 'Government of Chile - Ministry of Energy',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Science',
         sponsoring_entity: 'Impacta Energy',
         website: 'https://www.impactaenergia.cl/en',
-        most_recent_application_due_date: '7/12/2017',
+        most_recent_application_due_date: null,
         amount: 107000,
         amount_notes: '$7,000-$107,000',
-        geographic_region: 'Chile',
+        geographic_region: 'South America',
         domain_areas:
           'Improve renewable energy and meet hosehold demands efficently',
         target_entrepreneur_demographic: null,
@@ -347,13 +346,13 @@ exports.seed = function(knex) {
       {
         competition_name: 'Project Entrepreneur',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'UBS and Rent the Runway',
         website: 'http://projectentrepreneur.org/',
-        most_recent_application_due_date: '11/21/2016',
+        most_recent_application_due_date: null,
         amount: 10000,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Have an existing prototype or beta technology and plan to build high-growth companies',
         target_entrepreneur_demographic: null,
@@ -371,14 +370,14 @@ exports.seed = function(knex) {
         competition_name:
           'Kellogg-Morgan Stanley Sustainable Investing Challenge',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Social',
         sponsoring_entity:
           'MacAthur Foundation, Generation Foundation, Equilibrium Capital, Finance in Motion, Milken Institute',
         website: 'http://sustainableinvestingchallenge.org/compete/',
-        most_recent_application_due_date: '2/15/2017',
+        most_recent_application_due_date: null,
         amount: null,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Have an idea that has a sustainable impact through an investment strategy that uses finance and investment tools to create an innovative solution to an environmental or societal challenge',
         target_entrepreneur_demographic: null,
@@ -395,13 +394,13 @@ exports.seed = function(knex) {
       {
         competition_name: 'Global Social Venture Competition',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'Berkeley Haas',
         website: 'http://gsvc.org/apply/',
-        most_recent_application_due_date: '12/4/2017',
+        most_recent_application_due_date: null,
         amount: 80000,
         amount_notes: null,
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Financially sustainable or profitable, scalable long term, social and/or environmental bottom line,',
         target_entrepreneur_demographic: null,
@@ -418,13 +417,13 @@ exports.seed = function(knex) {
       {
         competition_name: 'EMA Innovator Challenge',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'EMA',
         website: 'http://www.makeanimpact2017.com/',
-        most_recent_application_due_date: '2/15/2017',
+        most_recent_application_due_date: null,
         amount: 100000,
         amount_notes: null,
-        geographic_region: 'Beverly Hills',
+        geographic_region: 'North America',
         domain_areas:
           "EMA serves as a valuable link between the world of media and the environmental community, working tirelessly to bring the planet's most pressing issues to the forefront of pop culture and make true change by inspiring the next generation of filmmakers and entrepreneurs.",
         target_entrepreneur_demographic: null,
