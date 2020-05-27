@@ -62,8 +62,8 @@ function checkUrl(req, res, next) {
     const newUrl = new URL(website);
     next();
   } catch {
-    req.body = {...req.body, use_logo: false}
-    next()
+    req.body = { ...req.body, use_logo: false };
+    next();
   }
 }
 
