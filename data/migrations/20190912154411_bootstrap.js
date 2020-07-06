@@ -7,7 +7,7 @@ exports.up = function(knex) {
     tbl.string('sponsoring_entity', 255); // Keep
     tbl.string('website', 500); // Keep
     tbl.string('most_recent_application_due_date'); // Keep
-    tbl.integer('amount'); // Keep
+    tbl.integer('amount').defaultTo(0); // Keep
     tbl.string('amount_notes', 1000); // Keep
     tbl.string('geographic_region', 255); // Keep
     tbl.string('country');
