@@ -8,10 +8,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'MIT Clean Energy Prize',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Science',
         sponsoring_entity: 'MIT',
         website: 'http://cep.mit.edu/',
-        most_recent_application_due_date: '4/5/2019',
+        most_recent_application_due_date: null,
         amount: 100000,
         amount_notes:
           'Prize amounts are determined\nby the discretion of the Clean\nEnergy Prize Managing\nDirectors (grand prize last year\nwas $100,000)',
@@ -31,13 +31,13 @@ exports.seed = function(knex) {
       {
         competition_name: 'J.M.K. Innovation Prize',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Science',
         sponsoring_entity: 'J.M. Kaplan Fund',
         website: 'http://www.jmkfund.org/',
-        most_recent_application_due_date: '4/28/2017',
+        most_recent_application_due_date: null,
         amount: 175000,
         amount_notes: '$175,000 (for each of the 10 winners)',
-        geographic_region: 'United States',
+        geographic_region: 'North America',
         domain_areas:
           'Cultural heritage, human rights, the built environment, the natural environment',
         target_entrepreneur_demographic: null,
@@ -53,10 +53,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'Lipman Family Prize',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'University of Pennsylvania',
         website: 'https://lipmanfamilyprize.wharton.upenn.edu/',
-        most_recent_application_due_date: '8/14/2017',
+        most_recent_application_due_date: null,
         amount: 250000,
         amount_notes:
           '$250,000 for winning organization and $25,000 for each of other two finalists',
@@ -76,10 +76,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'March Open Challenge',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'GlobalGiving',
         website: 'https://www.globalgiving.org/open-challenge-nomination/',
-        most_recent_application_due_date: '1/31/2016',
+        most_recent_application_due_date: null,
         amount: 5000,
         amount_notes: 'At least $5,000',
         geographic_region: 'Global',
@@ -98,10 +98,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'Milken-Penn GSE Education Business Plan Competition',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Business',
         sponsoring_entity: 'University of Pennsylvania School of Education',
         website: 'http://www.educationcompetition.org/',
-        most_recent_application_due_date: '9/12/2017',
+        most_recent_application_due_date: null,
         amount: 25000,
         amount_notes: 'Venture Prize: $25,000\n Idea Prize: $15,000',
         geographic_region: 'Global',
@@ -119,10 +119,10 @@ exports.seed = function(knex) {
       {
         competition_name: 'MIT Clean Energy Prize',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Science',
         sponsoring_entity: 'Massachusetts Institute of Technology',
         website: 'http://cep.mit.edu/',
-        most_recent_application_due_date: '2/17/2017',
+        most_recent_application_due_date: null,
         amount: 100000,
         amount_notes:
           '$100,000 Grand Prize, $75,000 DOE EERE Clean Energy Prize, and three $35,000 Track Prizes',
@@ -143,11 +143,11 @@ exports.seed = function(knex) {
       {
         competition_name: 'Morgan Stanley Sustainable Investing Challenge',
         type: 'Competition',
-        area_focus: 'Social Entrepreneurship',
+        area_focus: 'Social',
         sponsoring_entity:
           'Northwestern University, Kellogg School of Management',
         website: 'http://sustainableinvestingchallenge.org/',
-        most_recent_application_due_date: '2/15/2017',
+        most_recent_application_due_date: null,
         amount: 10000,
         amount_notes: '1st place: $10,000\n Runner-up: $5,000',
         geographic_region: 'Global',

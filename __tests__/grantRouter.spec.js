@@ -15,7 +15,7 @@ const requestBody = {
 const grants = [
   {
     competition_name: 'GIST Tech-I Competition',
-    area_focus: 'Social Entrepreneurship',
+    area_focus: 'Business',
     sponsoring_entity: 'Global Innovation Through Science and Technology',
     website: 'http://www.gistnetwork.org/content/gist-tech-i',
     most_recent_application_due_date: null,
@@ -33,7 +33,7 @@ const grants = [
   },
   {
     competition_name: 'Africa Angels Network Award',
-    area_focus: 'Social Entrepreneurship',
+    area_focus: 'Business',
     sponsoring_entity: 'Harambe Entrepreneur Alliance',
     website: 'http://www.healliance.org/africa_angels_network_award.pdf',
     most_recent_application_due_date: '12/30/2015',
@@ -50,7 +50,7 @@ const grants = [
   },
   {
     competition_name: 'Alaska Airlines Environmental Challenge',
-    area_focus: 'Social Entrepreneurship',
+    area_focus: 'Business',
     sponsoring_entity: 'Alaska Airlines',
     website:
       'http://foster.uw.edu/centers/buerk-ctr-entrepreneurship/entrepreneurship-competitions/eic/',
@@ -59,7 +59,7 @@ const grants = [
     amount_notes:
       '$15,000 Grand Prize\n $10,000 2nd Place\n $5,000 Clean Energy\n $2,500 Honorable Mentions',
     geographic_region: 'North America',
-    country: 'United States',
+    country: 'North America',
     target_entrepreneur_demographic: null,
     notes:
       'One team member must be a student of a college or university in Washington, Alaska, Wyoming, Idaho, or Montana',
@@ -70,7 +70,7 @@ const grants = [
   },
   {
     competition_name: 'APTE Impact IdeaPitch Competition',
-    area_focus: 'Social Entrepreneurship',
+    area_focus: 'Business',
     sponsoring_entity: 'Alleviating Poverty Through Entrepreneurship',
     website: 'http://www.aptesummit.org/bizcomp-judges/',
     most_recent_application_due_date: '3/15/2017',
@@ -86,7 +86,7 @@ const grants = [
   },
   {
     competition_name: 'ARPA-E: Open Funding Opportunity Announcement',
-    area_focus: 'Social Entrepreneurship',
+    area_focus: 'Business',
     sponsoring_entity: 'ARPA-E',
     website:
       'https://arpa-e-foa.energy.gov/#FoaIdce3cc85c-75cb-4d73-baa5-3cee39bb6bc7',
